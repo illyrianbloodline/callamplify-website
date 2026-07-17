@@ -5630,9 +5630,18 @@ calcROI();
       root.style.display='flex';
       setTimeout(function(){ if(started) input.focus(); },50);
     },
-    close:function(){ if(root){ root.style.display='none'; } }
+    close:function(){ if(root){ root.style.display='none'; } try{ sessionStorage.setItem('thynk_closed','1'); }catch(e){} }
   };
   window.caConcierge = api;
+  // Proactively open on arrival (desktop/tablet only; respect a manual close for the session)
+  (function autoOpen(){
+    function go(){
+      try{ if(sessionStorage.getItem('thynk_closed')==='1') return; }catch(e){}
+      if(window.innerWidth < 768) return;
+      setTimeout(function(){ api.open(); }, 900);
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', go); else go();
+  })();
 })();</script>
 </body>
 </html>
