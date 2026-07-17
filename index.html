@@ -2533,16 +2533,27 @@ renderHub(1);
       </div>
 
       <!-- Form card -->
-      <div style="background:#fff;padding:2.5rem">
-        <div style="font-size:1rem;font-weight:600;color:var(--n900);margin-bottom:.35rem">The best demo is the real thing</div>
-        <div style="font-size:.82rem;color:var(--n500);margin-bottom:1.75rem">Create a free account and hear your own AI receptionist answer &mdash; on your number, in your name, within 15 minutes.</div>
-        <div style="display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.75rem">
-          <div style="display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--n700)"><span style="width:22px;height:22px;background:var(--n900);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0">1</span>Try the live demo call below &mdash; no signup needed</div>
-          <div style="display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--n700)"><span style="width:22px;height:22px;background:var(--n900);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0">2</span>Start your 14-day trial &mdash; no card required</div>
-          <div style="display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--n700)"><span style="width:22px;height:22px;background:var(--n900);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0">3</span>Call your new number and hear it answer</div>
+      <div style="background:#fff;padding:2.25rem 2.25rem 2.5rem">
+        <div id="demo-form">
+          <div style="font-size:1.05rem;font-weight:600;color:var(--n900);margin-bottom:.35rem">Request a demo</div>
+          <div style="font-size:.82rem;color:var(--n500);margin-bottom:1.5rem">Tell us a bit about you and we'll be in touch to arrange a time.</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem">
+            <div><label style="display:block;font-size:.72rem;font-weight:600;color:var(--n700);margin-bottom:.35rem">First name</label><input id="df-first" type="text" style="width:100%;padding:.6rem .75rem;border:1px solid var(--n100);font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;color:var(--n900);outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"/></div>
+            <div><label style="display:block;font-size:.72rem;font-weight:600;color:var(--n700);margin-bottom:.35rem">Last name</label><input id="df-last" type="text" style="width:100%;padding:.6rem .75rem;border:1px solid var(--n100);font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;color:var(--n900);outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"/></div>
+          </div>
+          <div style="margin-bottom:.85rem"><label style="display:block;font-size:.72rem;font-weight:600;color:var(--n700);margin-bottom:.35rem">Work email</label><input id="df-email" type="email" placeholder="you@yourbusiness.ch" style="width:100%;padding:.6rem .75rem;border:1px solid var(--n100);font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;color:var(--n900);outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"/></div>
+          <div style="margin-bottom:.85rem"><label style="display:block;font-size:.72rem;font-weight:600;color:var(--n700);margin-bottom:.35rem">Phone number</label><input id="df-phone" type="tel" placeholder="+41 79 000 00 00" style="width:100%;padding:.6rem .75rem;border:1px solid var(--n100);font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;color:var(--n900);outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"/></div>
+          <div style="margin-bottom:.85rem"><label style="display:block;font-size:.72rem;font-weight:600;color:var(--n700);margin-bottom:.35rem">Company</label><input id="df-company" type="text" placeholder="Your business" style="width:100%;padding:.6rem .75rem;border:1px solid var(--n100);font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;color:var(--n900);outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"/></div>
+          <div style="margin-bottom:1.25rem"><label style="display:block;font-size:.72rem;font-weight:600;color:var(--n700);margin-bottom:.35rem">Your trade</label><select id="df-industry" style="width:100%;padding:.6rem .75rem;border:1px solid var(--n100);font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;color:var(--n900);outline:none;background:#fff;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"><option value="">Select your trade…</option><option>Plumbing</option><option>Electrical</option><option>Heating &amp; HVAC</option><option>Locksmith</option><option>Landscaping</option><option>Building &amp; renovation</option><option>Other trade</option></select></div>
+          <button class="arrow-button" style="width:100%;justify-content:center" onclick="caSubmitDemo(this)">Request demo<div class="arrow"></div></button>
+          <p style="font-size:.72rem;color:var(--n400);text-align:center;margin:.75rem 0 0">No spam. We'll only use this to arrange your demo.</p>
         </div>
-        <button class="arrow-button" onclick="window.location.href='https://app.callamplify.com/login'">Start free trial<div class="arrow"></div></button>
-        <p style="font-size:.75rem;color:var(--n400);text-align:center;margin:.75rem 0 0">No spam. No commitment. Cancel any time.</p>
+        <div id="demo-success" style="display:none;text-align:center;padding:1.5rem 0">
+          <div style="width:52px;height:52px;border-radius:50%;background:#defbe6;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#24a148" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div style="font-size:1.05rem;font-weight:600;color:var(--n900);margin-bottom:.4rem">Thanks — request received!</div>
+          <div style="font-size:.88rem;color:var(--n600);line-height:1.6;max-width:300px;margin:0 auto">We'll email you shortly to arrange your demo. Or start your free trial now and hear it live right away.</div>
+          <button class="arrow-button" style="margin:1.25rem auto 0" onclick="window.location.href='https://app.callamplify.com/login'">Start free trial now<div class="arrow"></div></button>
+        </div>
       </div>
     </div>
   </section>
@@ -5272,6 +5283,36 @@ calcROI();
   "Contact sales": "Vertrieb kontaktieren",
   "Response time": "Antwortzeit",
   "Ask Thynk": "Thynk fragen",
+  /* ---- Request-a-demo form ---- */
+  Object.assign(CA_DE, {
+  "Book a demo →": "Demo buchen →",
+  "See CallAmplify in action — live, with your questions answered": "Sehen Sie CallAmplify in Aktion — live, mit Antworten auf Ihre Fragen",
+  "Hear the AI answer a live demo call": "Hören Sie die KI einen Live-Demo-Anruf beantworten",
+  "Tailored to your industry and use case": "Zugeschnitten auf Ihr Gewerbe und Ihren Anwendungsfall",
+  "Q&A — ask anything, no sales pressure": "Fragerunde — fragen Sie alles, ohne Verkaufsdruck",
+  "30 minutes — we respect your time": "30 Minuten — wir respektieren Ihre Zeit",
+  "Request a demo": "Demo anfragen",
+  "Tell us a bit about you and we'll be in touch to arrange a time.": "Sagen Sie uns kurz, wer Sie sind, und wir melden uns, um einen Termin zu vereinbaren.",
+  "First name": "Vorname",
+  "Last name": "Nachname",
+  "Work email": "Geschäftliche E-Mail",
+  "Phone number": "Telefonnummer",
+  "Company": "Firma",
+  "Your trade": "Ihr Gewerbe",
+  "Select your trade…": "Gewerbe wählen …",
+  "Plumbing": "Sanitär",
+  "Electrical": "Elektro",
+  "Locksmith": "Schlüsseldienst",
+  "Landscaping": "Gartenbau",
+  "Building & renovation": "Bau & Renovation",
+  "Other trade": "Anderes Gewerbe",
+  "Request demo": "Demo anfragen",
+  "No spam. We'll only use this to arrange your demo.": "Kein Spam. Wir nutzen dies nur, um Ihre Demo zu vereinbaren.",
+  "Thanks — request received!": "Danke — Anfrage erhalten!",
+  "We'll email you shortly to arrange your demo. Or start your free trial now and hear it live right away.": "Wir melden uns in Kürze per E-Mail, um Ihre Demo zu vereinbaren. Oder starten Sie jetzt Ihren Gratis-Test und hören Sie es sofort live.",
+  "Start free trial now": "Jetzt kostenlos testen"
+  });
+
   /* Your AI team section */
   "Your AI team": "Ihr KI-Team",
   "Build your digital team. You’re still the boss.": "Bauen Sie Ihr digitales Team auf. Sie bleiben der Chef.",
@@ -5738,6 +5779,21 @@ calcROI();
     else if(e.key==='Escape'){ var ov=el('search-overlay'); if(ov && ov.style.display!=='none') window.closeSearch(); }
   });
 })();
+</script>
+<script>
+function caSubmitDemo(btn){
+  var g=function(id){var el=document.getElementById(id);return el?(el.value||'').trim():'';};
+  var de=(window.caGetLang&&caGetLang()==='de');
+  var email=g('df-email');
+  if(!g('df-first')||!/.+@.+\..+/.test(email)){ alert(de?'Bitte Vorname und eine gültige E-Mail eingeben.':'Please enter your first name and a valid email.'); return; }
+  var orig=btn.innerHTML; btn.style.pointerEvents='none'; btn.style.opacity='.7'; btn.innerHTML=de?'Senden …':'Sending …';
+  fetch('https://app.callamplify.com/api/demo-request',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({firstName:g('df-first'),lastName:g('df-last'),email:email,phone:g('df-phone'),company:g('df-company'),industry:g('df-industry')})
+  }).then(function(r){return r.json();}).then(function(d){
+    if(d&&d.ok){ document.getElementById('demo-form').style.display='none'; document.getElementById('demo-success').style.display='block'; }
+    else { throw new Error('bad'); }
+  }).catch(function(){ btn.style.pointerEvents=''; btn.style.opacity=''; btn.innerHTML=orig; alert(de?'Etwas ist schiefgelaufen — bitte erneut versuchen.':'Something went wrong — please try again.'); });
+}
 </script>
 </body>
 </html>
