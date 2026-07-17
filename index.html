@@ -1242,7 +1242,7 @@ footer{border-top:1px solid var(--n100)}
           <div style="display:flex;gap:.85rem;padding:.9rem 0;border-top:1px solid rgba(255,255,255,.1)"><span style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;color:#4589ff;flex-shrink:0">02</span><div><div style="font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.3rem">What drove it</div><div style="font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.5">Google Ads is your strongest channel — 9 jobs booked.</div></div></div>
           <div style="display:flex;gap:.85rem;padding:.9rem 0;border-top:1px solid rgba(255,255,255,.1)"><span style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;color:#ff832b;flex-shrink:0">03</span><div><div style="font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.3rem">What to do next</div><div style="font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.5">Follow up with Anna Meier — new lead, not contacted. CHF 850 on the line.</div></div></div>
           <div style="display:flex;align-items:center;gap:.7rem;margin-top:1.3rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.1)">
-            <span style="width:38px;height:38px;border-radius:50%;overflow:hidden;display:block;flex-shrink:0"><svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#eceff5"/><path d="M14 100c2-21 18-29 36-29s34 8 36 29z" fill="#0f62fe"/><path d="M43 63h14v10c0 5-14 5-14 0z" fill="#e6b994"/><path d="M24 56C22 30 33 18 50 18s28 12 26 38c-1 8-3 13-5 17l-2-29c0-12-7-19-19-19s-19 7-19 19l-2 29c-2-4-4-9-5-17z" fill="#73502f"/><ellipse cx="50" cy="50" rx="19" ry="22" fill="#f1cba6"/><circle cx="31" cy="53" r="4" fill="#f1cba6"/><circle cx="69" cy="53" r="4" fill="#f1cba6"/><path d="M31 47c0-16 9-22 19-22s19 6 19 22c-5-9-11-12-19-12s-14 3-19 12z" fill="#73502f"/><circle cx="43" cy="51" r="2.5" fill="#3b2f2f"/><circle cx="57" cy="51" r="2.5" fill="#3b2f2f"/><path d="M44 60q6 5 12 0" stroke="#c77f70" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M29 52C29 36 71 36 71 52" stroke="#33373d" stroke-width="2.6" fill="none"/></svg></span>
+            <span style="width:48px;height:48px;border-radius:50%;overflow:hidden;display:block;flex-shrink:0"><img src="sophie.jpg" alt="Sophie" style="width:100%;height:100%;object-fit:cover;object-position:44% 20%"/></span>
             <div><div style="font-size:.85rem;font-weight:600;color:#fff">Sophie</div><div style="font-size:.72rem;color:rgba(255,255,255,.5)">Your AI assistant · CallAmplify</div></div>
           </div>
         </div>
@@ -1497,6 +1497,12 @@ footer{border-top:1px solid var(--n100)}
   <div class="eyebrow" style="margin-bottom:.75rem">Pricing</div>
   <h1 style="font-size:clamp(2rem,3.5vw,3rem);font-weight:600;letter-spacing:-.03em;color:var(--n900);margin-bottom:.85rem">Simple plans that pay for themselves</h1>
   <p style="font-size:1rem;color:var(--n600);max-width:540px;margin:0 auto 1.75rem;line-height:1.75">One booked job usually covers the month. Every plan includes a 14-day free trial &mdash; no card required.</p>
+  <div style="display:flex;justify-content:center;margin-bottom:1.75rem">
+    <div style="display:inline-flex;border:1px solid var(--n900);border-radius:999px;padding:3px;background:#fff">
+      <button id="bill-mo" onclick="setBilling('monthly')" style="border:none;border-radius:999px;padding:.5rem 1.15rem;font-family:'IBM Plex Sans',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;background:var(--n900);color:#fff">Monthly</button>
+      <button id="bill-yr" onclick="setBilling('yearly')" style="border:none;border-radius:999px;padding:.5rem 1.15rem;font-family:'IBM Plex Sans',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;background:#fff;color:var(--n700);display:inline-flex;align-items:center;gap:.4rem">Yearly<span style="font-size:.62rem;font-weight:700;letter-spacing:.04em;color:#1f8a44;background:#defbe6;padding:.12rem .4rem;border-radius:999px">Save 10%</span></button>
+    </div>
+  </div>
   <!-- single CHF price for all markets (Swiss company, billed in CHF) -->
 </div>
 
@@ -1511,10 +1517,10 @@ footer{border-top:1px solid var(--n100)}
         <div style="font-size:.78rem;color:var(--n400);margin-bottom:1.1rem">See every call &amp; its source</div>
         <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:1.1rem">
           <span class="pr-cur" style="font-size:1rem;font-weight:600;color:var(--n600)">CHF</span>
-          <span class="pr-amt" data-chf="49" data-eur="45" data-gbp="39" style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace">49</span>
+          <span class="pr-amt" data-chf="49" data-eur="45" data-gbp="39" data-mo="49" data-yr="44" style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace">49</span>
           <span style="font-size:.9rem;color:var(--n400)">/month</span>
         </div>
-        <div style="font-size:.72rem;color:var(--n400);margin:-.5rem 0 1rem">≈ €45 / £39</div>
+        <div class="pr-ref" data-mo="≈ €45 / £39" data-yr="≈ €40 / £35" style="font-size:.72rem;color:var(--n400);margin:-.5rem 0 1rem">≈ €45 / £39</div><div class="pr-billnote" style="display:none;font-size:.7rem;color:#1f8a44;font-weight:600;margin:-.6rem 0 .9rem">billed annually · save 10%</div>
         <button class="arrow-button" onclick="goTo('free-trial')" style="width:100%;justify-content:center">Start free trial<div class="arrow"></div></button>
       </div>
       <div style="padding:1.5rem;display:flex;flex-direction:column;gap:.7rem;flex:1">
@@ -1544,10 +1550,10 @@ footer{border-top:1px solid var(--n100)}
         <div style="font-size:.78rem;color:var(--n400);margin-bottom:1.1rem">Turn calls into booked jobs</div>
         <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:1.1rem">
           <span class="pr-cur" style="font-size:1rem;font-weight:600;color:var(--n600)">CHF</span>
-          <span class="pr-amt" data-chf="99" data-eur="89" data-gbp="79" style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace">99</span>
+          <span class="pr-amt" data-chf="99" data-eur="89" data-gbp="79" data-mo="99" data-yr="89" style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace">99</span>
           <span style="font-size:.9rem;color:var(--n400)">/month</span>
         </div>
-        <div style="font-size:.72rem;color:var(--n400);margin:-.5rem 0 1rem">≈ €89 / £79</div>
+        <div class="pr-ref" data-mo="≈ €89 / £79" data-yr="≈ €80 / £71" style="font-size:.72rem;color:var(--n400);margin:-.5rem 0 1rem">≈ €89 / £79</div><div class="pr-billnote" style="display:none;font-size:.7rem;color:#1f8a44;font-weight:600;margin:-.6rem 0 .9rem">billed annually · save 10%</div>
         <button class="arrow-button" onclick="goTo('free-trial')" style="width:100%;justify-content:center">Start free trial<div class="arrow"></div></button>
         <div style="font-size:.72rem;color:var(--n400);text-align:center;margin-top:.65rem">Pays for itself with one recovered job.</div>
       </div>
@@ -1576,10 +1582,10 @@ footer{border-top:1px solid var(--n100)}
         <div style="font-size:.78rem;color:var(--n400);margin-bottom:1.1rem">Grow with a team</div>
         <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:1.1rem">
           <span class="pr-cur" style="font-size:1rem;font-weight:600;color:var(--n600)">CHF</span>
-          <span class="pr-amt" data-chf="199" data-eur="179" data-gbp="159" style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace">199</span>
+          <span class="pr-amt" data-chf="199" data-eur="179" data-gbp="159" data-mo="199" data-yr="179" style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace">199</span>
           <span style="font-size:.9rem;color:var(--n400)">/month</span>
         </div>
-        <div style="font-size:.72rem;color:var(--n400);margin:-.5rem 0 1rem">≈ €179 / £159</div>
+        <div class="pr-ref" data-mo="≈ €179 / £159" data-yr="≈ €161 / £143" style="font-size:.72rem;color:var(--n400);margin:-.5rem 0 1rem">≈ €179 / £159</div><div class="pr-billnote" style="display:none;font-size:.7rem;color:#1f8a44;font-weight:600;margin:-.6rem 0 .9rem">billed annually · save 10%</div>
         <button class="arrow-button" onclick="goTo('free-trial')" style="width:100%;justify-content:center">Start free trial<div class="arrow"></div></button>
       </div>
       <div style="padding:1.5rem;display:flex;flex-direction:column;gap:.7rem;flex:1">
@@ -1651,6 +1657,14 @@ footer{border-top:1px solid var(--n100)}
 </div>
 
 <script>
+window.setBilling = function(mode){
+  var yr = (mode === 'yearly');
+  document.querySelectorAll('#page-pricing .pr-amt').forEach(function(el){ var v = el.getAttribute(yr?'data-yr':'data-mo'); if(v) el.textContent = v; });
+  document.querySelectorAll('#page-pricing .pr-ref').forEach(function(el){ var v = el.getAttribute(yr?'data-yr':'data-mo'); if(v) el.textContent = v; });
+  document.querySelectorAll('#page-pricing .pr-billnote').forEach(function(el){ el.style.display = yr?'block':'none'; });
+  var mB=document.getElementById('bill-mo'), yB=document.getElementById('bill-yr');
+  if(mB&&yB){ mB.style.background=yr?'#fff':'var(--n900)'; mB.style.color=yr?'var(--n700)':'#fff'; yB.style.background=yr?'var(--n900)':'#fff'; yB.style.color=yr?'#fff':'var(--n700)'; }
+};
 window.setRegion = function(cur){
   var map = { CHF:{key:'chf',sym:'CHF'}, EUR:{key:'eur',sym:'€'}, GBP:{key:'gbp',sym:'£'} };
   var m = map[cur] || map.CHF;
@@ -5385,6 +5399,10 @@ calcROI();
   "Contact sales": "Vertrieb kontaktieren",
   "Response time": "Antwortzeit",
   "Ask Ample": "Ample fragen",
+  "Monthly": "Monatlich",
+  "Yearly": "Jährlich",
+  "Save 10%": "10% sparen",
+  "billed annually · save 10%": "jährlich abgerechnet · 10% sparen",
   "Daily Brief · only on CallAmplify": "Tagesbriefing · nur bei CallAmplify",
   "Every morning, your business briefs you.": "Jeden Morgen brieft Sie Ihr Betrieb.",
   "While you load the van, your AI assistant reads the calls, texts and jobs from yesterday — and hands you three lines: where you stand, what drove it, and the one follow-up worth making today. No dashboards to dig through.": "Während Sie den Wagen beladen, liest Ihr KI-Assistent die Anrufe, SMS und Aufträge von gestern — und gibt Ihnen drei Zeilen: wo Sie stehen, was es ausgelöst hat und die eine Nachfassung, die sich heute lohnt. Kein Wühlen in Dashboards.",
