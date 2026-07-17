@@ -5643,5 +5643,101 @@ calcROI();
     if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', go); else go();
   })();
 })();</script>
+<script>
+/* ── SITE SEARCH — engine (the design export shipped the box + index but not this) ── */
+(function(){
+  var _results = [];
+  function el(id){ return document.getElementById(id); }
+
+  function buildSuggestions(){
+    var pop = el('popular-tags'), nav = el('quick-nav');
+    if(pop && !pop.dataset.built){
+      ['Pricing','AI receptionist','Missed-call text-back','Plumbers','Call tracking'].forEach(function(t){
+        var b=document.createElement('button'); b.textContent=t;
+        b.style.cssText='background:var(--n50);border:1px solid var(--n100);padding:.4rem .8rem;font-size:.8rem;color:var(--n700);cursor:pointer;font-family:inherit';
+        b.onmouseover=function(){b.style.borderColor='var(--n900)';}; b.onmouseout=function(){b.style.borderColor='var(--n100)';};
+        b.onclick=function(){ var i=el('search-input'); i.value=t; window.runSearch(t); i.focus(); };
+        pop.appendChild(b);
+      });
+      pop.dataset.built='1';
+    }
+    if(nav && !nav.dataset.built){
+      [['home','Home'],['pricing','Pricing'],['ind-homeservices','For your trade'],['company','About us'],['feat-ai-scoring','AI receptionist'],['free-trial','Start free trial']].forEach(function(it){
+        var b=document.createElement('button'); b.textContent=it[1];
+        b.style.cssText='text-align:left;background:#fff;border:none;border-right:1px solid var(--n100);border-bottom:1px solid var(--n100);padding:.85rem 1rem;font-size:.85rem;color:var(--n700);cursor:pointer;font-family:inherit';
+        b.onmouseover=function(){b.style.background='var(--n50)';}; b.onmouseout=function(){b.style.background='#fff';};
+        b.onclick=function(){ window.closeSearch(); if(window.goTo) goTo(it[0]); };
+        nav.appendChild(b);
+      });
+      nav.dataset.built='1';
+    }
+  }
+
+  window.openSearch = function(){
+    var ov = el('search-overlay'), inp = el('search-input');
+    if(!ov) return;
+    buildSuggestions();
+    ov.style.display='block';
+    el('search-results').style.display='none';
+    el('search-hint').style.display='none';
+    el('search-suggestions').style.display='block';
+    if(inp){ inp.value=''; setTimeout(function(){ inp.focus(); }, 30); }
+    _results=[]; if(typeof activeIdx!=='undefined') activeIdx=-1;
+    document.body.style.overflow='hidden';
+  };
+  window.closeSearch = function(){
+    var ov = el('search-overlay'); if(ov) ov.style.display='none';
+    document.body.style.overflow='';
+  };
+  window.closeSearchOnBg = function(e){ if(e && e.target && e.target.id==='search-overlay') window.closeSearch(); };
+
+  window.runSearch = function(q){
+    q=(q||'').trim();
+    var res=el('search-results'), hint=el('search-hint'), sug=el('search-suggestions');
+    if(!q){ res.style.display='none'; hint.style.display='none'; sug.style.display='block'; _results=[]; if(typeof activeIdx!=='undefined') activeIdx=-1; return; }
+    var ql=q.toLowerCase();
+    var hits=(typeof SEARCH_INDEX!=='undefined'?SEARCH_INDEX:[]).map(function(it){
+      var hay=(it.heading+' '+it.body+' '+it.label).toLowerCase(), sc=0;
+      if(it.heading.toLowerCase().indexOf(ql)!==-1) sc+=3;
+      if(it.label.toLowerCase().indexOf(ql)!==-1) sc+=2;
+      if(hay.indexOf(ql)!==-1) sc+=1;
+      return {it:it, sc:sc};
+    }).filter(function(x){return x.sc>0;}).sort(function(a,b){return b.sc-a.sc;}).slice(0,8);
+    _results=hits.map(function(h){return h.it;});
+    if(typeof activeIdx!=='undefined') activeIdx=-1;
+    if(!hits.length){ res.style.display='none'; hint.style.display='block'; sug.style.display='none'; return; }
+    sug.style.display='none'; hint.style.display='none';
+    res.innerHTML=hits.map(function(h,i){
+      var it=h.it;
+      return '<button class="cacc-sr" data-i="'+i+'" onclick="goSearchResult('+i+')" style="display:block;width:100%;text-align:left;background:none;border:none;border-bottom:1px solid var(--n100);padding:1rem 1.25rem;cursor:pointer;font-family:inherit">'
+        +'<div style="font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.3rem">'+it.label+'</div>'
+        +'<div style="font-size:.95rem;font-weight:600;color:var(--n900);margin-bottom:.2rem">'+window.highlight(it.heading,q)+'</div>'
+        +'<div style="font-size:.82rem;color:var(--n600);line-height:1.5">'+window.highlight(window.excerpt(it.body,q),q)+'</div></button>';
+    }).join('');
+    res.style.display='block';
+  };
+
+  window.goSearchResult = function(i){ var it=_results[i]; if(it){ window.closeSearch(); if(window.goTo) goTo(it.page); } };
+
+  window.searchKeyNav = function(e){
+    if(e.key==='Enter'){ e.preventDefault(); if(_results.length) window.goSearchResult((typeof activeIdx!=='undefined'&&activeIdx>=0)?activeIdx:0); return; }
+    if(e.key==='Escape'){ window.closeSearch(); return; }
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+      e.preventDefault(); if(!_results.length) return;
+      if(activeIdx<0) activeIdx=0;
+      else activeIdx = e.key==='ArrowDown' ? Math.min(_results.length-1, activeIdx+1) : Math.max(0, activeIdx-1);
+      var btns=document.querySelectorAll('#search-results .cacc-sr');
+      btns.forEach(function(b,idx){ b.style.background = idx===activeIdx?'var(--n50)':'none'; });
+      if(btns[activeIdx]) btns[activeIdx].scrollIntoView({block:'nearest'});
+    }
+  };
+
+  // global Ctrl/Cmd+K shortcut + Esc to close
+  document.addEventListener('keydown', function(e){
+    if((e.ctrlKey||e.metaKey) && (e.key==='k'||e.key==='K')){ e.preventDefault(); window.openSearch(); }
+    else if(e.key==='Escape'){ var ov=el('search-overlay'); if(ov && ov.style.display!=='none') window.closeSearch(); }
+  });
+})();
+</script>
 </body>
 </html>
