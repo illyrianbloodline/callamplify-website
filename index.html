@@ -1212,6 +1212,44 @@ footer{border-top:1px solid var(--n100)}
     </div>
   </section>
 
+<style>
+.db-band{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:var(--max);margin:0 auto;padding:0 2rem}
+.db-band>div{min-width:0}
+@media(max-width:860px){.db-band{grid-template-columns:1fr;gap:2rem}}
+</style>
+  <section style="padding:4.5rem 0;background:#fff">
+    <div class="db-band">
+      <div>
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem">Daily Brief · only on CallAmplify</div>
+        <h2 style="font-size:clamp(1.75rem,3vw,2.4rem);font-weight:600;letter-spacing:-.03em;color:var(--n900);margin-bottom:.85rem;line-height:1.15">Every morning, your business briefs you.</h2>
+        <p style="font-size:1rem;color:var(--n600);line-height:1.7;margin-bottom:1.7rem">While you load the van, your AI assistant reads the calls, texts and jobs from yesterday — and hands you three lines: where you stand, what drove it, and the one follow-up worth making today. No dashboards to dig through.</p>
+        <div style="display:flex;flex-direction:column;gap:.9rem;margin-bottom:1.8rem">
+          <div style="display:flex;gap:.7rem;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="11" fill="#0f62fe"/><path d="M7 12.4l3.3 3.3L17.2 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="font-size:.92rem;color:var(--n700);line-height:1.5"><strong style="color:var(--n900)">Where things stand.</strong> Calls answered, jobs booked, and revenue recovered — the numbers that matter, first.</div></div>
+          <div style="display:flex;gap:.7rem;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="11" fill="#0f62fe"/><path d="M7 12.4l3.3 3.3L17.2 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="font-size:.92rem;color:var(--n700);line-height:1.5"><strong style="color:var(--n900)">What drove it.</strong> Your strongest channel and busiest hours, spotted for you.</div></div>
+          <div style="display:flex;gap:.7rem;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="11" fill="#0f62fe"/><path d="M7 12.4l3.3 3.3L17.2 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="font-size:.92rem;color:var(--n700);line-height:1.5"><strong style="color:var(--n900)">What to do next.</strong> The one lead worth chasing today, with the money on the line.</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap;margin-bottom:1.1rem">
+          <button class="arrow-button" onclick="goTo('free-trial')">Start free trial<div class="arrow"></div></button>
+          <button onclick="goTo('book-demo')" style="background:none;border:none;color:var(--n900);font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.92rem;padding:0">Book a demo &rarr;</button>
+        </div>
+        <p style="font-size:.82rem;color:var(--n500);line-height:1.6;border-left:2px solid var(--orange);padding-left:.85rem;margin:0">CallRail gives you dashboards to dig through. CallAmplify hands you the decision.</p>
+      </div>
+      <div>
+        <div style="background:#161616;border-radius:16px;padding:1.85rem;box-shadow:0 30px 70px rgba(0,0,0,.22)">
+          <span style="display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.12);padding:.3rem .6rem;margin-bottom:1.1rem">Daily Brief</span>
+          <div style="font-size:1.02rem;color:#fff;line-height:1.5;margin-bottom:1.1rem">Good morning, Tom — here is your day in three lines: where things stand, what drove it, and what I would do next.</div>
+          <div style="display:flex;gap:.85rem;padding:.9rem 0;border-top:1px solid rgba(255,255,255,.1)"><span style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;color:#4589ff;flex-shrink:0">01</span><div><div style="font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.3rem">Where things stand</div><div style="font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.5">You answered 23 calls and booked CHF 4,200 this week. Recovery rate 68%.</div></div></div>
+          <div style="display:flex;gap:.85rem;padding:.9rem 0;border-top:1px solid rgba(255,255,255,.1)"><span style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;color:#4589ff;flex-shrink:0">02</span><div><div style="font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.3rem">What drove it</div><div style="font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.5">Google Ads is your strongest channel — 9 jobs booked.</div></div></div>
+          <div style="display:flex;gap:.85rem;padding:.9rem 0;border-top:1px solid rgba(255,255,255,.1)"><span style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;color:#ff832b;flex-shrink:0">03</span><div><div style="font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.3rem">What to do next</div><div style="font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.5">Follow up with Anna Meier — new lead, not contacted. CHF 850 on the line.</div></div></div>
+          <div style="display:flex;align-items:center;gap:.7rem;margin-top:1.3rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.1)">
+            <span style="width:38px;height:38px;border-radius:50%;overflow:hidden;display:block;flex-shrink:0"><svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#eceff5"/><path d="M14 100c2-21 18-29 36-29s34 8 36 29z" fill="#0f62fe"/><path d="M43 63h14v10c0 5-14 5-14 0z" fill="#e6b994"/><path d="M24 56C22 30 33 18 50 18s28 12 26 38c-1 8-3 13-5 17l-2-29c0-12-7-19-19-19s-19 7-19 19l-2 29c-2-4-4-9-5-17z" fill="#73502f"/><ellipse cx="50" cy="50" rx="19" ry="22" fill="#f1cba6"/><circle cx="31" cy="53" r="4" fill="#f1cba6"/><circle cx="69" cy="53" r="4" fill="#f1cba6"/><path d="M31 47c0-16 9-22 19-22s19 6 19 22c-5-9-11-12-19-12s-14 3-19 12z" fill="#73502f"/><circle cx="43" cy="51" r="2.5" fill="#3b2f2f"/><circle cx="57" cy="51" r="2.5" fill="#3b2f2f"/><path d="M44 60q6 5 12 0" stroke="#c77f70" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M29 52C29 36 71 36 71 52" stroke="#33373d" stroke-width="2.6" fill="none"/></svg></span>
+            <div><div style="font-size:.85rem;font-weight:600;color:#fff">Sophie</div><div style="font-size:.72rem;color:rgba(255,255,255,.5)">Your AI assistant · CallAmplify</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="cta-section" style="padding-top:2.4rem">
     <div class="cta-box">
       <div class="cta-grid">
@@ -1469,30 +1507,32 @@ footer{border-top:1px solid var(--n100)}
     <!-- STARTER -->
     <div style="background:#fff;border-right:1px solid var(--n100);display:flex;flex-direction:column">
       <div style="padding:1.75rem 1.5rem 1.5rem;border-bottom:1px solid var(--n100)">
-        <div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.2rem">Starter <span style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--n400);border:1px solid var(--n100);padding:.15rem .45rem;vertical-align:middle;margin-left:.35rem">Coming soon</span></div>
-        <div style="font-size:.78rem;color:var(--n400);margin-bottom:1.1rem">Solo, just starting</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.2rem">Call Tracking</div>
+        <div style="font-size:.78rem;color:var(--n400);margin-bottom:1.1rem">See every call &amp; its source</div>
         <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:1.1rem">
           <span class="pr-cur" style="font-size:1rem;font-weight:600;color:var(--n600)">CHF</span>
           <span class="pr-amt" data-chf="49" data-eur="45" data-gbp="39" style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace">49</span>
           <span style="font-size:.9rem;color:var(--n400)">/month</span>
         </div>
         <div style="font-size:.72rem;color:var(--n400);margin:-.5rem 0 1rem">≈ €45 / £39</div>
-        <button class="arrow-button-outline" disabled style="width:100%;justify-content:center;opacity:.45;cursor:default">Coming soon</button>
+        <button class="arrow-button" onclick="goTo('free-trial')" style="width:100%;justify-content:center">Start free trial<div class="arrow"></div></button>
       </div>
       <div style="padding:1.5rem;display:flex;flex-direction:column;gap:.7rem;flex:1">
-        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Your AI receptionist</div>
+        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Calls &amp; tracking</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>24/7 AI call answering</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>1 local tracking number</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Call source tracking (ad, page &amp; campaign)</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Call recording</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>~300 AI minutes / month</div>
+        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Capture &amp; inbox</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Missed-call text-back (SMS)</div>
-        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Inbox &amp; leads</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Two-way SMS with customers</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Lead inbox — calls &amp; texts</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Contacts &amp; lead pipeline</div>
-        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Included every month</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>1 local number</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>~300 AI minutes</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Email support</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6);flex-shrink:0">–</span>Call recording &amp; transcripts</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6);flex-shrink:0">–</span>AI Analyst — call summaries &amp; scoring</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6);flex-shrink:0">–</span>Marketing reports</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6);flex-shrink:0">–</span>Call transcripts &amp; AI summaries</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6);flex-shrink:0">–</span>Lead scoring &amp; AI follow-up</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6);flex-shrink:0">–</span>Marketing attribution reports</div>
       </div>
     </div>
 
@@ -1500,8 +1540,8 @@ footer{border-top:1px solid var(--n100)}
     <div style="background:#fff;border-right:1px solid var(--n100);display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.10);position:relative;z-index:1;margin:-1px 0">
       <div style="background:var(--orange);text-align:center;padding:.4rem"><span style="font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff">Most popular</span></div>
       <div style="padding:1.75rem 1.5rem 1.5rem;border-bottom:1px solid var(--n100)">
-        <div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.2rem">Pro</div>
-        <div style="font-size:.78rem;color:var(--n400);margin-bottom:1.1rem">The growing tradesman</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.2rem">Lead Conversion</div>
+        <div style="font-size:.78rem;color:var(--n400);margin-bottom:1.1rem">Turn calls into booked jobs</div>
         <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:1.1rem">
           <span class="pr-cur" style="font-size:1rem;font-weight:600;color:var(--n600)">CHF</span>
           <span class="pr-amt" data-chf="99" data-eur="89" data-gbp="79" style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace">99</span>
@@ -1512,18 +1552,19 @@ footer{border-top:1px solid var(--n100)}
         <div style="font-size:.72rem;color:var(--n400);text-align:center;margin-top:.65rem">Pays for itself with one recovered job.</div>
       </div>
       <div style="padding:1.5rem;display:flex;flex-direction:column;gap:.7rem;flex:1">
-        <div style="font-size:.72rem;font-weight:700;color:var(--n900);margin-bottom:-.1rem">Everything in Starter, plus:</div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--n900);margin-bottom:-.1rem">Everything in Call Tracking, plus:</div>
         <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Your AI team</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>AI Receptionist — answers &amp; captures</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>AI Analyst — summary + lead score per call</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>AI Receptionist — answers &amp; books jobs</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>AI Analyst — summary, sentiment &amp; lead score</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>AI Follow-up — drafts the chase for quiet leads</div>
-        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Inbox &amp; leads</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Call recording &amp; full transcripts</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Follow-up queue — every hot lead ranked</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Marketing reports — which ads bring jobs</div>
-        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Included every month</div>
+        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Convert &amp; measure</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Searchable call transcripts</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Follow-up queue — hottest leads first</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Marketing attribution — which ads pay off</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Daily Brief — your AI's morning game-plan</div>
+        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Included</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>3 local numbers</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>~800 AI minutes</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>~800 AI minutes / month</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Priority email support</div>
       </div>
     </div>
@@ -1531,27 +1572,28 @@ footer{border-top:1px solid var(--n100)}
     <!-- BUSINESS -->
     <div style="background:#fff;display:flex;flex-direction:column">
       <div style="padding:1.75rem 1.5rem 1.5rem;border-bottom:1px solid var(--n100)">
-        <div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.2rem">Scale <span style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--n400);border:1px solid var(--n100);padding:.15rem .45rem;vertical-align:middle;margin-left:.35rem">Coming soon</span></div>
-        <div style="font-size:.78rem;color:var(--n400);margin-bottom:1.1rem">Teams and multiple vans</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.2rem">Scale</div>
+        <div style="font-size:.78rem;color:var(--n400);margin-bottom:1.1rem">Grow with a team</div>
         <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:1.1rem">
           <span class="pr-cur" style="font-size:1rem;font-weight:600;color:var(--n600)">CHF</span>
           <span class="pr-amt" data-chf="199" data-eur="179" data-gbp="159" style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace">199</span>
           <span style="font-size:.9rem;color:var(--n400)">/month</span>
         </div>
         <div style="font-size:.72rem;color:var(--n400);margin:-.5rem 0 1rem">≈ €179 / £159</div>
-        <button class="arrow-button-outline" disabled style="width:100%;justify-content:center;opacity:.45;cursor:default">Coming soon</button>
+        <button class="arrow-button" onclick="goTo('free-trial')" style="width:100%;justify-content:center">Start free trial<div class="arrow"></div></button>
       </div>
       <div style="padding:1.5rem;display:flex;flex-direction:column;gap:.7rem;flex:1">
-        <div style="font-size:.72rem;font-weight:700;color:var(--n900);margin-bottom:-.1rem">Everything in Pro, plus:</div>
-        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Your AI team</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Premium natural voice</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Campaigns + follow-up automation</div>
-        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Team &amp; inbox</div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--n900);margin-bottom:-.1rem">Everything in Lead Conversion, plus:</div>
+        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Team &amp; automation</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Team access — users &amp; roles</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Shared inbox &amp; lead assignment</div>
-        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Included every month</div>
-        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>10 local numbers</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Campaigns + follow-up automation</div>
+        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Growth</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Premium natural voice</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>WhatsApp text-back</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Deal probability &amp; revenue forecast</div>
+        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Included</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>10 local numbers</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Highest AI allowance</div>
         <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f8a44;font-weight:700;flex-shrink:0">✓</span>Priority support</div>
       </div>
@@ -5343,6 +5385,55 @@ calcROI();
   "Contact sales": "Vertrieb kontaktieren",
   "Response time": "Antwortzeit",
   "Ask Ample": "Ample fragen",
+  "Daily Brief · only on CallAmplify": "Tagesbriefing · nur bei CallAmplify",
+  "Every morning, your business briefs you.": "Jeden Morgen brieft Sie Ihr Betrieb.",
+  "While you load the van, your AI assistant reads the calls, texts and jobs from yesterday — and hands you three lines: where you stand, what drove it, and the one follow-up worth making today. No dashboards to dig through.": "Während Sie den Wagen beladen, liest Ihr KI-Assistent die Anrufe, SMS und Aufträge von gestern — und gibt Ihnen drei Zeilen: wo Sie stehen, was es ausgelöst hat und die eine Nachfassung, die sich heute lohnt. Kein Wühlen in Dashboards.",
+  "Where things stand.": "Wo die Dinge stehen.",
+  "Calls answered, jobs booked, and revenue recovered — the numbers that matter, first.": "Beantwortete Anrufe, gebuchte Aufträge und zurückgewonnener Umsatz — die wichtigen Zahlen zuerst.",
+  "What drove it.": "Was es ausgelöst hat.",
+  "Your strongest channel and busiest hours, spotted for you.": "Ihr stärkster Kanal und Ihre Stosszeiten — für Sie erkannt.",
+  "What to do next.": "Was als Nächstes zu tun ist.",
+  "The one lead worth chasing today, with the money on the line.": "Der eine Lead, den es sich heute zu verfolgen lohnt — mit dem Geld auf dem Spiel.",
+  "Book a demo →": "Demo buchen →",
+  "CallRail gives you dashboards to dig through. CallAmplify hands you the decision.": "CallRail gibt Ihnen Dashboards zum Durchwühlen. CallAmplify gibt Ihnen die Entscheidung.",
+  "Good morning, Tom — here is your day in three lines: where things stand, what drove it, and what I would do next.": "Guten Morgen, Tom — hier ist Ihr Tag in drei Zeilen: wo die Dinge stehen, was es ausgelöst hat und was ich als Nächstes tun würde.",
+  "Where things stand": "Wo die Dinge stehen",
+  "You answered 23 calls and booked CHF 4,200 this week. Recovery rate 68%.": "Sie haben diese Woche 23 Anrufe beantwortet und CHF 4'200 gebucht. Rückgewinnungsrate 68%.",
+  "What drove it": "Was es ausgelöst hat",
+  "Google Ads is your strongest channel — 9 jobs booked.": "Google Ads ist Ihr stärkster Kanal — 9 Aufträge gebucht.",
+  "What to do next": "Was als Nächstes zu tun ist",
+  "Follow up with Anna Meier — new lead, not contacted. CHF 850 on the line.": "Nachfassen bei Anna Meier — neuer Lead, nicht kontaktiert. CHF 850 auf dem Spiel.",
+  "Your AI assistant · CallAmplify": "Ihr KI-Assistent · CallAmplify",
+  "See every call & its source": "Jeder Anruf & seine Quelle",
+  "Turn calls into booked jobs": "Aus Anrufen werden gebuchte Aufträge",
+  "Grow with a team": "Wachsen Sie mit einem Team",
+  "Calls & tracking": "Anrufe & Tracking",
+  "Capture & inbox": "Erfassen & Posteingang",
+  "Convert & measure": "Konvertieren & messen",
+  "Included": "Inklusive",
+  "Team & automation": "Team & Automatisierung",
+  "Growth": "Wachstum",
+  "Everything in Call Tracking, plus:": "Alles aus Call Tracking, plus:",
+  "Everything in Lead Conversion, plus:": "Alles aus Lead Conversion, plus:",
+  "Call source tracking (ad, page & campaign)": "Anrufquellen-Tracking (Anzeige, Seite & Kampagne)",
+  "Call recording": "Anrufaufnahme",
+  "Two-way SMS with customers": "Zwei-Wege-SMS mit Kunden",
+  "Lead inbox — calls & texts": "Lead-Posteingang — Anrufe & SMS",
+  "Contacts & lead pipeline": "Kontakte & Lead-Pipeline",
+  "Call transcripts & AI summaries": "Anruf-Transkripte & KI-Zusammenfassungen",
+  "Lead scoring & AI follow-up": "Lead-Scoring & KI-Nachfassung",
+  "Marketing attribution reports": "Marketing-Attributionsberichte",
+  "AI Receptionist — answers & books jobs": "KI-Empfang — nimmt an & bucht Aufträge",
+  "AI Analyst — summary, sentiment & lead score": "KI-Analyst — Zusammenfassung, Stimmung & Lead-Score",
+  "AI Follow-up — drafts the chase for quiet leads": "KI-Nachfassung — entwirft die Nachricht für stille Leads",
+  "Searchable call transcripts": "Durchsuchbare Anruf-Transkripte",
+  "Follow-up queue — hottest leads first": "Nachfass-Warteschlange — heisseste Leads zuerst",
+  "Marketing attribution — which ads pay off": "Marketing-Attribution — welche Anzeigen sich lohnen",
+  "Daily Brief — your AI's morning game-plan": "Tagesbriefing — der Morgenplan Ihrer KI",
+  "Team access — users & roles": "Team-Zugang — Nutzer & Rollen",
+  "Shared inbox & lead assignment": "Geteilter Posteingang & Lead-Zuweisung",
+  "Deal probability & revenue forecast": "Abschlusswahrscheinlichkeit & Umsatzprognose",
+  "Highest AI allowance": "Höchstes KI-Kontingent",
   "AI Receptionist": "KI-Empfang",
   "Turn every missed call into a booked job": "Aus jedem verpassten Anruf ein gebuchter Auftrag",
   "In every plan, with no add-on fee: the moment you cannot pick up, Ample texts the caller back, captures the job, and ranks the lead in your inbox.": "In jedem Plan, ohne Aufpreis: Sobald Sie nicht rangehen können, schreibt Ample dem Anrufer zurück, erfasst den Auftrag und priorisiert den Lead in Ihrem Posteingang.",
