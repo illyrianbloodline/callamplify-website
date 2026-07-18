@@ -680,38 +680,79 @@ footer{border-top:1px solid var(--n100)}
 ═══════════════════════════════════════════ -->
 <div id="page-home" class="page active">
 
-  <!-- HERO ─────────────────────────────────── -->
-  <section class="hero">
-    <div class="hero-grid">
-
-      <!-- Left: text -->
-      <div class="hero-left">
-        <div class="hero-badge">
-          <span class="dot"></span>
-          <span>Call answering for trades</span>
-        </div>
-        <h1>Never lose a job to a missed call again.</h1>
-        <p class="hero-desc">You're on a job, the phone rings out, and the caller dials the next trade. CallAmplify's AI answers every call in your name, captures the job, and texts back anyone you miss &mdash; day, night, or weekend.</p>
-        <div class="hero-ctas">
-          <button class="arrow-button" onclick="goTo('free-trial')">Start free trial<div class="arrow"></div></button>
-          <button class="arrow-button-ghost" onclick="goTo('book-demo')">Watch the demo<div class="arrow"></div></button>
-        </div>
-
+  <!-- HERO — editorial (ported from CallAmplify.dc design, Carbon blue) -->
+  <style>
+  .tmp-wrap{display:flex;gap:2px;background:#fff;width:100%;height:clamp(360px,54vh,560px)}
+  .tmp{position:relative;flex:1 1 0;min-width:0;overflow:hidden;background:#161616;transition:flex .6s cubic-bezier(.4,0,.2,1);cursor:pointer}
+  .tmp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+  .tmp-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,17,.12) 0%,rgba(20,18,17,0) 38%,rgba(20,18,17,.55) 72%,rgba(20,18,17,.94) 100%)}
+  .tmp-scan{position:absolute;top:0;left:0;bottom:0;width:2px;overflow:hidden;opacity:0;transition:opacity .4s;pointer-events:none}
+  .tmp-scan>div{width:100%;height:25%;background:linear-gradient(180deg,transparent,#0f62fe,transparent);animation:tmpScan 2.6s linear infinite}
+  .tmp-live{position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:7px;opacity:0;transition:opacity .4s}
+  .tmp-live b{width:7px;height:7px;border-radius:50%;background:#4589ff;animation:tmpPulse 1.4s ease-in-out infinite}
+  .tmp-live span{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+  .tmp-foot{position:absolute;left:0;right:0;bottom:0;padding:20px;display:flex;flex-direction:column;gap:10px;z-index:4}
+  .tmp-num{font-weight:700;font-size:14px;color:#78a9ff}
+  .tmp-ico{display:inline-flex}
+  .tmp-nm{font-weight:700;color:#fff;line-height:1.08;font-size:15px;letter-spacing:.14em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg)}
+  .tmp.on .tmp-nm{writing-mode:horizontal-tb;transform:none;font-size:clamp(24px,2.4vw,38px);letter-spacing:-.015em;text-transform:none}
+  .tmp-role{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#78a9ff}
+  .tmp-dt{overflow:hidden;opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}
+  .tmp-dt p{font-size:14px;line-height:1.5;margin:0;max-width:32ch;color:#c6c6c6}
+  .tmp.on .tmp-dt,.tmp.on .tmp-live,.tmp.on .tmp-scan{opacity:1;transform:none}
+  @keyframes tmpScan{0%{transform:translateY(-100%)}100%{transform:translateY(400%)}}
+  @keyframes tmpPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.7)}}
+  @media(max-width:860px){.tmp-wrap{flex-direction:column;height:auto}.tmp{height:170px;flex:none!important}
+    .tmp-nm{writing-mode:horizontal-tb;transform:none;font-size:19px;letter-spacing:-.01em;text-transform:none}
+    .tmp-dt,.tmp-live{opacity:1;transform:none}.tmp-dt p{max-width:none}}
+  </style>
+  <section style="max-width:var(--max);margin:0 auto;padding:clamp(18px,3vh,36px) 2rem clamp(12px,2vh,24px)">
+    <span style="display:block;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0043ce;margin-bottom:12px">For trades businesses that live on the phone &middot; Built in Switzerland</span>
+    <h1 style="font-weight:700;font-size:clamp(32px,4.6vw,64px);line-height:1.03;letter-spacing:-.03em;margin:0 0 0 -.04em;color:var(--n900)">
+      <span style="display:block">Never lose a job</span>
+      <span style="display:block">to a missed call</span>
+      <span style="display:block;color:#0f62fe">again.</span>
+    </h1>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:center;margin-top:20px">
+      <p style="font-size:clamp(15px,1.2vw,17px);line-height:1.55;max-width:52ch;margin:0;color:var(--n600)">You’re on a job, the phone rings out, and the caller dials the next trade. CallAmplify’s AI answers every call in your name, captures the job, and texts back anyone you miss — day, night, or weekend.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="arrow-button" style="height:52px;font-size:16px" onclick="document.getElementById('hx-team').scrollIntoView({behavior:'smooth'})">Meet your AI team<div class="arrow"></div></button>
+        <button class="arrow-button-outline" style="height:52px;font-size:16px" onclick="goTo('book-demo')">See it answer a call<div class="arrow"></div></button>
       </div>
-
-      <!-- Right: dashboard mockup -->
-      <div class="hero-right">
-        <div style="width:100%;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:radial-gradient(120% 95% at 80% 4%,#e9f0ff,#f4f8fd 46%,#fff);border:1px solid #e0e0e0;padding:2rem;text-align:center" aria-hidden="true">
-          <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,#3d86ff,#0f62fe);display:flex;align-items:center;justify-content:center">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg>
-          </div>
-          <div style="font-size:1rem;font-weight:600;color:#161616">Every call answered</div>
-          <div style="font-size:.85rem;color:#6f6f6f;max-width:280px;line-height:1.6">Your AI receptionist picks up, captures the job, and shows you where every call came from.</div>
-        </div>
-      </div>
-
     </div>
   </section>
+
+  <!-- AI TEAM — hover-expanding portrait panels -->
+  <section id="hx-team" style="background:#161616;color:#fff;padding:clamp(14px,2vh,28px) 0 0">
+    <div style="max-width:var(--max);margin:0 auto;padding:0 2rem">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:14px">
+        <h2 style="font-weight:700;font-size:clamp(22px,2.6vw,34px);line-height:1.05;letter-spacing:-.015em;margin:0">Build your digital team — <span style="color:#78a9ff">you’re still the boss.</span></h2>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8d8d8d">Hover left &rarr; right</span>
+      </div>
+    </div>
+    <div class="tmp-wrap" id="tmp-panels">
+      <div class="tmp"><img class="tmp-bg" src="sophie.jpg" alt="" style="object-position:44% 20%"/><div class="tmp-shade"></div><div class="tmp-scan"><div></div></div><div class="tmp-live"><b></b><span>Live</span></div><div class="tmp-foot"><span class="tmp-num">01</span><span class="tmp-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#78a9ff" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg></span><div class="tmp-nm">AI Receptionist</div><span class="tmp-role">Answers 24/7</span><div class="tmp-dt"><p>Answers every call in your name, captures the job, and texts back anyone you miss.</p></div></div></div>
+      <div class="tmp"><img class="tmp-bg" src="lukas.jpg" alt="" style="object-position:50% 14%"/><div class="tmp-shade"></div><div class="tmp-scan"><div></div></div><div class="tmp-live"><b></b><span>Live</span></div><div class="tmp-foot"><span class="tmp-num">02</span><span class="tmp-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#78a9ff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></span><div class="tmp-nm">AI Analyst</div><span class="tmp-role">Reads every call</span><div class="tmp-dt"><p>Records, transcribes and summarises every call, so you can quote the job right.</p></div></div></div>
+      <div class="tmp"><img class="tmp-bg" src="emma.jpg" alt="" style="object-position:46% 18%"/><div class="tmp-shade"></div><div class="tmp-scan"><div></div></div><div class="tmp-live"><b></b><span>Live</span></div><div class="tmp-foot"><span class="tmp-num">03</span><span class="tmp-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#78a9ff" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="tmp-nm">AI Follow-up</div><span class="tmp-role">Chases the job</span><div class="tmp-dt"><p>Chases the callbacks and floats the hottest jobs to the top of your inbox.</p></div></div></div>
+      <div class="tmp"><img class="tmp-bg" src="av-marketing.jpg" alt="" style="object-position:50% 25%"/><div class="tmp-shade"></div><div class="tmp-scan"><div></div></div><div class="tmp-live"><b></b><span>Live</span></div><div class="tmp-foot"><span class="tmp-num">04</span><span class="tmp-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#78a9ff" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span><div class="tmp-nm">AI Marketing Analyst</div><span class="tmp-role">Tracks the source</span><div class="tmp-dt"><p>Shows which advert earned the call — Google, Facebook, your van or a flyer.</p></div></div></div>
+      <div class="tmp"><img class="tmp-bg" src="marco.jpg" alt="" style="object-position:47% 16%"/><div class="tmp-shade"></div><div class="tmp-scan"><div></div></div><div class="tmp-live"><b></b><span>Live</span></div><div class="tmp-foot"><span class="tmp-num">05</span><span class="tmp-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#78a9ff" stroke-width="2"><path d="M3 11l18-7-7 18-2.5-7.5z"/></svg></span><div class="tmp-nm">Campaign Manager</div><span class="tmp-role">Keeps the phone ringing</span><div class="tmp-dt"><p>Runs the campaigns, WhatsApp and automation that keep new jobs coming in.</p></div></div></div>
+    </div>
+    <div style="height:clamp(40px,6vh,72px)"></div>
+  </section>
+  <script>
+  (function(){
+    var wrap=document.getElementById('tmp-panels'); if(!wrap) return;
+    var ps=Array.prototype.slice.call(wrap.children);
+    function set(a){ps.forEach(function(p,i){p.style.flexGrow=(a==null?1:(i===a?4.4:0.7));p.classList.toggle('on',i===a);});}
+    ps.forEach(function(p,i){
+      p.addEventListener('mouseenter',function(){set(i);});
+      p.addEventListener('click',function(){set(i);});
+    });
+    wrap.addEventListener('mouseleave',function(){set(null);});
+    set(null);
+  })();
+  </script>
+
   <!-- SOCIAL PROOF — real trades -->
   <section style="border-bottom:1px solid var(--n100)">
     <div style="max-width:var(--max);margin:0 auto;padding:0 2rem">
@@ -1161,56 +1202,7 @@ footer{border-top:1px solid var(--n100)}
   </section>
 
     <!-- CTA ──────────────────────────────────── -->
-  <!-- YOUR AI TEAM ─────────────────────────────── -->
-  <section style="background:var(--n900);padding:3.5rem 0;color:#fff">
-    <div style="max-width:var(--max);margin:0 auto;padding:0 2rem">
-      <div style="text-align:center;margin-bottom:2.4rem">
-        <div style="font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem">Your AI team</div>
-        <h2 style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:600;letter-spacing:-.03em;margin-bottom:.85rem">Build your digital team. You’re still the boss.</h2>
-        <p style="font-size:1rem;color:rgba(255,255,255,.6);max-width:580px;margin:0 auto;line-height:1.75">It starts with your AI receptionist — and grows into a team that works the phones, chases the follow-ups, and keeps the paperwork. They do the work; everything reports back to you, in one inbox, for your call.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1)">
 
-        <div style="background:var(--n900);padding:1.6rem 1.3rem;display:flex;flex-direction:column;gap:.65rem">
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <span style="width:38px;height:38px;border-radius:8px;background:rgba(15,98,254,.18);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78a9ff" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg></span>
-            <span style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#42be65;background:rgba(36,161,72,.15);padding:.25rem .5rem">Available now</span>
-          </div>
-          <div style="font-size:1.02rem;font-weight:600">AI Reception</div>
-          <div style="font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.55">Answers every call, captures the job, and texts back the ones you miss.</div>
-        </div>
-
-        <div style="background:var(--n900);padding:1.6rem 1.3rem;display:flex;flex-direction:column;gap:.65rem">
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <span style="width:38px;height:38px;border-radius:8px;background:rgba(15,98,254,.18);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78a9ff" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-            <span style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#42be65;background:rgba(36,161,72,.15);padding:.25rem .5rem">Available now</span>
-          </div>
-          <div style="font-size:1.02rem;font-weight:600">AI Follow-up</div>
-          <div style="font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.55">Flags leads who’ve gone quiet and drafts the follow-up message, ready for you to send.</div>
-        </div>
-
-        <div style="background:var(--n900);padding:1.6rem 1.3rem;display:flex;flex-direction:column;gap:.65rem">
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <span style="width:38px;height:38px;border-radius:8px;background:rgba(15,98,254,.18);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78a9ff" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01"/></svg></span>
-            <span style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(255,255,255,.08);padding:.25rem .5rem">Coming soon</span>
-          </div>
-          <div style="font-size:1.02rem;font-weight:600">AI Bookkeeping</div>
-          <div style="font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.55">Logs every booked job and keeps your numbers straight — no spreadsheets.</div>
-        </div>
-
-        <div style="background:var(--n900);padding:1.6rem 1.3rem;display:flex;flex-direction:column;gap:.65rem">
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <span style="width:38px;height:38px;border-radius:8px;background:rgba(15,98,254,.18);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78a9ff" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span>
-            <span style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#42be65;background:rgba(36,161,72,.15);padding:.25rem .5rem">Available now</span>
-          </div>
-          <div style="font-size:1.02rem;font-weight:600">AI Insight</div>
-          <div style="font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.55">Shows which ads and channels actually bring you paying jobs.</div>
-        </div>
-
-      </div>
-      <p style="text-align:center;font-size:.9rem;color:rgba(255,255,255,.55);margin-top:1.6rem">You stay in control — every AI teammate reports to you. You approve, you decide. <b style="color:#fff">You’re the boss.</b></p>
-    </div>
-  </section>
 
 <style>
 .db-band{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:var(--max);margin:0 auto;padding:0 2rem}
@@ -5424,6 +5416,27 @@ calcROI();
   "Contact sales": "Vertrieb kontaktieren",
   "Response time": "Antwortzeit",
   "Ask Ample": "Ample fragen",
+  "Build your digital team —": "Bauen Sie Ihr digitales Team auf —",
+  "For trades businesses that live on the phone · Built in Switzerland": "Für Handwerksbetriebe, die am Telefon leben · Gebaut in der Schweiz",
+  "Never lose a job": "Nie wieder einen Auftrag",
+  "to a missed call": "an einen verpassten Anruf",
+  "again.": "verlieren.",
+  "You’re on a job, the phone rings out, and the caller dials the next trade. CallAmplify’s AI answers every call in your name, captures the job, and texts back anyone you miss — day, night, or weekend.": "Sie sind auf einer Baustelle, das Telefon klingelt ins Leere, und der Anrufer wählt den nächsten Handwerker. Die KI von CallAmplify nimmt jeden Anruf in Ihrem Namen an, erfasst den Auftrag und schreibt jedem zurück, den Sie verpassen — Tag, Nacht und Wochenende.",
+  "Meet your AI team": "Lernen Sie Ihr KI-Team kennen",
+  "See it answer a call": "Hören Sie es einen Anruf annehmen",
+  "Build your digital team — ": "Bauen Sie Ihr digitales Team auf — ",
+  "you’re still the boss.": "Sie bleiben der Chef.",
+  "Hover left → right": "Von links → rechts fahren",
+  "Answers 24/7": "Nimmt 24/7 ab",
+  "Reads every call": "Liest jeden Anruf",
+  "Chases the job": "Fasst beim Auftrag nach",
+  "Tracks the source": "Erkennt die Quelle",
+  "Keeps the phone ringing": "Hält das Telefon am Klingeln",
+  "Answers every call in your name, captures the job, and texts back anyone you miss.": "Nimmt jeden Anruf in Ihrem Namen an, erfasst den Auftrag und schreibt jedem verpassten Anrufer zurück.",
+  "Records, transcribes and summarises every call, so you can quote the job right.": "Nimmt jeden Anruf auf, transkribiert und fasst zusammen — damit Sie den Auftrag richtig offerieren.",
+  "Chases the callbacks and floats the hottest jobs to the top of your inbox.": "Fasst bei Rückrufen nach und holt die heissesten Aufträge in Ihrem Posteingang nach oben.",
+  "Shows which advert earned the call — Google, Facebook, your van or a flyer.": "Zeigt, welche Werbung den Anruf gebracht hat — Google, Facebook, Ihr Fahrzeug oder ein Flyer.",
+  "Runs the campaigns, WhatsApp and automation that keep new jobs coming in.": "Führt die Kampagnen, WhatsApp und Automatisierungen, die laufend neue Aufträge bringen.",
   "Email lead capture — emails become leads in your inbox": "E-Mail-Lead-Erfassung — E-Mails werden zu Leads in Ihrem Posteingang",
   "Email lead capture": "E-Mail-Lead-Erfassung",
   "Soon": "Bald",
