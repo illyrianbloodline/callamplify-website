@@ -166,7 +166,7 @@ header{
 .mod-text p{font-size:1rem;line-height:1.75;color:var(--n600);margin-bottom:2rem;max-width:420px}
 
 /* ─── PAGE HEADER (inner pages) ──────────────────────── */
-.page-header{border-bottom:1px solid var(--n100)}
+.page-header{border-bottom:none;position:relative}header::after{content:"";display:block;height:3px;background:linear-gradient(90deg,#a855f7 0%,#6366f1 45%,#22d3ee 100%)}
 .page-header-grid{max-width:var(--max);margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:.44fr .56fr}
 .ph-dark{background:var(--n900);padding:4rem 3rem 4rem 0;border-right:1px solid var(--n700)}
 .ph-dark .eyebrow{color:rgba(255,255,255,.45)}
