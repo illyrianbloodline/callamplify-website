@@ -5664,6 +5664,8 @@ calcROI();
     document.documentElement.lang = lang;
     walk(document.body);
     syncSwitchUI();
+    // The Ample widget renders its own strings (t(), not CA_DE) — repaint it.
+    try { if (window.caConcierge && window.caConcierge.relang) window.caConcierge.relang(); } catch (e) {}
   }
   window.caSetLang = setLang;
   window.caGetLang = function () { return lang; };
@@ -5906,7 +5908,11 @@ calcROI();
       root.style.display='flex';
       setTimeout(function(){ if(started) input.focus(); },50);
     },
-    close:function(){ if(root){ root.style.display='none'; } try{ sessionStorage.setItem('thynk_closed','1'); }catch(e){} }
+    close:function(){ if(root){ root.style.display='none'; } try{ sessionStorage.setItem('thynk_closed','1'); }catch(e){} },
+    // Repaint the widget's own texts after a site-language switch. The page
+    // walker can't translate them (they're rendered by t(), not CA_DE keys).
+    // A started conversation keeps its bubbles; statics always follow.
+    relang:function(){ if(!root) return; paintStatics(); if(!started && !history.length) renderIntro(); }
   };
   window.caConcierge = api;
   // Proactively open on arrival (desktop/tablet only; respect a manual close for the session)
