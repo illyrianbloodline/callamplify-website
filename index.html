@@ -5894,9 +5894,9 @@ calcROI();
         '<button id="ca-opt-de" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.55rem .7rem;background:none;border:none;cursor:pointer;font-family:inherit;font-size:.88rem;color:var(--n900);text-align:left">' +
           '<span style="font-size:1rem">\uD83C\uDDE9\uD83C\uDDEA</span><span style="flex:1">Deutsch</span><span id="ca-check-de" style="color:var(--orange)">\u2713</span></button>' +
       '</div>';
-    // insert before the search button if present, else at start
+    // insert after the search button (IBM masthead order: search, locale, auth, CTA)
     var searchBtn = cta.querySelector('#search-btn');
-    if (searchBtn) cta.insertBefore(wrap, searchBtn); else cta.insertBefore(wrap, cta.firstChild);
+    if (searchBtn) cta.insertBefore(wrap, searchBtn.nextSibling); else cta.insertBefore(wrap, cta.firstChild);
 
     var btn = wrap.querySelector('#ca-lang-btn');
     var menu = wrap.querySelector('#ca-lang-menu');
