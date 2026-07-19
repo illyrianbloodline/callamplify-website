@@ -653,7 +653,7 @@ footer{border-top:1px solid var(--n100)}
       <button class="btn-ghost-sm" id="search-btn" onclick="openSearch()" aria-label="Search" title="Search">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:block"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
-      <button class="btn-ghost-sm" onclick="window.location.href='https://app.callamplify.com/login?mode=signin'">Sign in</button>
+      <button class="btn-ghost-sm" onclick="caGoSignin()">Sign in</button>
       <button class="ca-btn-secondary" onclick="goTo('book-demo')">Book a demo</button>
       <button class="ca-btn-primary" onclick="goTo('free-trial')">Start free trial</button>
       <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
@@ -2922,7 +2922,7 @@ renderHub(1);
         </div>
         <button class="arrow-button" style="width:100%;justify-content:center" onclick="caGoSignup()">Start free trial<div class="arrow"></div></button>
         <p style="font-size:.75rem;color:var(--n400);text-align:center;margin:.75rem 0 0">No credit card required. Upgrade or cancel any time.</p>
-        <p style="font-size:.75rem;color:var(--n400);text-align:center;margin:.4rem 0 0">Already have an account? <button style="background:none;border:none;color:var(--orange);font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.75rem;padding:0" onclick="window.location.href='https://app.callamplify.com/login?mode=signin'">Sign in</button></p>
+        <p style="font-size:.75rem;color:var(--n400);text-align:center;margin:.4rem 0 0">Already have an account? <button style="background:none;border:none;color:var(--orange);font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.75rem;padding:0" onclick="caGoSignin()">Sign in</button></p>
       </div>
     </div>
   </section>
@@ -3239,7 +3239,9 @@ renderHub(1);
 
 <script>
 function caPickPlan(p){try{sessionStorage.setItem('caPlan',p);sessionStorage.setItem('caBilling',(window.__caBillMode==='yearly')?'yearly':'monthly');}catch(e){}}
-function caGoSignup(){var u='https://app.callamplify.com/login?mode=signup';try{var p=sessionStorage.getItem('caPlan'),b=sessionStorage.getItem('caBilling');if(p)u+='&plan='+encodeURIComponent(p);if(b)u+='&billing='+encodeURIComponent(b);}catch(e){}window.location.href=u;}
+function caLang(){try{return (window.caGetLang&&caGetLang()==='de')?'de':'en';}catch(e){return 'en';}}
+function caGoSignup(){var u='https://app.callamplify.com/login?mode=signup&lang='+caLang();try{var p=sessionStorage.getItem('caPlan'),b=sessionStorage.getItem('caBilling');if(p)u+='&plan='+encodeURIComponent(p);if(b)u+='&billing='+encodeURIComponent(b);}catch(e){}window.location.href=u;}
+function caGoSignin(){window.location.href='https://app.callamplify.com/login?mode=signin&lang='+caLang();}
 </script>
 <script>
 /* ── STICKY HOVER EXPAND ─────────────────────────────────── */
