@@ -6093,15 +6093,6 @@ calcROI();
     relang:function(){ if(!root) return; paintStatics(); if(!started && !history.length) renderIntro(); }
   };
   window.caConcierge = api;
-  // Proactively open on arrival (desktop/tablet only; respect a manual close for the session)
-  (function autoOpen(){
-    function go(){
-      try{ if(sessionStorage.getItem('thynk_closed')==='1') return; }catch(e){}
-      if(window.innerWidth < 768) return;
-      setTimeout(function(){ api.open(); }, 900);
-    }
-    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', go); else go();
-  })();
 })();</script>
 <script>
 /* ── SITE SEARCH — engine (the design export shipped the box + index but not this) ── */
