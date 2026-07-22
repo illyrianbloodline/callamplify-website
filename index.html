@@ -1225,7 +1225,7 @@ footer{border-top:1px solid var(--n100)}
         if (playing === code){ stop(); return; }
         stop();
         playing = code;
-        au.src = 'assets/demo/appointment-' + code + '.mp3';
+        au.src = 'assets/demo/appointment-' + code + '.mp3?v=3';
         au.play().then(function(){
           icon(code, PAUSE); caption(code, 'Playing...');
         }).catch(function(){
