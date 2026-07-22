@@ -775,6 +775,250 @@ footer{border-top:1px solid var(--n100)}
   </script>
 
   <!-- COUNT ON IT — honest product-truth stats -->
+    <!-- WHO WE SERVE — cube lattice, owner-supplied art ported verbatim from the
+       DC component. Substitutions the static site requires: the Lucide CDN
+       script is replaced with inline SVG (this site loads ZERO external hosts
+       and self-hosts even its fonts), the DC design-system font variables are
+       replaced with the site stack, and DCLogic becomes plain JS below. The
+       stage is a fixed 900x380 grid, so it scales rather than reflows. -->
+  <style>
+    @keyframes flow { from{offset-distance:0%;} to{offset-distance:100%;} }
+    .ca-cubes-wrap{display:flex;justify-content:center;overflow:hidden;height:380px}
+    .ca-cubes-stage{transform-origin:top center}
+    @media (max-width:980px){ .ca-cubes-wrap{height:300px} .ca-cubes-stage{transform:scale(.78)} }
+    @media (max-width:760px){ .ca-cubes-wrap{height:230px} .ca-cubes-stage{transform:scale(.58)} }
+    @media (max-width:520px){ .ca-cubes-wrap{height:170px} .ca-cubes-stage{transform:scale(.42)} }
+    @media (prefers-reduced-motion: reduce){ .ca-cubes-wrap *{animation:none !important} }
+  </style>
+  <section style="background:radial-gradient(circle at 50% 42%,#ffffff 0%,#eef1f6 100%);padding:4rem 0;overflow:hidden">
+    <div style="max-width:var(--max);margin:0 auto;padding:0 2rem;text-align:center">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#2f6bff">Who we serve</div>
+      <h2 style="font-size:clamp(26px,3vw,44px);line-height:1.05;font-weight:800;color:#16233f;margin:12px 0 0;letter-spacing:-.02em">Every call finds its place.</h2>
+      <p style="font-size:1rem;line-height:1.6;color:#5a6b86;margin:16px auto 0;max-width:56ch">One AI receptionist, tuned to the calls your business actually gets — from home services to healthcare.</p>
+      <div class="ca-cubes-wrap" style="margin-top:4px">
+        <div class="ca-cubes-stage">
+          <div style="position:relative;width:900px;height:380px;perspective:2200px;">
+    <div data-cube="1" style="position:absolute;left:337px;top:131px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:131;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:603px;top:131px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:131;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:271px;top:158px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:158;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:404px;top:158px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:158;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:536px;top:158px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:158;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:669px;top:158px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:158;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:204px;top:185px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:185;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:337px;top:185px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:185;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:470px;top:185px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:185;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:603px;top:185px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:185;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:736px;top:185px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:185;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:271px;top:212px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:212;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:404px;top:212px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:212;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:536px;top:212px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:212;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:669px;top:212px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:212;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:337px;top:239px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:239;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:470px;top:239px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:239;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div data-cube="1" style="position:absolute;left:603px;top:239px;width:94px;height:94px;margin:-47px 0 0 -47px;transition:filter .4s ease;transform-style:preserve-3d;z-index:239;"><div style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-45deg);">
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateX(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(180deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(-90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:rotateY(90deg) translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(150,180,255,.12),rgba(120,160,255,.03));border:1.5px solid rgba(90,141,255,.5);box-shadow:inset 0 0 12px rgba(120,160,255,.15);transform:translateZ(47px);"></div>
+      <div style="position:absolute;width:94px;height:94px;left:0;top:0;border-radius:0;background:linear-gradient(135deg,rgba(210,225,255,.35),rgba(140,175,255,.06));border:1.5px solid rgba(120,160,255,.55);transform:rotateX(90deg) translateZ(47px);"></div>
+    </div></div>
+    <div style="position:absolute;left:0;top:0;width:0;height:0;z-index:149;offset-path:path('M 204,185 C 215.2,189.5 259.8,216.5 271,212 C 282.2,207.5 260.0,171.5 271,158 C 282.0,144.5 326.0,126.5 337,131 C 348.0,135.5 337.0,167.0 337,185 C 337.0,203.0 325.8,234.5 337,239 C 348.2,243.5 392.8,225.5 404,212 C 415.2,198.5 393.0,162.5 404,158 C 415.0,153.5 459.0,171.5 470,185 C 481.0,198.5 459.0,234.5 470,239 C 481.0,243.5 525.0,225.5 536,212 C 547.0,198.5 524.8,171.5 536,158 C 547.2,144.5 591.8,126.5 603,131 C 614.2,135.5 603.0,167.0 603,185 C 603.0,203.0 592.0,234.5 603,239 C 614.0,243.5 658.0,225.5 669,212 C 680.0,198.5 657.8,162.5 669,158 C 680.2,153.5 724.8,180.5 736,185');offset-rotate:0deg;animation:flow 13s ease-in-out -0.22s alternate infinite;">
+      <div style="position:absolute;left:-22px;top:-22px;width:44px;height:44px;border-radius:50%;background:radial-gradient(circle, rgba(90,141,255,0.4), rgba(47,107,255,0) 70%);filter:blur(7px);"></div>
+    </div>
+    <div style="position:absolute;left:0;top:0;width:0;height:0;z-index:149;offset-path:path('M 204,185 C 215.2,189.5 259.8,216.5 271,212 C 282.2,207.5 260.0,171.5 271,158 C 282.0,144.5 326.0,126.5 337,131 C 348.0,135.5 337.0,167.0 337,185 C 337.0,203.0 325.8,234.5 337,239 C 348.2,243.5 392.8,225.5 404,212 C 415.2,198.5 393.0,162.5 404,158 C 415.0,153.5 459.0,171.5 470,185 C 481.0,198.5 459.0,234.5 470,239 C 481.0,243.5 525.0,225.5 536,212 C 547.0,198.5 524.8,171.5 536,158 C 547.2,144.5 591.8,126.5 603,131 C 614.2,135.5 603.0,167.0 603,185 C 603.0,203.0 592.0,234.5 603,239 C 614.0,243.5 658.0,225.5 669,212 C 680.0,198.5 657.8,162.5 669,158 C 680.2,153.5 724.8,180.5 736,185');offset-rotate:0deg;animation:flow 13s ease-in-out -0.42s alternate infinite;">
+      <div style="position:absolute;left:-19px;top:-19px;width:38px;height:38px;border-radius:50%;background:radial-gradient(circle, rgba(90,141,255,0.28), rgba(47,107,255,0) 70%);filter:blur(9px);"></div>
+    </div>
+    <div style="position:absolute;left:0;top:0;width:0;height:0;z-index:149;offset-path:path('M 204,185 C 215.2,189.5 259.8,216.5 271,212 C 282.2,207.5 260.0,171.5 271,158 C 282.0,144.5 326.0,126.5 337,131 C 348.0,135.5 337.0,167.0 337,185 C 337.0,203.0 325.8,234.5 337,239 C 348.2,243.5 392.8,225.5 404,212 C 415.2,198.5 393.0,162.5 404,158 C 415.0,153.5 459.0,171.5 470,185 C 481.0,198.5 459.0,234.5 470,239 C 481.0,243.5 525.0,225.5 536,212 C 547.0,198.5 524.8,171.5 536,158 C 547.2,144.5 591.8,126.5 603,131 C 614.2,135.5 603.0,167.0 603,185 C 603.0,203.0 592.0,234.5 603,239 C 614.0,243.5 658.0,225.5 669,212 C 680.0,198.5 657.8,162.5 669,158 C 680.2,153.5 724.8,180.5 736,185');offset-rotate:0deg;animation:flow 13s ease-in-out -0.62s alternate infinite;">
+      <div style="position:absolute;left:-15px;top:-15px;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle, rgba(90,141,255,0.18), rgba(47,107,255,0) 70%);filter:blur(11px);"></div>
+    </div>
+    <div style="position:absolute;left:0;top:0;width:0;height:0;z-index:149;offset-path:path('M 204,185 C 215.2,189.5 259.8,216.5 271,212 C 282.2,207.5 260.0,171.5 271,158 C 282.0,144.5 326.0,126.5 337,131 C 348.0,135.5 337.0,167.0 337,185 C 337.0,203.0 325.8,234.5 337,239 C 348.2,243.5 392.8,225.5 404,212 C 415.2,198.5 393.0,162.5 404,158 C 415.0,153.5 459.0,171.5 470,185 C 481.0,198.5 459.0,234.5 470,239 C 481.0,243.5 525.0,225.5 536,212 C 547.0,198.5 524.8,171.5 536,158 C 547.2,144.5 591.8,126.5 603,131 C 614.2,135.5 603.0,167.0 603,185 C 603.0,203.0 592.0,234.5 603,239 C 614.0,243.5 658.0,225.5 669,212 C 680.0,198.5 657.8,162.5 669,158 C 680.2,153.5 724.8,180.5 736,185');offset-rotate:0deg;animation:flow 13s ease-in-out -0.82s alternate infinite;">
+      <div style="position:absolute;left:-12px;top:-12px;width:24px;height:24px;border-radius:50%;background:radial-gradient(circle, rgba(90,141,255,0.1), rgba(47,107,255,0) 70%);filter:blur(12px);"></div>
+    </div>
+    <div id="ballDot" style="position:absolute;left:0;top:0;width:0;height:0;z-index:200;offset-path:path('M 204,185 C 215.2,189.5 259.8,216.5 271,212 C 282.2,207.5 260.0,171.5 271,158 C 282.0,144.5 326.0,126.5 337,131 C 348.0,135.5 337.0,167.0 337,185 C 337.0,203.0 325.8,234.5 337,239 C 348.2,243.5 392.8,225.5 404,212 C 415.2,198.5 393.0,162.5 404,158 C 415.0,153.5 459.0,171.5 470,185 C 481.0,198.5 459.0,234.5 470,239 C 481.0,243.5 525.0,225.5 536,212 C 547.0,198.5 524.8,171.5 536,158 C 547.2,144.5 591.8,126.5 603,131 C 614.2,135.5 603.0,167.0 603,185 C 603.0,203.0 592.0,234.5 603,239 C 614.0,243.5 658.0,225.5 669,212 C 680.0,198.5 657.8,162.5 669,158 C 680.2,153.5 724.8,180.5 736,185');offset-rotate:0deg;animation:flow 13s ease-in-out alternate infinite;">
+      <div style="position:absolute;left:-23px;top:-23px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 36% 30%, #f2f6ff 0%, #9dbcff 34%, #3f78ff 66%, #1f4fcc 100%);box-shadow:0 8px 20px rgba(20,45,120,.45), inset -5px -7px 12px rgba(15,40,120,.5), inset 3px 4px 8px rgba(255,255,255,.6);"></div>
+    </div>
+  </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;max-width:900px;margin:6px auto 0">
+        <div style="display:flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2f6bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.1-2.1z"/></svg><span style="font-size:15px;font-weight:700;color:#16233f;letter-spacing:-.01em;white-space:nowrap">Home Services</span></div>
+        <div style="display:flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2f6bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v5a4 4 0 0 0 8 0V3M10 12v3a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="10" r="2"/></svg><span style="font-size:15px;font-weight:700;color:#16233f;letter-spacing:-.01em;white-space:nowrap">Healthcare</span></div>
+        <div style="display:flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2f6bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M7 21h10M6 7h12M6 7 3 13h6zM18 7l-3 6h6z"/></svg><span style="font-size:15px;font-weight:700;color:#16233f;letter-spacing:-.01em;white-space:nowrap">Legal</span></div>
+        <div style="display:flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2f6bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7M6 10v10h12V10"/></svg><span style="font-size:15px;font-weight:700;color:#16233f;letter-spacing:-.01em;white-space:nowrap">Real Estate</span></div>
+        <div style="display:flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2f6bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13v5h-3v-2H8v2H5z"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></svg><span style="font-size:15px;font-weight:700;color:#16233f;letter-spacing:-.01em;white-space:nowrap">Automotive</span></div>
+        <div style="display:flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2f6bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v8a2 2 0 0 0 4 0V3M8 11v10M17 3c-1.5 1-2 3-2 5s.5 3 2 3v10"/></svg><span style="font-size:15px;font-weight:700;color:#16233f;letter-spacing:-.01em;white-space:nowrap">Hospitality</span></div>
+      </div>
+    </div>
+  </section>
+  <script>
+  (function(){
+    // Verbatim port of the DC component's lighting loop: the travelling ball
+    // lights whichever cube it is nearest, and cubes cool off behind it.
+    var ball = document.getElementById('ballDot');
+    var cubes = [].slice.call(document.querySelectorAll('[data-cube]'));
+    if (!ball || !cubes.length) return;
+    var stage = ball.parentElement;
+    var glow = document.createElement('div');
+    glow.style.cssText = 'position:absolute;left:0;top:0;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;pointer-events:none;z-index:300;opacity:0;background:radial-gradient(circle,rgba(200,225,255,.65) 0%,rgba(110,165,255,.5) 34%,rgba(80,140,255,0) 70%);filter:blur(6px);mix-blend-mode:screen;transition:left .25s ease, top .25s ease, opacity .3s ease;';
+    stage.appendChild(glow);
+    cubes.forEach(function(c){
+      c.dataset.z = c.style.zIndex; c.style.transition='none'; c._heat=0;
+      c._faces = [].slice.call(c.firstElementChild ? c.firstElementChild.children : []);
+      c._faces.forEach(function(f){ f._bg=f.style.background; f._bc=f.style.borderColor||'rgba(90,141,255,.5)';
+        f._sh=f.style.boxShadow||'none'; f.style.transition='none'; });
+    });
+    function tick(){
+      var br=ball.getBoundingClientRect(), bx=br.left+br.width/2, by=br.top+br.height/2;
+      var best=null, bd=1e9, bw=120;
+      cubes.forEach(function(c){ var r=c.getBoundingClientRect();
+        var d=Math.hypot(r.left+r.width/2-bx, r.top+r.height/2-by);
+        if(d<bd){ bd=d; best=c; bw=r.width; } });
+      var near = best && bd < bw*0.62;
+      if(near){ glow.style.left=parseFloat(best.style.left)+'px';
+        glow.style.top=parseFloat(best.style.top)+'px'; glow.style.opacity='1'; }
+      else { glow.style.opacity='0'; }
+      cubes.forEach(function(c){
+        var active=(c===best && near);
+        c._heat = active ? 1 : Math.max(0, c._heat*0.9);
+        var h=c._heat;
+        if(h>0.03){
+          c.style.zIndex = active ? '4000' : '3000';
+          c.style.filter = 'drop-shadow(0 0 '+(5*h).toFixed(1)+'px rgba(120,170,255,'+(0.18*h).toFixed(2)+'))';
+          c._faces.forEach(function(f){
+            f.style.background='linear-gradient(135deg, rgba(150,190,255,'+(0.1*h).toFixed(2)+'), rgba(70,135,255,'+(0.07*h).toFixed(2)+'))';
+            f.style.borderColor='rgba(200,225,255,'+Math.min(1,0.45+0.18*h).toFixed(2)+')';
+            f.style.boxShadow='0 0 '+(5*h).toFixed(1)+'px rgba(120,170,255,'+(0.12*h).toFixed(2)+')'; });
+          c._dirty=true;
+        } else if(c._dirty){
+          c._dirty=false; c.style.zIndex=c.dataset.z||''; c.style.filter='none';
+          c._faces.forEach(function(f){ f.style.background=f._bg; f.style.borderColor=f._bc; f.style.boxShadow=f._sh||'none'; });
+        }
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
+  })();
+  </script>
   <section style="background:#fff;padding:4rem 0">
     <div style="max-width:var(--max);margin:0 auto;padding:0 2rem">
       <h2 style="font-weight:700;font-size:clamp(24px,2.6vw,36px);letter-spacing:-.02em;color:var(--n900);margin:0 0 .6rem">You can count on it</h2>
@@ -10090,6 +10334,30 @@ Object.assign(CA_IT, {"For international callers": "Per chi chiama dall'estero"}
 Object.assign(CA_DE, {"The AI receptionist's real voices. Re-enacted example call — no client data.": "Die echten Stimmen der KI-Empfangskraft. Nachgestelltes Beispielgespräch — keine Kundendaten."});
 Object.assign(CA_FR, {"The AI receptionist's real voices. Re-enacted example call — no client data.": "Les vraies voix de la réception IA. Appel d'exemple reconstitué — aucune donnée client."});
 Object.assign(CA_IT, {"The AI receptionist's real voices. Re-enacted example call — no client data.": "Le vere voci della reception IA. Chiamata di esempio ricostruita — nessun dato dei clienti."});
+Object.assign(CA_DE, {"Every call finds its place.": "Jeder Anruf findet seinen Platz."});
+Object.assign(CA_FR, {"Every call finds its place.": "Chaque appel trouve sa place."});
+Object.assign(CA_IT, {"Every call finds its place.": "Ogni chiamata trova il suo posto."});
+Object.assign(CA_DE, {"One AI receptionist, tuned to the calls your business actually gets — from home services to healthcare.": "Eine KI-Empfangskraft, abgestimmt auf die Anrufe, die Ihr Betrieb wirklich bekommt — vom Handwerk bis zur Praxis."});
+Object.assign(CA_FR, {"One AI receptionist, tuned to the calls your business actually gets — from home services to healthcare.": "Une réception IA, adaptée aux appels que votre entreprise reçoit vraiment — de l'artisanat au cabinet médical."});
+Object.assign(CA_IT, {"One AI receptionist, tuned to the calls your business actually gets — from home services to healthcare.": "Una reception IA, calibrata sulle chiamate che la sua azienda riceve davvero — dall'artigianato allo studio medico."});
+Object.assign(CA_DE, {"Home Services": "Handwerk"});
+Object.assign(CA_FR, {"Home Services": "Artisanat"});
+Object.assign(CA_IT, {"Home Services": "Artigianato"});
+Object.assign(CA_DE, {"Healthcare": "Gesundheit"});
+Object.assign(CA_FR, {"Healthcare": "Santé"});
+Object.assign(CA_IT, {"Healthcare": "Sanità"});
+Object.assign(CA_DE, {"Legal": "Recht"});
+Object.assign(CA_FR, {"Legal": "Juridique"});
+Object.assign(CA_IT, {"Legal": "Legale"});
+Object.assign(CA_DE, {"Real Estate": "Immobilien"});
+Object.assign(CA_FR, {"Real Estate": "Immobilier"});
+Object.assign(CA_IT, {"Real Estate": "Immobiliare"});
+Object.assign(CA_DE, {"Automotive": "Auto & Werkstatt"});
+Object.assign(CA_FR, {"Automotive": "Automobile"});
+Object.assign(CA_IT, {"Automotive": "Automotive"});
+Object.assign(CA_DE, {"Hospitality": "Gastgewerbe"});
+Object.assign(CA_FR, {"Hospitality": "Hôtellerie"});
+Object.assign(CA_IT, {"Hospitality": "Ristorazione"});
 var CA_DICTS = { de: CA_DE,
                    fr: (typeof CA_FR !== 'undefined') ? CA_FR : {},
                    it: (typeof CA_IT !== 'undefined') ? CA_IT : {} };
