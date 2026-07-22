@@ -783,11 +783,9 @@ footer{border-top:1px solid var(--n100)}
     </div>
   </section>
 
-  <!-- ASK-ANYTHING ORBS (owner-supplied art, ported verbatim from the DC
-       component: same markup/SVG/keyframes; only the DC runtime bits are
-       replaced - the demo's 100vh harness is dropped and the DCLogic ripple
-       class is plain JS below. style-hover attrs are inert outside DC and
-       kept as-is.) -->
+  <!-- LISTEN TO THE AI — one orb per national language. Orb art is the
+       owner's DC component, ported verbatim; only captions and the audio
+       player are added around it. Recordings live in assets/demo/. -->
   <style>
     @keyframes orbSpin { to { transform: rotate(360deg); } }
     @keyframes orbSpinRev { to { transform: rotate(-360deg); } }
@@ -878,10 +876,14 @@ footer{border-top:1px solid var(--n100)}
     }
   </style>
   <section style="background:#f6f8fa;padding:4rem 0;overflow:hidden">
-    <div style="max-width:var(--max);margin:0 auto;padding:0 2rem;display:flex;justify-content:center">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:72px;">
-
-    <div style="position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;">
+    <div style="max-width:var(--max);margin:0 auto;padding:0 2rem;text-align:center">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue,#0f62fe);margin-bottom:.7rem">Hear it yourself</div>
+      <h2 style="font-weight:700;font-size:clamp(24px,2.6vw,36px);letter-spacing:-.02em;color:var(--n900);margin:0 0 .6rem">Listen to the AI book an appointment</h2>
+      <p style="font-size:1rem;color:var(--n600);line-height:1.65;max-width:56ch;margin:0 auto 3rem">The same receptionist answers in all three national languages. Tap a sphere to hear a real call.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:72px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
+          <div data-demo="de">
+            <div style="position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;">
       <div style="position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:130px;height:22px;border-radius:50%;background:radial-gradient(ellipse,rgba(20,40,80,.28),rgba(0,0,0,0) 70%);filter:blur(4px);"></div>
       <div style="position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(120,170,230,.55),rgba(0,0,0,0) 68%);filter:blur(14px);animation:orbGlow 5s ease-in-out infinite;animation-delay:0s;"></div>
       <div data-orb="1" style="position:absolute;inset:0;border-radius:46% 54% 57% 43% / 54% 46% 54% 46%;overflow:hidden;animation:blobMorph 16s ease-in-out infinite;animation-delay:0s;box-shadow:0 14px 36px rgba(30,30,30,.3),inset 0 3px 8px rgba(255,255,255,.55),inset 0 -8px 18px rgba(20,20,20,.28),inset 6px 0 14px rgba(255,255,255,.2);">
@@ -950,8 +952,15 @@ footer{border-top:1px solid var(--n100)}
         </svg>
       </button>
     </div>
-
-    <div style="position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;">
+          </div>
+          <div style="text-align:center">
+            <div style="font-weight:700;font-size:1.05rem;color:var(--n900)">Deutsch</div>
+            <div data-demo-state="de" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">Schweizerdeutsch verstanden</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
+          <div data-demo="fr">
+            <div style="position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;">
       <div style="position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:130px;height:22px;border-radius:50%;background:radial-gradient(ellipse,rgba(40,40,40,.28),rgba(0,0,0,0) 70%);filter:blur(4px);"></div>
       <div style="position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(200,200,205,.5),rgba(0,0,0,0) 68%);filter:blur(14px);animation:orbGlow 5s ease-in-out infinite;animation-delay:1.4s;"></div>
       <div data-orb="1" style="position:absolute;inset:0;border-radius:46% 54% 57% 43% / 54% 46% 54% 46%;overflow:hidden;animation:blobMorph 16s ease-in-out infinite;animation-delay:1.4s;box-shadow:0 14px 36px rgba(30,30,30,.3),inset 0 3px 8px rgba(255,255,255,.55),inset 0 -8px 18px rgba(20,20,20,.28),inset 6px 0 14px rgba(255,255,255,.2);">
@@ -1020,8 +1029,15 @@ footer{border-top:1px solid var(--n100)}
         </svg>
       </button>
     </div>
-
-    <div style="position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;">
+          </div>
+          <div style="text-align:center">
+            <div style="font-weight:700;font-size:1.05rem;color:var(--n900)">Français</div>
+            <div data-demo-state="fr" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">Compris et parlé</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
+          <div data-demo="it">
+            <div style="position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;">
       <div style="position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:130px;height:22px;border-radius:50%;background:radial-gradient(ellipse,rgba(20,40,110,.3),rgba(0,0,0,0) 70%);filter:blur(4px);"></div>
       <div style="position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(47,107,255,.55),rgba(0,0,0,0) 68%);filter:blur(14px);animation:orbGlow 5s ease-in-out infinite;animation-delay:2.6s;"></div>
       <div data-orb="1" style="position:absolute;inset:0;border-radius:46% 54% 57% 43% / 54% 46% 54% 46%;overflow:hidden;animation:blobMorph 16s ease-in-out infinite;animation-delay:2.6s;box-shadow:0 14px 36px rgba(30,30,30,.3),inset 0 3px 8px rgba(255,255,255,.55),inset 0 -8px 18px rgba(20,20,20,.28),inset 6px 0 14px rgba(255,255,255,.2);">
@@ -1090,11 +1106,65 @@ footer{border-top:1px solid var(--n100)}
         </svg>
       </button>
     </div>
-  </div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-weight:700;font-size:1.05rem;color:var(--n900)">Italiano</div>
+            <div data-demo-state="it" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">Capito e parlato</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:.8rem;color:var(--n500,#8d8d8d);margin:2.6rem 0 0">Recorded with our own AI receptionist. Example scenario — no client data.</p>
     </div>
   </section>
   <script>
-  (function(){ // orb click ripple - verbatim port of the DC component's handler
+  (function(){
+    // One shared <audio>: swapping its src is what makes "only one plays at a
+    // time" automatic rather than something to coordinate between three players.
+    var au = new Audio(), playing = null;
+    var PLAY  = '<svg width="16" height="18" viewBox="0 0 16 18" fill="none"><path d="M2 1.8 14 9 2 16.2V1.8Z" fill="#201e1d"></path></svg>';
+    var PAUSE = '<svg width="16" height="18" viewBox="0 0 16 18" fill="none"><rect x="2" y="2" width="4" height="14" fill="#201e1d"></rect><rect x="10" y="2" width="4" height="14" fill="#201e1d"></rect></svg>';
+
+    function caption(code, text){
+      var el = document.querySelector('[data-demo-state="' + code + '"]');
+      if (el){ if (el.dataset.orig === undefined) el.dataset.orig = el.textContent; el.textContent = text; }
+    }
+    function restore(code){
+      var el = document.querySelector('[data-demo-state="' + code + '"]');
+      if (el && el.dataset.orig !== undefined) el.textContent = el.dataset.orig;
+    }
+    function icon(code, svg){
+      var b = document.querySelector('[data-demo="' + code + '"] button');
+      if (b) b.innerHTML = svg;
+    }
+    function stop(){
+      if (!playing) return;
+      au.pause(); icon(playing, PLAY); restore(playing); playing = null;
+    }
+
+    document.querySelectorAll('[data-demo]').forEach(function(card){
+      var code = card.getAttribute('data-demo');
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function(){
+        if (playing === code){ stop(); return; }
+        stop();
+        playing = code;
+        au.src = 'assets/demo/appointment-' + code + '.mp3';
+        au.play().then(function(){
+          icon(code, PAUSE); caption(code, 'Playing...');
+        }).catch(function(){
+          // No recording in place yet. Say so plainly rather than leaving a
+          // pulsing play button that swallows the click - the dead-button
+          // pattern this section exists to avoid.
+          playing = null; icon(code, PLAY); caption(code, 'Recording coming soon');
+        });
+      });
+    });
+    au.addEventListener('ended', stop);
+    au.addEventListener('error', function(){
+      if (playing){ var c = playing; playing = null; icon(c, PLAY); caption(c, 'Recording coming soon'); }
+    });
+
+    // click ripple - verbatim port of the DC component's handler
     document.querySelectorAll('[data-orb]').forEach(function(orb){
       if (orb._rippleBound) return;
       orb._rippleBound = true;
@@ -1113,7 +1183,6 @@ footer{border-top:1px solid var(--n100)}
     });
   })();
   </script>
-
   <!-- SOCIAL PROOF — real trades -->
   <section style="border-bottom:1px solid var(--n100);padding:64px 0">
     <div style="max-width:var(--max);margin:0 auto;padding:0 2rem">
@@ -9902,6 +9971,33 @@ Object.assign(CA_IT, {"Contacts & deals pipeline": "Contatti e pipeline delle tr
 Object.assign(CA_DE, {"Google Calendar integration": "Google Kalender-Integration"});
 Object.assign(CA_FR, {"Google Calendar integration": "Int\u00e9gration Google Agenda"});
 Object.assign(CA_IT, {"Google Calendar integration": "Integrazione con Google Calendar"});
+Object.assign(CA_DE, {"Hear it yourself": "Hören Sie selbst"});
+Object.assign(CA_FR, {"Hear it yourself": "Écoutez vous-même"});
+Object.assign(CA_IT, {"Hear it yourself": "Ascolti lei stesso"});
+Object.assign(CA_DE, {"Listen to the AI book an appointment": "Hören Sie, wie die KI einen Termin vereinbart"});
+Object.assign(CA_FR, {"Listen to the AI book an appointment": "Écoutez l'IA fixer un rendez-vous"});
+Object.assign(CA_IT, {"Listen to the AI book an appointment": "Ascolti l'IA fissare un appuntamento"});
+Object.assign(CA_DE, {"The same receptionist answers in all three national languages. Tap a sphere to hear a real call.": "Dieselbe Empfangskraft antwortet in allen drei Landessprachen. Tippen Sie auf eine Kugel, um einen echten Anruf zu hören."});
+Object.assign(CA_FR, {"The same receptionist answers in all three national languages. Tap a sphere to hear a real call.": "La même réception répond dans les trois langues nationales. Touchez une sphère pour écouter un vrai appel."});
+Object.assign(CA_IT, {"The same receptionist answers in all three national languages. Tap a sphere to hear a real call.": "La stessa reception risponde in tutte e tre le lingue nazionali. Tocchi una sfera per ascoltare una chiamata reale."});
+Object.assign(CA_DE, {"Recorded with our own AI receptionist. Example scenario — no client data.": "Aufgenommen mit unserer eigenen KI-Empfangskraft. Beispielszenario — keine Kundendaten."});
+Object.assign(CA_FR, {"Recorded with our own AI receptionist. Example scenario — no client data.": "Enregistré avec notre propre réception IA. Scénario d'exemple — aucune donnée client."});
+Object.assign(CA_IT, {"Recorded with our own AI receptionist. Example scenario — no client data.": "Registrato con la nostra reception IA. Scenario di esempio — nessun dato dei clienti."});
+Object.assign(CA_DE, {"Schweizerdeutsch verstanden": "Schweizerdeutsch verstanden"});
+Object.assign(CA_FR, {"Schweizerdeutsch verstanden": "Comprend le suisse allemand"});
+Object.assign(CA_IT, {"Schweizerdeutsch verstanden": "Capisce lo svizzero tedesco"});
+Object.assign(CA_DE, {"Compris et parlé": "Verstanden und gesprochen"});
+Object.assign(CA_FR, {"Compris et parlé": "Compris et parlé"});
+Object.assign(CA_IT, {"Compris et parlé": "Capito e parlato"});
+Object.assign(CA_DE, {"Capito e parlato": "Verstanden und gesprochen"});
+Object.assign(CA_FR, {"Capito e parlato": "Compris et parlé"});
+Object.assign(CA_IT, {"Capito e parlato": "Capito e parlato"});
+Object.assign(CA_DE, {"Playing...": "Läuft..."});
+Object.assign(CA_FR, {"Playing...": "Lecture..."});
+Object.assign(CA_IT, {"Playing...": "In riproduzione..."});
+Object.assign(CA_DE, {"Recording coming soon": "Aufnahme folgt in Kürze"});
+Object.assign(CA_FR, {"Recording coming soon": "Enregistrement à venir"});
+Object.assign(CA_IT, {"Recording coming soon": "Registrazione in arrivo"});
 var CA_DICTS = { de: CA_DE,
                    fr: (typeof CA_FR !== 'undefined') ? CA_FR : {},
                    it: (typeof CA_IT !== 'undefined') ? CA_IT : {} };
