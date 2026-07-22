@@ -783,9 +783,9 @@ footer{border-top:1px solid var(--n100)}
     </div>
   </section>
 
-  <!-- LISTEN TO THE AI — one orb per national language. Orb art is the
-       owner's DC component, ported verbatim; only captions and the audio
-       player are added around it. Recordings live in assets/demo/. -->
+  <!-- LISTEN TO THE AI — one orb per language the receptionist speaks.
+       Orb art is the owner's DC component, ported verbatim; only captions
+       and the audio player are added around it. Recordings: assets/demo/. -->
   <style>
     @keyframes orbSpin { to { transform: rotate(360deg); } }
     @keyframes orbSpinRev { to { transform: rotate(-360deg); } }
@@ -879,8 +879,8 @@ footer{border-top:1px solid var(--n100)}
     <div style="max-width:var(--max);margin:0 auto;padding:0 2rem;text-align:center">
       <div style="font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue,#0f62fe);margin-bottom:.7rem">Hear it yourself</div>
       <h2 style="font-weight:700;font-size:clamp(24px,2.6vw,36px);letter-spacing:-.02em;color:var(--n900);margin:0 0 .6rem">Listen to the AI book an appointment</h2>
-      <p style="font-size:1rem;color:var(--n600);line-height:1.65;max-width:56ch;margin:0 auto 3rem">The same receptionist answers in all three national languages. Tap a sphere to hear a real call.</p>
-      <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:72px">
+      <p style="font-size:1rem;color:var(--n600);line-height:1.65;max-width:58ch;margin:0 auto 3rem">The same receptionist answers in German, French, Italian and English. Tap a sphere to hear a real call.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:56px">
         <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
           <div data-demo="de">
             <div style="position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;">
@@ -955,7 +955,7 @@ footer{border-top:1px solid var(--n100)}
           </div>
           <div style="text-align:center">
             <div style="font-weight:700;font-size:1.05rem;color:var(--n900)">Deutsch</div>
-            <div data-demo-state="de" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">Schweizerdeutsch verstanden</div>
+            <div data-demo-state="de" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">Swiss German too</div>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
@@ -1032,7 +1032,7 @@ footer{border-top:1px solid var(--n100)}
           </div>
           <div style="text-align:center">
             <div style="font-weight:700;font-size:1.05rem;color:var(--n900)">Français</div>
-            <div data-demo-state="fr" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">Compris et parlé</div>
+            <div data-demo-state="fr" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">Understood and spoken</div>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
@@ -1109,7 +1109,84 @@ footer{border-top:1px solid var(--n100)}
           </div>
           <div style="text-align:center">
             <div style="font-weight:700;font-size:1.05rem;color:var(--n900)">Italiano</div>
-            <div data-demo-state="it" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">Capito e parlato</div>
+            <div data-demo-state="it" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">Understood and spoken</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
+          <div data-demo="en">
+            <div style="position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:130px;height:22px;border-radius:50%;background:radial-gradient(ellipse,rgba(50,20,100,.3),rgba(0,0,0,0) 70%);filter:blur(4px);"></div>
+      <div style="position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.5),rgba(0,0,0,0) 68%);filter:blur(14px);animation:orbGlow 5s ease-in-out infinite;animation-delay:3.8s;"></div>
+      <div data-orb="1" style="position:absolute;inset:0;border-radius:46% 54% 57% 43% / 54% 46% 54% 46%;overflow:hidden;animation:blobMorph 16s ease-in-out infinite;animation-delay:3.8s;box-shadow:0 14px 36px rgba(30,30,30,.3),inset 0 3px 8px rgba(255,255,255,.55),inset 0 -8px 18px rgba(20,20,20,.28),inset 6px 0 14px rgba(255,255,255,.2);">
+        <svg viewBox="0 0 200 200" width="100%" height="100%" style="position:absolute;inset:0;display:block;">
+          <defs>
+            <radialGradient id="glassBase_d" cx="42%" cy="34%" r="78%">
+              <stop offset="0%" stop-color="#f0e6ff"></stop>
+              <stop offset="55%" stop-color="#b184f0"></stop>
+              <stop offset="100%" stop-color="#7c3aed"></stop>
+            </radialGradient>
+            <radialGradient id="darkg_d" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="#1e0640"></stop>
+              <stop offset="60%" stop-color="#4c1d95"></stop>
+              <stop offset="100%" stop-color="#4c1d95" stop-opacity="0"></stop>
+            </radialGradient>
+            <radialGradient id="lightg_d" cx="50%" cy="45%" r="60%">
+              <stop offset="0%" stop-color="#ffffff"></stop>
+              <stop offset="50%" stop-color="#f2e9ff"></stop>
+              <stop offset="100%" stop-color="#f2e9ff" stop-opacity="0"></stop>
+            </radialGradient>
+            <radialGradient id="shell_d" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#fff" stop-opacity="0"></stop>
+              <stop offset="76%" stop-color="#fff" stop-opacity="0"></stop>
+              <stop offset="90%" stop-color="#ffffff" stop-opacity=".55"></stop>
+              <stop offset="97%" stop-color="#b184f0" stop-opacity=".35"></stop>
+              <stop offset="100%" stop-color="#7c3aed" stop-opacity=".5"></stop>
+            </radialGradient>
+            <clipPath id="ball_d"><rect x="0" y="0" width="200" height="200"></rect></clipPath>
+            <filter id="b2_d" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4"></feGaussianBlur></filter>
+            <filter id="b4_d" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4.5"></feGaussianBlur></filter>
+            <filter id="b6_d" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7.5"></feGaussianBlur></filter>
+            <filter id="molten_d" x="-30%" y="-30%" width="160%" height="160%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.014 0.022" numOctaves="2" seed="18" result="noise">
+                <animate attributeName="baseFrequency" dur="20s" values="0.014 0.022;0.022 0.015;0.017 0.026;0.014 0.022" repeatCount="indefinite"></animate>
+              </feTurbulence>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+            </filter>
+          </defs>
+          <g clip-path="url(#ball_d)">
+            <rect x="0" y="0" width="200" height="200" fill="url(#glassBase_d)"></rect>
+            <g filter="url(#molten_d)">
+            <g style="transform-box:fill-box;transform-origin:center;animation:driftDark 8s ease-in-out infinite;animation-delay:3.8s;">
+              <ellipse cx="90" cy="122" rx="54" ry="42" fill="url(#darkg_d)" filter="url(#b4_d)" transform="rotate(-22 90 122)"></ellipse>
+              <ellipse cx="120" cy="132" rx="34" ry="48" fill="url(#darkg_d)" filter="url(#b6_d)" transform="rotate(28 120 132)"></ellipse>
+              <ellipse cx="66" cy="98" rx="30" ry="21" fill="url(#darkg_d)" filter="url(#b4_d)" transform="rotate(-8 66 98)"></ellipse>
+              <ellipse cx="112" cy="80" rx="20" ry="15" fill="url(#darkg_d)" filter="url(#b2_d)" transform="rotate(40 112 80)"></ellipse>
+            </g>
+            <g style="transform-box:fill-box;transform-origin:center;animation:driftLight 10s ease-in-out infinite;animation-delay:3.8s;">
+              <ellipse cx="96" cy="60" rx="48" ry="27" fill="url(#lightg_d)" filter="url(#b4_d)" transform="rotate(-16 96 60)"></ellipse>
+              <ellipse cx="134" cy="94" rx="30" ry="42" fill="url(#lightg_d)" filter="url(#b6_d)" transform="rotate(34 134 94)"></ellipse>
+              <ellipse cx="62" cy="80" rx="23" ry="16" fill="url(#lightg_d)" filter="url(#b2_d)" transform="rotate(-30 62 80)"></ellipse>
+              <ellipse cx="150" cy="140" rx="22" ry="18" fill="url(#lightg_d)" filter="url(#b4_d)"></ellipse>
+            </g>
+            <path d="M52,74 C 84,44 122,52 146,86" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#b2_d)" opacity=".72" style="transform-box:fill-box;transform-origin:center;animation:driftLight 10s ease-in-out infinite;animation-delay:3.8s;"></path>
+            </g>
+            <rect x="0" y="0" width="200" height="200" fill="url(#shell_d)"></rect>
+          </g>
+          <ellipse cx="70" cy="56" rx="26" ry="15" fill="#ffffff" opacity=".8" filter="url(#b2_d)" transform="rotate(-24 70 56)"></ellipse>
+          <ellipse cx="56" cy="70" rx="7" ry="5" fill="#ffffff" opacity=".95"></ellipse>
+        </svg>
+        <div style="position:absolute;top:0;left:0;width:38%;height:100%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));filter:blur(6px);mix-blend-mode:screen;animation:sheenSweep 8s ease-in-out infinite;animation-delay:3.8s;pointer-events:none;"></div>
+      </div>
+      <button aria-label="Play" style="position:relative;z-index:2;width:46px;height:46px;border-radius:50%;border:none;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;cursor:pointer;animation:playPulse 2.6s ease-in-out infinite;padding:0;" style-hover="box-shadow:0 6px 18px rgba(0,0,0,.28);">
+        <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 1.8 14 9 2 16.2V1.8Z" fill="#201e1d"></path>
+        </svg>
+      </button>
+    </div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-weight:700;font-size:1.05rem;color:var(--n900)">English</div>
+            <div data-demo-state="en" style="font-size:.85rem;color:var(--n600);margin-top:.2rem">For international callers</div>
           </div>
         </div>
       </div>
@@ -9998,6 +10075,18 @@ Object.assign(CA_IT, {"Playing...": "In riproduzione..."});
 Object.assign(CA_DE, {"Recording coming soon": "Aufnahme folgt in Kürze"});
 Object.assign(CA_FR, {"Recording coming soon": "Enregistrement à venir"});
 Object.assign(CA_IT, {"Recording coming soon": "Registrazione in arrivo"});
+Object.assign(CA_DE, {"The same receptionist answers in German, French, Italian and English. Tap a sphere to hear a real call.": "Dieselbe Empfangskraft antwortet auf Deutsch, Französisch, Italienisch und Englisch. Tippen Sie auf eine Kugel, um einen echten Anruf zu hören."});
+Object.assign(CA_FR, {"The same receptionist answers in German, French, Italian and English. Tap a sphere to hear a real call.": "La même réception répond en allemand, français, italien et anglais. Touchez une sphère pour écouter un vrai appel."});
+Object.assign(CA_IT, {"The same receptionist answers in German, French, Italian and English. Tap a sphere to hear a real call.": "La stessa reception risponde in tedesco, francese, italiano e inglese. Tocchi una sfera per ascoltare una chiamata reale."});
+Object.assign(CA_DE, {"Swiss German too": "Auch Schweizerdeutsch"});
+Object.assign(CA_FR, {"Swiss German too": "Suisse allemand aussi"});
+Object.assign(CA_IT, {"Swiss German too": "Anche svizzero tedesco"});
+Object.assign(CA_DE, {"Understood and spoken": "Verstanden und gesprochen"});
+Object.assign(CA_FR, {"Understood and spoken": "Compris et parlé"});
+Object.assign(CA_IT, {"Understood and spoken": "Capito e parlato"});
+Object.assign(CA_DE, {"For international callers": "Für internationale Anrufer"});
+Object.assign(CA_FR, {"For international callers": "Pour les appels internationaux"});
+Object.assign(CA_IT, {"For international callers": "Per chi chiama dall'estero"});
 var CA_DICTS = { de: CA_DE,
                    fr: (typeof CA_FR !== 'undefined') ? CA_FR : {},
                    it: (typeof CA_IT !== 'undefined') ? CA_IT : {} };
