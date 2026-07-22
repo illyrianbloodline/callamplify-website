@@ -566,7 +566,7 @@ footer{border-top:1px solid var(--n100)}
       </div>
       
       <div class="nav-industries">
-        <button class="nav-tab" style="gap:.3rem">
+        <button class="nav-tab" data-page="who-we-serve" style="gap:.3rem" onclick="closeMega();goTo('who-we-serve')">
           Who we serve
           <svg class="caret" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,3 5,7 8,3"/></svg>
         </button>
@@ -686,6 +686,7 @@ footer{border-top:1px solid var(--n100)}
   
   <button class="nav-tab" style="font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--n400);cursor:default;padding-bottom:0">Who we serve</button>
   <button class="nav-tab" style="padding-left:2.5rem" onclick="goTo('ind-homeservices');toggleMobile()">Home Services</button>
+  <button class="nav-tab" style="padding-left:2.5rem" onclick="goTo('who-we-serve');toggleMobile()">All industries we serve</button>
   <button class="nav-tab" onclick="goTo('pricing');toggleMobile()">Pricing</button>
   <button class="nav-tab" onclick="goTo('company');toggleMobile()">Get the latest</button>
 </nav>
