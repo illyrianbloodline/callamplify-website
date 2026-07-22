@@ -94,6 +94,11 @@ header{
 .arrow-button-ghost{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.8);background-color:transparent;padding:10px 16px;border-radius:0;transition:all .3s ease;font-weight:500;cursor:pointer;font-size:.875rem;font-family:'IBM Plex Sans',sans-serif;border:1px solid rgba(255,255,255,.25)}
 .arrow-button-ghost>.arrow{border-right-color:rgba(255,255,255,.8);border-bottom-color:rgba(255,255,255,.8)}
 .arrow-button-ghost:hover{background-color:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.5)}
+/* Ghost button for LIGHT sections. The base .arrow-button-ghost is white text on a white border — correct on the dark bands, invisible on #f6f8fa/#fff, which silently hid the 'Book a demo' CTA on two light sections. */
+.arrow-button-ghost-light{display:inline-flex;align-items:center;gap:6px;color:var(--n700,#393939);background-color:transparent;padding:10px 16px;border-radius:0;transition:all .3s ease;font-weight:500;cursor:pointer;font-size:.875rem;font-family:'IBM Plex Sans',sans-serif;border:1px solid var(--n300,#c6c6c6)}
+.arrow-button-ghost-light>.arrow{border-right-color:var(--n700,#393939);border-bottom-color:var(--n700,#393939)}
+.arrow-button-ghost-light:hover{background-color:rgba(15,98,254,.06);color:var(--blue,#0f62fe);border-color:var(--blue,#0f62fe)}
+.arrow-button-ghost-light:hover>.arrow{border-right-color:var(--blue,#0f62fe);border-bottom-color:var(--blue,#0f62fe)}
 .arrow-button-ghost:hover>.arrow{border-right-color:#fff;border-bottom-color:#fff}
 /* Shared arrow div */
 .arrow-button>.arrow,.arrow-button-ghost>.arrow{width:6px;height:6px;border-right:2px solid rgba(255,255,255,.85);border-bottom:2px solid rgba(255,255,255,.85);position:relative;transform:rotate(-45deg);margin:0 4px;transition:all .3s ease;flex-shrink:0}
@@ -1445,7 +1450,7 @@ footer{border-top:1px solid var(--n100)}
         <p style="font-size:.95rem;color:#8d8d8d;margin-bottom:1.25rem">Every missed call is a job your competitor picks up instead. CallAmplify makes sure you're the one who answers.</p>
         <div style="display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap">
           <button class="arrow-button" onclick="goTo('free-trial')">Start free trial<div class="arrow"></div></button>
-          <button class="arrow-button-ghost" onclick="goTo('book-demo')">Book a demo<div class="arrow"></div></button>
+          <button class="arrow-button-ghost-light" onclick="goTo('book-demo')">Book a demo<div class="arrow"></div></button>
         </div>
       </div>
 
@@ -3623,7 +3628,7 @@ renderHub(1);
         </div>
         <div style="display:flex;gap:.75rem;flex-shrink:0">
           <button class="arrow-button" style="font-size:1rem;padding:14px 28px" onclick="goTo('contact')">Apply to become a partner<div class="arrow"></div></button>
-          <button class="arrow-button-ghost" onclick="goTo('book-demo')">Book a demo<div class="arrow"></div></button>
+          <button class="arrow-button-ghost-light" onclick="goTo('book-demo')">Book a demo<div class="arrow"></div></button>
         </div>
       </div>
     </div>
