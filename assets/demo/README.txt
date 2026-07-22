@@ -1,9 +1,9 @@
 The four demo recordings, and how they were made (22 Jul 2026)
 
   appointment-de.mp3  36s  AI voice: Telnyx.Ultra Lukas  - the LIVE agent voice
-  appointment-en.mp3  37s  AI voice: Telnyx.Ultra Clara  - the LIVE agent voice
-  appointment-fr.mp3  38s  AI voice: AWS.Polly.Lea-Neural    (native French)
-  appointment-it.mp3  43s  AI voice: AWS.Polly.Bianca-Neural (native Italian)
+  appointment-en.mp3  37s  business: Miller Plumbing  AI voice: Telnyx.Ultra Clara  - the LIVE agent voice
+  appointment-fr.mp3  38s  business: Chauffage Dupont  AI voice: AWS.Polly.Lea-Neural    (native French)
+  appointment-it.mp3  43s  business: Idraulica Rossi  AI voice: AWS.Polly.Bianca-Neural (native Italian)
 
 Rendered through Telnyx's own text-to-speech API (the engine the receptionist
 runs on), stitched with ffmpeg, 350ms gaps, 24kHz mono 64kbps. The AI's opening
@@ -25,3 +25,10 @@ live agent voices.
 
 To re-record: the script that generated these lives in the session scratchpad;
 ask Claude to regenerate with new wording, or use the Telnyx portal preview.
+
+QA note (22 Jul): every file is machine-verified by transcribing it back
+(Telnyx ai/audio/transcriptions, whisper-large-v3-turbo — the distil model
+is English-only and produces gibberish for de/fr/it; do not QA with it).
+v1 English said 'two P-meters' for 'two p m' — scripts must write times as
+words ('two o'clock in the afternoon'), and the fictional business name is
+localized per language because German compounds garble in non-German voices.
