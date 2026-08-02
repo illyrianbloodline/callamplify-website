@@ -2478,16 +2478,8 @@ window.setRegion = function(cur){
         <!-- Featured left -->
         <div style="display:flex;flex-direction:column;border-right:1px solid var(--n100);cursor:pointer" onclick="openArticle('a1')">
           <div style="background:var(--n900);padding:3rem;flex:1;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;min-height:280px">
-            <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 20%,rgba(245,78,0,.15) 0%,transparent 70%);pointer-events:none"></div>
-            <!-- Mini dashboard illustration -->
-            <div style="position:absolute;top:1.5rem;right:2rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:1rem;width:200px">
-              <div style="font-size:.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.6rem">Calls by source</div>
-              <div style="display:flex;flex-direction:column;gap:.35rem">
-                <div style="display:flex;align-items:center;gap:.5rem"><div style="height:5px;width:72%;background:var(--orange)"></div><span style="font-size:.65rem;color:rgba(255,255,255,.5)">72%</span></div>
-                <div style="display:flex;align-items:center;gap:.5rem"><div style="height:5px;width:45%;background:rgba(255,255,255,.3)"></div><span style="font-size:.65rem;color:rgba(255,255,255,.5)">45%</span></div>
-                <div style="display:flex;align-items:center;gap:.5rem"><div style="height:5px;width:28%;background:#6366f1"></div><span style="font-size:.65rem;color:rgba(255,255,255,.5)">28%</span></div>
-              </div>
-            </div>
+            <img src="assets/usecases/usecase-a1.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,30,.82) 0%,rgba(10,15,30,.35) 55%,rgba(10,15,30,.1) 100%);pointer-events:none"></div>
             <div style="position:relative;z-index:1">
               <span style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)">Guide</span>
               <h2 style="font-size:1.5rem;font-weight:600;color:#fff;line-height:1.2;margin:.6rem 0 0">What a missed call really costs a one-van business</h2>
@@ -2527,7 +2519,7 @@ window.setRegion = function(cur){
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.55rem;flex-wrap:wrap;gap:1rem">
         <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900)">All resources</h2>
         <div style="display:flex;gap:.5rem;flex-wrap:wrap" id="hub-filters">
-          <button class="arrow-button" style="background:var(--n900);justify-content:center" onclick="filterHub('all',this)">All resources<div class="arrow"></div></button>
+          <button class="arrow-button" style="background:var(--n900);justify-content:center" onclick="filterHub('all',this)">All resources</button><button class="arrow-button" style="background:none;color:var(--n600);border:1px solid var(--n100);justify-content:center" onclick="filterHub('guide',this)">Guides</button><button class="arrow-button" style="background:none;color:var(--n600);border:1px solid var(--n100);justify-content:center" onclick="filterHub('case',this)">Case studies</button><button class="arrow-button" style="background:none;color:var(--n600);border:1px solid var(--n100);justify-content:center" onclick="filterHub('article',this)">Articles</button>
         </div>
       </div>
 
@@ -2535,7 +2527,7 @@ window.setRegion = function(cur){
       <div id="hub-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem">
 
         <!-- Card 1 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a1')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="guide" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a1')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a1.webp" alt="Paper-craft phone, call recording and AI symbols" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Guide · Home Services</div>
@@ -2545,7 +2537,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 2 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a2')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="case" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a2')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a2.webp" alt="Paper-craft plumber fixing a sink while the call is answered" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Case Study · Plumbing</div>
@@ -2555,7 +2547,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 3 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a3')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="guide" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a3')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a3.webp" alt="Paper-craft figure reviewing call analytics at a desk" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--n400);margin-bottom:.6rem">Guide · Marketing</div>
@@ -2565,7 +2557,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 4 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a4')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="guide" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a4')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a4.webp" alt="Paper-craft night scene with a call answered while the street sleeps" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Guide · Home Services</div>
@@ -2575,7 +2567,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 5 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a5')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="article" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a5')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a5.webp" alt="Paper-craft scene of AI answering business calls" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Article · AI Receptionist</div>
@@ -2585,7 +2577,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 6 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a6')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="case" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a6')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a6.webp" alt="Paper-craft gardener planting while her phone is answered" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Case Study · Landscaping</div>
@@ -2595,7 +2587,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 7 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a7')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="case" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a7')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a7.webp" alt="Paper-craft electrician up a ladder while the call is answered below" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Case Study · Electrical</div>
@@ -2605,7 +2597,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 8 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a8')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="case" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a8')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a8.webp" alt="Paper-craft winter night with a heating call being answered" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Case Study · Heating</div>
@@ -2615,7 +2607,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 9 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a9')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="guide" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a9')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a9.webp" alt="Paper-craft messages and calls flowing into one inbox tray" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Guide · Lead inbox</div>
@@ -2625,7 +2617,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 10 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a10')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="article" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a10')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a10.webp" alt="Paper-craft dashboard with charts showing booked jobs" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Article · Marketing</div>
@@ -2635,7 +2627,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 11 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a11')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="guide" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a11')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a11.webp" alt="Paper-craft scene of two people talking across a desk" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Guide · Refer &amp; earn</div>
@@ -2645,7 +2637,7 @@ window.setRegion = function(cur){
         </div>
 
         <!-- Card 12 -->
-        <div class="hub-card" data-tags="homeservices" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a12')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
+        <div class="hub-card" data-tags="article" style="border:1px solid var(--n100);background:#fff;cursor:pointer" onclick="openArticle('a12')" onmouseover="this.style.borderColor='var(--n900)'" onmouseout="this.style.borderColor='var(--n100)'">
           <div style="height:140px;overflow:hidden;border-bottom:1px solid var(--n100)"><img src="assets/usecases/usecase-a12.webp" alt="Paper-craft flat price pedestal beside a chaotic pile of per-minute fees" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="padding:1.25rem">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">Article · Pricing</div>
@@ -10582,6 +10574,9 @@ Object.assign(CA_IT, {"Your industry, answered.": "Il suo settore, gestito."});
 Object.assign(CA_DE, {"Pick your industry during setup and the receptionist speaks your language from the first call.": "Wählen Sie bei der Einrichtung Ihr Gewerbe — ab dem ersten Anruf spricht die Empfangskraft Ihre Sprache."});
 Object.assign(CA_FR, {"Pick your industry during setup and the receptionist speaks your language from the first call.": "Choisissez votre métier à la configuration : dès le premier appel, la réception parle votre langue."});
 Object.assign(CA_IT, {"Pick your industry during setup and the receptionist speaks your language from the first call.": "Scelga il suo mestiere in fase di configurazione: dalla prima chiamata la reception parla la sua lingua."});
+Object.assign(CA_DE, {"Guides": "Leitfäden", "Case studies": "Fallstudien", "Articles": "Artikel"});
+Object.assign(CA_FR, {"Guides": "Guides", "Case studies": "Études de cas", "Articles": "Articles"});
+Object.assign(CA_IT, {"Guides": "Guide", "Case studies": "Casi di studio", "Articles": "Articoli"});
 Object.assign(CA_DE, {"It already knows your industry.": "Sie kennt Ihre Branche."});
 Object.assign(CA_FR, {"It already knows your industry.": "Elle connaît votre métier."});
 Object.assign(CA_IT, {"It already knows your industry.": "Conosce il suo settore."});
