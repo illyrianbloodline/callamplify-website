@@ -3701,6 +3701,8 @@ renderHub(1);
 
     <h2 style="font-size:1.1rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem">9. Cookies</h2>
     <p>We use cookies and similar technologies as described in our <button onclick="goTo('cookies')" style="background:none;border:none;cursor:pointer;color:var(--orange);font-family:'IBM Plex Sans',sans-serif;font-size:1rem;padding:0">Cookie Policy</button>.</p>
+    <h2 style="font-size:1.1rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem">9a. Website statistics</h2>
+    <p>We measure use of this website ourselves, without cookies and without third-party analytics: our own server counts page views with a daily-changing anonymous identifier that cannot recognise you across days, stores only the referring domain (never full URLs) and no IP addresses, and nothing is placed on your device. Because no data is stored on or read from your device and no profile can be built, this requires no consent; the legal basis is our legitimate interest in understanding our own website (Art. 6(1)(f) GDPR / revDSG).</p>
 
     <h2 style="font-size:1.1rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem">10. Changes to this policy</h2>
     <p>We may update this policy periodically. We will notify you of material changes by email or in-app notice. Continued use of the service after changes constitutes acceptance of the updated policy.</p>
@@ -4160,9 +4162,9 @@ renderHub(1);
 <!-- AI receptionist demo orb removed 17 Jul 2026 — replaced by the live Ample concierge -->
 
 <script>
-function caPickPlan(p){try{sessionStorage.setItem('caPlan',p);sessionStorage.setItem('caBilling',(window.__caBillMode==='yearly')?'yearly':'monthly');}catch(e){}}
+function caPickPlan(p){try{caTrack('cta','pricing','plan');}catch(e){}try{sessionStorage.setItem('caPlan',p);sessionStorage.setItem('caBilling',(window.__caBillMode==='yearly')?'yearly':'monthly');}catch(e){}}
 function caLang(){try{return (window.caGetLang&&caGetLang()==='de')?'de':'en';}catch(e){return 'en';}}
-function caGoSignup(){var u='https://app.callamplify.com/login?mode=signup&lang='+caLang();try{var p=sessionStorage.getItem('caPlan'),b=sessionStorage.getItem('caBilling');if(p)u+='&plan='+encodeURIComponent(p);if(b)u+='&billing='+encodeURIComponent(b);}catch(e){}window.location.href=u;}
+function caGoSignup(){try{caTrack('cta','pricing','trial');}catch(e){}var u='https://app.callamplify.com/login?mode=signup&lang='+caLang();try{var p=sessionStorage.getItem('caPlan'),b=sessionStorage.getItem('caBilling');if(p)u+='&plan='+encodeURIComponent(p);if(b)u+='&billing='+encodeURIComponent(b);}catch(e){}window.location.href=u;}
 function caGoSignin(){window.location.href='https://app.callamplify.com/login?mode=signin&lang='+caLang();}
 </script>
 <script>
@@ -11191,5 +11193,35 @@ function caSubmitDemo(btn){
     <svg class="ca-eu-stars" viewBox="0 0 126.6 10.0" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false" fill="#ffcc00"><path d="M5.00 0.00L6.12 3.45L9.76 3.45L6.82 5.59L7.94 9.05L5.00 6.91L2.06 9.05L3.18 5.59L0.24 3.45L3.88 3.45Z"/><path d="M15.60 0.00L16.72 3.45L20.36 3.45L17.42 5.59L18.54 9.05L15.60 6.91L12.66 9.05L13.78 5.59L10.84 3.45L14.48 3.45Z"/><path d="M26.20 0.00L27.32 3.45L30.96 3.45L28.02 5.59L29.14 9.05L26.20 6.91L23.26 9.05L24.38 5.59L21.44 3.45L25.08 3.45Z"/><path d="M36.80 0.00L37.92 3.45L41.56 3.45L38.62 5.59L39.74 9.05L36.80 6.91L33.86 9.05L34.98 5.59L32.04 3.45L35.68 3.45Z"/><path d="M47.40 0.00L48.52 3.45L52.16 3.45L49.22 5.59L50.34 9.05L47.40 6.91L44.46 9.05L45.58 5.59L42.64 3.45L46.28 3.45Z"/><path d="M58.00 0.00L59.12 3.45L62.76 3.45L59.82 5.59L60.94 9.05L58.00 6.91L55.06 9.05L56.18 5.59L53.24 3.45L56.88 3.45Z"/><path d="M68.60 0.00L69.72 3.45L73.36 3.45L70.42 5.59L71.54 9.05L68.60 6.91L65.66 9.05L66.78 5.59L63.84 3.45L67.48 3.45Z"/><path d="M79.20 0.00L80.32 3.45L83.96 3.45L81.02 5.59L82.14 9.05L79.20 6.91L76.26 9.05L77.38 5.59L74.44 3.45L78.08 3.45Z"/><path d="M89.80 0.00L90.92 3.45L94.56 3.45L91.62 5.59L92.74 9.05L89.80 6.91L86.86 9.05L87.98 5.59L85.04 3.45L88.68 3.45Z"/><path d="M100.40 0.00L101.52 3.45L105.16 3.45L102.22 5.59L103.34 9.05L100.40 6.91L97.46 9.05L98.58 5.59L95.64 3.45L99.28 3.45Z"/><path d="M111.00 0.00L112.12 3.45L115.76 3.45L112.82 5.59L113.94 9.05L111.00 6.91L108.06 9.05L109.18 5.59L106.24 3.45L109.88 3.45Z"/><path d="M121.60 0.00L122.72 3.45L126.36 3.45L123.42 5.59L124.54 9.05L121.60 6.91L118.66 9.05L119.78 5.59L116.84 3.45L120.48 3.45Z"/></svg>
   </span>
 </a>
+
+<script>
+/* First-party stats: our beacon, our API, our Admin. Cookieless by design --
+   nothing is stored on the visitor's device, so no consent banner is needed.
+   The server keys uniqueness to a daily-rotating anonymous hash. */
+(function(){
+  var API='https://app.callamplify.com/api/t';
+  if(/localhost|127\.0\.0\.1/.test(location.hostname)) API='http://localhost:5001/api/t';
+  var qs=new URLSearchParams(location.search);
+  var utm={us:qs.get('utm_source')||'',um:qs.get('utm_medium')||'',uc:qs.get('utm_campaign')||''};
+  var sentRef=false;
+  function send(e,p,c){
+    try{
+      var body=JSON.stringify({e:e,p:p||'home',c:c||'',
+        r:sentRef?'':(document.referrer||''),
+        us:utm.us,um:utm.um,uc:utm.uc,
+        l:(localStorage.getItem('ca_lang')||'en'),
+        m:innerWidth<720?1:0});
+      sentRef=true;
+      if(navigator.sendBeacon){navigator.sendBeacon(API,new Blob([body],{type:'application/json'}));}
+      else{fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true});}
+    }catch(err){}
+  }
+  window.caTrack=send;
+  /* count SPA page changes through the site's own router */
+  var _goTo=window.goTo;
+  window.goTo=function(id){ if(_goTo)_goTo(id); send('pageview',id); };
+  send('pageview','home');
+})();
+</script>
 </body>
 </html>
