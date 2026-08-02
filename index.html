@@ -275,7 +275,11 @@ footer{border-top:1px solid var(--n100)}
 .nav-industries:hover .mega-menu,.nav-solutions:hover .mega-menu{display:block}
 .mega-force-close .mega-menu{display:none !important;}
 .mega-inner{
-  max-width:var(--max);margin:0 auto;padding:0 2rem;
+  /* No right padding, matching the nav container (padding:0 0 0 2rem): the
+     right column is a dark panel, and 2rem of white to its right left it
+     hanging 32px short of the Start-free-trial button it sits under. The
+     panel carries its own 1.75rem internal padding, so content is fine. */
+  max-width:var(--max);margin:0 auto;padding:0 0 0 2rem;
   display:grid;grid-template-columns:1fr 360px;
 }
 .mega-links{padding:1.2rem 2rem 1.2rem 0;border-right:1px solid var(--n100)}
