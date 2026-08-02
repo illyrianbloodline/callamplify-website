@@ -49,7 +49,10 @@ header{
   border-bottom:1px solid #393939;box-shadow:none;
 }
 .header-inner{
-  max-width:var(--max);margin:0 auto;padding:0 0 0 2rem;
+  /* Right padding matches the content sections below, so the Start-free-trial
+     button ends on the same vertical line as the page content (owner request:
+     the nav ran 2rem past everything under it). */
+  max-width:var(--max);margin:0 auto;padding:0 2rem;
   height:48px;display:flex;align-items:center;justify-content:space-between;
 }
 .logo-btn{display:flex;align-items:center;gap:.85rem;cursor:pointer;flex-shrink:0;background:none;border:none;padding:0 1.25rem 0 0}
@@ -275,11 +278,9 @@ footer{border-top:1px solid var(--n100)}
 .nav-industries:hover .mega-menu,.nav-solutions:hover .mega-menu{display:block}
 .mega-force-close .mega-menu{display:none !important;}
 .mega-inner{
-  /* No right padding, matching the nav container (padding:0 0 0 2rem): the
-     right column is a dark panel, and 2rem of white to its right left it
-     hanging 32px short of the Start-free-trial button it sits under. The
-     panel carries its own 1.75rem internal padding, so content is fine. */
-  max-width:var(--max);margin:0 auto;padding:0 0 0 2rem;
+  /* Same 2rem right padding as the nav container above, so the dark panel's
+     edge tracks the Start-free-trial button exactly wherever it sits. */
+  max-width:var(--max);margin:0 auto;padding:0 2rem;
   display:grid;grid-template-columns:1fr 360px;
 }
 .mega-links{padding:1.2rem 2rem 1.2rem 0;border-right:1px solid var(--n100)}
