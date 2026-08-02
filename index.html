@@ -297,6 +297,13 @@ footer{border-top:1px solid var(--n100)}
   font-family:'IBM Plex Sans',sans-serif;text-align:left;
   transition:background .1s;width:100%;
 }
+/* the grid's last row + the section divider under it drew a double rule --
+   the section's border-top is the one line, the last row goes borderless.
+   Parity guard: in a 2-col grid the second-to-last is only IN the last row
+   when it sits in the left column (odd index) -- with an odd item count it
+   belongs to the row above and must keep its border. */
+.mega-links-grid .mega-link:last-child{border-bottom:none}
+.mega-links-grid .mega-link:nth-last-child(2):nth-child(odd){border-bottom:none}
 .mega-link:hover{background:var(--n50)}
 .mega-link:hover .mega-link-arrow{color:var(--orange)}
 .mega-link-text{font-size:.875rem;font-weight:600;color:var(--n900)}
