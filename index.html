@@ -485,6 +485,34 @@ footer{border-top:1px solid var(--n100)}
 }
 
 </style>
+
+<style>
+  /* EU hosting badge. Small, out of the way, and it does not follow the reader
+     on phones -- an 80px square pinned over a one-column layout costs more
+     attention than the claim is worth on that screen. */
+  #ca-eu-badge{position:fixed;left:18px;bottom:18px;z-index:60;width:76px;height:76px;
+    background:#0b0b0c;overflow:hidden;text-decoration:none;display:block;
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    /* A hairline ring: the badge body is near-black, and the home page scrolls
+       a full-bleed dark photo section straight under it -- without this the tile
+       disappears and only the blue EU and the bar float there. */
+    box-shadow:0 0 0 1px rgba(255,255,255,.30), 0 3px 14px rgba(0,0,0,.28);
+    transition:transform .12s ease;}
+  #ca-eu-badge:hover{transform:translateY(-2px);}
+  #ca-eu-badge:focus-visible{outline:2px solid #1f4fd1;outline-offset:2px;}
+  .ca-eu-mark{position:absolute;right:-8px;top:-13px;font-weight:800;font-size:52px;
+    line-height:1;color:#1f4fd1;letter-spacing:-.04em;}
+  .ca-eu-bar{position:absolute;left:0;right:0;bottom:0;background:#1f4fd1;
+    border-top:1px solid #0b0b0c;padding:4px 5px 3px;display:block;}
+  .ca-eu-txt{display:block;font-weight:700;font-size:8.5px;letter-spacing:-.01em;
+    color:#fff;line-height:1.1;margin-bottom:3px;text-align:center;white-space:nowrap;}
+  /* Twelve stars drawn from one element: twelve spans of markup for decoration
+     the screen reader is told to skip is markup nobody should have to maintain. */
+  .ca-eu-stars{display:block;height:5px;
+    background-image:radial-gradient(circle at 50% 45%, #ffcc00 1.4px, transparent 1.6px);
+    background-size:calc(100% / 12) 100%;background-repeat:repeat-x;}
+  @media (max-width:720px){#ca-eu-badge{display:none;}}
+</style>
 </head>
 <body>
 
@@ -4465,7 +4493,14 @@ function closeMega() {
   });
 }
 
+function caEuBadge(id) {
+  // Home only: on the legal pages it would sit beside the text that explains it,
+  // and on pricing it is noise next to a decision about money.
+  var b = document.getElementById('ca-eu-badge');
+  if (b) b.style.display = (id === 'home') ? '' : 'none';
+}
 function goTo(id) {
+  caEuBadge(id);
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const page = document.getElementById('page-' + id);
   if (page) page.classList.add('active');
@@ -11066,5 +11101,19 @@ function caSubmitDemo(btn){
   }).catch(function(){ btn.style.pointerEvents=''; btn.style.opacity=''; btn.innerHTML=orig; alert(de?'Etwas ist schiefgelaufen — bitte erneut versuchen.':'Something went wrong — please try again.'); });
 }
 </script>
+
+<!-- EU hosting badge — home page only. The claim is narrow and true:
+     render.yaml pins region: frankfurt for the web service AND the database.
+     It says HOSTED, not "processed only in the EU" — telephony media and the
+     concierge model are not region-pinned (DATA-PROCESSING-MAP.md §2.2). -->
+<a id="ca-eu-badge" href="#" onclick="goTo('privacy');return false;"
+   aria-label="Hosted in the EU — read our privacy policy"
+   title="App and database hosted in Frankfurt, EU">
+  <span class="ca-eu-mark">EU</span>
+  <span class="ca-eu-bar">
+    <span class="ca-eu-txt">HOSTED IN EU</span>
+    <span class="ca-eu-stars" aria-hidden="true"></span>
+  </span>
+</a>
 </body>
 </html>
