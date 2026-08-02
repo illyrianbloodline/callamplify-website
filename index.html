@@ -4321,6 +4321,7 @@ var ARTICLES = {
     type:'Guide', industry:'Home Services', time:'5 min read',
     title:'What a missed call really costs a one-van trades business',
     hero:'background:var(--n900)',
+    img:'assets/usecases/usecase-missed-call.webp',
     body:`
       <p>You're under a sink with both hands full when the phone rings. By the time you've dried off, it's stopped — and there's no voicemail. Most trades owners shrug this off as part of the job. The numbers say it's the most expensive habit in the business.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">One in four calls goes unanswered — and most never call back</h2>
@@ -4357,6 +4358,7 @@ var ARTICLES = {
     type:'Guide', industry:'Marketing', time:'6 min read',
     title:'Which advert actually brings you jobs? A simple way to find out',
     hero:'background:var(--n50);border-bottom:1px solid var(--n100)',
+    img:'assets/usecases/usecase-analytics-desk.webp',
     body:`
       <p>Most trades spend money in a few places — Google, Facebook, a sign on the van, maybe a flyer drop or the local paper — and have no real idea which ones pay off. When work is steady, it all feels worth it. When it's quiet, you cut something and hope you guessed right. You shouldn't have to guess.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">The trick: give each advert its own number</h2>
@@ -4388,6 +4390,7 @@ var ARTICLES = {
     type:'Article', industry:'AI Receptionist', time:'4 min read',
     title:'Why nobody leaves a voicemail anymore — and what to do about it',
     hero:'background:var(--n50);border-bottom:1px solid var(--n100)',
+    img:'assets/usecases/usecase-ai-reception.webp',
     body:`
       <p>Think about the last time you reached a voicemail. Did you leave a message? Probably not. You hung up and tried someone else. Your customers do exactly the same thing — which is why a voicemail box is one of the quietest ways to lose work.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">Voicemail asks the customer to do the work</h2>
@@ -4458,6 +4461,7 @@ var ARTICLES = {
     type:'Article', industry:'Marketing', time:'4 min read',
     title:'More calls isn\'t the goal. More booked jobs is.',
     hero:'background:var(--n900)',
+    img:'assets/usecases/usecase-booked-jobs.webp',
     body:`
       <p>It's easy to chase call volume — more rings feels like more business. But twenty tyre-kickers asking your cheapest price are worth less than three serious customers ready to book. What matters isn't how loud your phone is. It's how many of those calls turn into paid work.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">Volume flatters. Booked work pays.</h2>
@@ -4472,6 +4476,7 @@ var ARTICLES = {
     type:'Guide', industry:'Refer & earn', time:'3 min read',
     title:'Refer a mate, cover your own bill: how Refer & earn works',
     hero:'background:var(--orange)',
+    img:'assets/usecases/usecase-referral.webp',
     body:`
       <p>Every trade knows another trade who's still missing calls and losing jobs to voicemail. Tell them about CallAmplify and you don't just do them a favour — you get paid for it, every month they stay.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">20% of their plan, for a full year</h2>
@@ -4511,10 +4516,12 @@ function openArticle(id) {
     '<span style="width:4px;height:4px;border-radius:50%;background:var(--n200);display:inline-block"></span>' +
     '<span style="font-size:.82rem;color:var(--n400)">' + a.time + '</span>' +
     '</div>';
-  document.getElementById('article-hero').innerHTML =
-    '<div style="height:220px;' + a.hero + ';display:flex;align-items:center;justify-content:center">' +
-    '<div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3)">' + a.type.toUpperCase() + '</div>' +
-    '</div>';
+  document.getElementById('article-hero').innerHTML = a.img
+    ? '<div style="height:clamp(220px,32vw,380px);overflow:hidden;border:1px solid var(--n100)">' +
+      '<img src="' + a.img + '" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
+    : '<div style="height:220px;' + a.hero + ';display:flex;align-items:center;justify-content:center">' +
+      '<div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3)">' + a.type.toUpperCase() + '</div>' +
+      '</div>';
   document.getElementById('article-body').innerHTML = a.body;
   goTo('article');
   window.scrollTo(0, 0);
