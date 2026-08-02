@@ -490,7 +490,7 @@ footer{border-top:1px solid var(--n100)}
   /* EU hosting badge. Small, out of the way, and it does not follow the reader
      on phones -- an 80px square pinned over a one-column layout costs more
      attention than the claim is worth on that screen. */
-  #ca-eu-badge{position:fixed;left:14px;bottom:14px;z-index:60;width:38px;height:38px;
+  #ca-eu-badge{position:fixed;left:16px;bottom:16px;z-index:60;width:57px;height:57px;
     background:#0b0b0c;overflow:hidden;text-decoration:none;display:block;
     font-family:'IBM Plex Sans',system-ui,sans-serif;
     /* A hairline ring: the badge body is near-black, and the home page scrolls
@@ -500,18 +500,18 @@ footer{border-top:1px solid var(--n100)}
     transition:transform .12s ease;}
   #ca-eu-badge:hover{transform:translateY(-2px);}
   #ca-eu-badge:focus-visible{outline:2px solid #1f4fd1;outline-offset:2px;}
-  .ca-eu-mark{position:absolute;right:-3px;top:-6px;font-weight:800;font-size:21px;
+  .ca-eu-mark{position:absolute;right:-5px;top:-9px;font-weight:800;font-size:33px;
     line-height:1;color:#1f4fd1;letter-spacing:-.04em;}
   .ca-eu-bar{position:absolute;left:0;right:0;bottom:0;background:#1f4fd1;
-    border-top:1px solid #0b0b0c;padding:2px 2px 2.5px;display:block;}
-    /* Two lines at half size. On one line the caption needs ~40px inside a
-     34px box, so it was being clipped -- and dropping to 5px to make it fit
-     would have made it unreadable, which is the same as not having it. */
-  .ca-eu-txt{display:block;font-weight:700;font-size:6.5px;letter-spacing:-.01em;
-    color:#fff;line-height:1.15;margin-bottom:1.5px;text-align:center;}
+    border-top:1px solid #0b0b0c;padding:3px 2px 3.5px;display:block;}
+    /* One line again: at 57px the bar has ~51px of usable width and the
+     caption needs ~50px at this size, so it fits without shrinking the type
+     to the point of being decorative. */
+  .ca-eu-txt{display:block;font-weight:700;font-size:7.5px;letter-spacing:-.015em;
+    color:#fff;line-height:1.1;margin-bottom:2.5px;text-align:center;white-space:nowrap;}
   /* Real star geometry, not dots. Vector, so it stays sharp at any pixel
      density and any zoom -- a gradient could only ever draw a circle. */
-  .ca-eu-stars{display:block;width:100%;height:5px;overflow:visible;}
+  .ca-eu-stars{display:block;width:100%;height:6.5px;overflow:visible;}
   @media (max-width:720px){#ca-eu-badge{display:none;}}
 </style>
 </head>
@@ -11112,7 +11112,7 @@ function caSubmitDemo(btn){
    title="App and database hosted in Frankfurt, EU">
   <span class="ca-eu-mark">EU</span>
   <span class="ca-eu-bar">
-    <span class="ca-eu-txt">HOSTED<br>IN EU</span>
+    <span class="ca-eu-txt">HOSTED IN EU</span>
     <svg class="ca-eu-stars" viewBox="0 0 126.6 10.0" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false" fill="#ffcc00"><path d="M5.00 0.00L6.12 3.45L9.76 3.45L6.82 5.59L7.94 9.05L5.00 6.91L2.06 9.05L3.18 5.59L0.24 3.45L3.88 3.45Z"/><path d="M15.60 0.00L16.72 3.45L20.36 3.45L17.42 5.59L18.54 9.05L15.60 6.91L12.66 9.05L13.78 5.59L10.84 3.45L14.48 3.45Z"/><path d="M26.20 0.00L27.32 3.45L30.96 3.45L28.02 5.59L29.14 9.05L26.20 6.91L23.26 9.05L24.38 5.59L21.44 3.45L25.08 3.45Z"/><path d="M36.80 0.00L37.92 3.45L41.56 3.45L38.62 5.59L39.74 9.05L36.80 6.91L33.86 9.05L34.98 5.59L32.04 3.45L35.68 3.45Z"/><path d="M47.40 0.00L48.52 3.45L52.16 3.45L49.22 5.59L50.34 9.05L47.40 6.91L44.46 9.05L45.58 5.59L42.64 3.45L46.28 3.45Z"/><path d="M58.00 0.00L59.12 3.45L62.76 3.45L59.82 5.59L60.94 9.05L58.00 6.91L55.06 9.05L56.18 5.59L53.24 3.45L56.88 3.45Z"/><path d="M68.60 0.00L69.72 3.45L73.36 3.45L70.42 5.59L71.54 9.05L68.60 6.91L65.66 9.05L66.78 5.59L63.84 3.45L67.48 3.45Z"/><path d="M79.20 0.00L80.32 3.45L83.96 3.45L81.02 5.59L82.14 9.05L79.20 6.91L76.26 9.05L77.38 5.59L74.44 3.45L78.08 3.45Z"/><path d="M89.80 0.00L90.92 3.45L94.56 3.45L91.62 5.59L92.74 9.05L89.80 6.91L86.86 9.05L87.98 5.59L85.04 3.45L88.68 3.45Z"/><path d="M100.40 0.00L101.52 3.45L105.16 3.45L102.22 5.59L103.34 9.05L100.40 6.91L97.46 9.05L98.58 5.59L95.64 3.45L99.28 3.45Z"/><path d="M111.00 0.00L112.12 3.45L115.76 3.45L112.82 5.59L113.94 9.05L111.00 6.91L108.06 9.05L109.18 5.59L106.24 3.45L109.88 3.45Z"/><path d="M121.60 0.00L122.72 3.45L126.36 3.45L123.42 5.59L124.54 9.05L121.60 6.91L118.66 9.05L119.78 5.59L116.84 3.45L120.48 3.45Z"/></svg>
   </span>
 </a>
