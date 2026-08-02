@@ -2069,8 +2069,41 @@ footer{border-top:1px solid var(--n100)}
 </div>
 
 <!-- THREE TIERS -->
-<div style="max-width:1120px;margin:0 auto;padding:1.6rem 2rem">
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;align-items:stretch">
+<div style="max-width:1320px;margin:0 auto;padding:1.6rem 2rem">
+  <!-- auto-fit rather than repeat(4,1fr): four fixed columns would squeeze to
+       ~230px on a 1280 laptop. This keeps a 250px floor and drops to 2-up
+       then 1-up on its own, with no extra media query to keep in step. -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem;align-items:stretch">
+
+<!-- FREE — a peer card, deliberately quieter (dashed border, no shadow):
+         it is the on-ramp, not the recommendation. What it CANNOT do is listed
+         beside what it can, because someone who signs up expecting an AI
+         receptionist and finds a contact list has been mis-sold. -->
+    <div style="background:#fff;border:1px dashed var(--n300,#c6c6c6);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="padding:1.75rem 1.35rem 1.5rem;border-bottom:1px solid var(--n100);display:flex;flex-direction:column;min-height:320px">
+        <div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.2rem">Free Job Book</div>
+        <div style="font-size:.78rem;color:var(--n400);margin-bottom:.55rem">Zum Starten &mdash; ohne Rufnummer</div>
+        <p style="font-size:.75rem;color:var(--n500);line-height:1.5;margin:0 0 1rem">Ihre Kunden und Auftr&auml;ge an einem Ort. Keine Karte, kein Ablaufdatum.</p>
+        <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:1.1rem">
+          <span style="font-size:1rem;font-weight:600;color:var(--n600)">CHF</span>
+          <span style="font-size:2.8rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1">0</span>
+          <span style="font-size:.9rem;color:var(--n400)">/month</span>
+        </div>
+        <div style="font-size:.72rem;color:var(--n400);margin:-.5rem 0 1rem">Dauerhaft gratis</div>
+        <button class="arrow-button" onclick="caPickPlan('free_jobbook');goTo('free-trial')" style="width:100%;justify-content:center;margin-top:auto">Gratis starten</button>
+      </div>
+      <div style="padding:1.35rem;display:flex;flex-direction:column;gap:.7rem;flex:1">
+        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Enthalten</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f4fd1">&check;</span>Kunden &amp; Kontakte</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f4fd1">&check;</span>Follow-up-Liste</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f4fd1">&check;</span>Auswertungen</div>
+        <div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--n400);margin:.55rem 0 -.15rem">Nicht enthalten</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6)">&times;</span>Eigene Rufnummer</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6)">&times;</span>KI-Anrufannahme</div>
+        <div style="display:flex;gap:.55rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6)">&times;</span>SMS-R&uuml;ckruf</div>
+        <p style="font-size:.7rem;color:var(--n400);line-height:1.5;margin:.6rem 0 0">Jederzeit eine Nummer dazubuchen &mdash; dann protokollieren sich Ihre Anrufe selbst.</p>
+      </div>
+    </div>
 
     <!-- STARTER -->
     <div style="background:#fff;border:1px solid var(--n100);border-radius:14px;overflow:hidden;box-shadow:0 10px 28px rgba(22,22,22,.07);display:flex;flex-direction:column">
@@ -2178,47 +2211,7 @@ footer{border-top:1px solid var(--n100)}
 
   </div>
 
-<!-- FREE TIER — deliberately a band below the three, not a fourth column.
-     The honest limitation (no tracking number) is the whole reason the tier can
-     exist at zero cost, so it is stated in the card rather than buried. -->
-<!-- No max-width or padding here: this block is inserted INSIDE the section
-     container that already applies both, and repeating them made the card 64px
-     narrower than the tier grid it sits under. -->
-<div style="margin:1.75rem 0 0">
-  <div style="background:#fff;border:1px dashed var(--n300,#c6c6c6);border-radius:14px;padding:1.6rem 1.75rem;
-              display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center">
-    <div style="flex:1 1 260px;min-width:220px">
-      <div style="display:flex;align-items:baseline;gap:.6rem;margin-bottom:.3rem">
-        <span style="font-size:1rem;font-weight:700;color:var(--n900)">Free Job Book</span>
-        <span style="font-size:.62rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-                     color:var(--n500);background:var(--n50,#f4f4f4);padding:.15rem .5rem;border-radius:4px">Kein Ablauf</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:.3rem">
-        <span style="font-size:1rem;font-weight:600;color:var(--n600)">CHF</span>
-        <span style="font-size:2.4rem;font-weight:700;letter-spacing:-.04em;color:var(--n900);line-height:1">0</span>
-        <span style="font-size:.9rem;color:var(--n400)">/Monat</span>
-      </div>
-      <p style="font-size:.78rem;color:var(--n500);line-height:1.55;margin:.5rem 0 0;max-width:280px">
-        Zum Starten: Ihre Kunden und Auftr&auml;ge an einem Ort. Keine Kreditkarte, kein Ablaufdatum.</p>
-    </div>
 
-    <div style="flex:2 1 340px;min-width:260px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem .9rem">
-      <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f4fd1">&check;</span>Kunden &amp; Kontakte</div>
-      <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f4fd1">&check;</span>Follow-up-Liste</div>
-      <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--n700);line-height:1.4"><span style="color:#1f4fd1">&check;</span>Auswertungen</div>
-      <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6)">&times;</span>Keine Rufnummer</div>
-      <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6)">&times;</span>Keine KI-Anrufannahme</div>
-      <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--n400);line-height:1.4"><span style="color:var(--n300,#c6c6c6)">&times;</span>Kein SMS-R&uuml;ckruf</div>
-    </div>
-
-    <div style="flex:0 0 auto;min-width:190px">
-      <button class="arrow-button" onclick="caPickPlan('free_jobbook');goTo('free-trial')"
-              style="width:100%;justify-content:center">Gratis starten</button>
-      <p style="font-size:.7rem;color:var(--n400);margin:.55rem 0 0;text-align:center;line-height:1.5">
-        Jederzeit eine Nummer dazubuchen &mdash; dann protokollieren sich Ihre Anrufe selbst.</p>
-    </div>
-  </div>
-</div>
 
   <p style="text-align:center;font-size:.82rem;color:var(--n400);margin-top:2.9rem">All plans: 14-day free trial &middot; no card required &middot; cancel anytime &middot; flat monthly price, no per-minute fees</p>
   <p style="text-align:center;font-size:.78rem;color:var(--n400);margin-top:.4rem">Bigger team or more numbers? <button onclick="goTo('contact')" style="background:none;border:none;color:var(--orange);font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.78rem;padding:0">Talk to us &rarr;</button></p>
