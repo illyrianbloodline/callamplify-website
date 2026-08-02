@@ -831,9 +831,7 @@ footer{border-top:1px solid var(--n100)}
     </div>
   </section>
 
-  <!-- LISTEN TO THE AI — one orb per language the receptionist speaks.
-       Orb art is the owner's DC component, ported verbatim; only captions
-       and the audio player are added around it. Recordings: assets/demo/. -->
+  <!-- LISTEN TO THE AI: language orbs -->
   <style>
     @keyframes orbSpin { to { transform: rotate(360deg); } }
     @keyframes orbSpinRev { to { transform: rotate(-360deg); } }
@@ -2766,12 +2764,7 @@ renderHub(1);
      INDUSTRY: HOME SERVICES
 ═══════════════════════════════════════════ -->
 <div id="page-who-we-serve" class="page">
-  <!-- WHO WE SERVE — cube lattice, owner-supplied art ported verbatim from the
-       DC component. Substitutions the static site requires: the Lucide CDN
-       script is replaced with inline SVG (this site loads ZERO external hosts
-       and self-hosts even its fonts), the DC design-system font variables are
-       replaced with the site stack, and DCLogic becomes plain JS below. The
-       stage is a fixed 900x380 grid, so it scales rather than reflows. -->
+  <!-- WHO WE SERVE: cube lattice -->
   <style>
     @keyframes flow { from{offset-distance:0%;} to{offset-distance:100%;} }
     .ca-cubes-wrap{display:flex;justify-content:center;overflow:hidden;height:380px}
@@ -3031,13 +3024,7 @@ renderHub(1);
 </div>
 
 <div id="page-what-we-offer" class="page">
-  <!-- WHAT WE OFFER — integrations-hub art, owner-supplied, ported from the DC
-       component like the cubes page: Lucide CDN replaced with inline SVG (this
-       site loads ZERO external hosts), DC font/colour vars replaced with the
-       site palette, style-hover replaced with a CSS class. The stage is a fixed
-       960x700 canvas, so it scales rather than reflows. The art's "40+ native
-       connections" stat was replaced with 24/7 — we do not have 40 integrations
-       and this site does not carry claims we cannot substantiate. -->
+  <!-- WHAT WE OFFER: integrations hub -->
   <style>
     @keyframes ca-flowin { 0%{ offset-distance:0%; opacity:0;} 14%{opacity:1;} 78%{opacity:1;} 100%{ offset-distance:100%; opacity:0;} }
     @keyframes ca-flowout { 0%{ offset-distance:0%; opacity:0;} 16%{opacity:.7;} 80%{opacity:.7;} 100%{ offset-distance:100%; opacity:0;} }
@@ -10929,11 +10916,7 @@ var CA_DICTS = { de: CA_DE,
 })();
 </script>
 
-<!-- ═══════════════ AI SALES CONCIERGE ═══════════════
-     A scoped AI assistant. Talks to the app's /api/concierge proxy (key is
-     server-side); the assistant is instructed to never invent features, never
-     collect personal data, and route sign-ups to the trial. Degrades to a
-     canned signpost if the backend has no key. -->
+<!-- AI SALES CONCIERGE -->
 <script>(function(){
   var API_BASE = 'https://app.callamplify.com';   // app origin that hosts /api/concierge
   var busy = false, started = false, history = [];
@@ -11198,10 +11181,7 @@ function caSubmitDemo(btn){
 }
 </script>
 
-<!-- EU hosting badge — home page only. The claim is narrow and true:
-     render.yaml pins region: frankfurt for the web service AND the database.
-     It says HOSTED, not "processed only in the EU" — telephony media and the
-     concierge model are not region-pinned (DATA-PROCESSING-MAP.md §2.2). -->
+<!-- EU hosting badge (home only) -->
 <a id="ca-eu-badge" href="#" onclick="goTo('privacy');return false;"
    aria-label="Hosted in the EU — read our privacy policy"
    title="App and database hosted in Frankfurt, EU">
