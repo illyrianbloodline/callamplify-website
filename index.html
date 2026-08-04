@@ -3879,10 +3879,10 @@ renderHub(1);
       </div>
       <div style="background:var(--n50);border:1px solid var(--n100);padding:2.5rem">
         <div style="font-size:1rem;font-weight:600;color:var(--n900);margin-bottom:1.5rem">Send us a message</div>
-        <div style="margin-bottom:1rem"><label style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Name</label><input type="text" placeholder="Anna Müller" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></div>
-        <div style="margin-bottom:1rem"><label style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Email</label><input type="email" placeholder="anna@yourcompany.ch" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></div>
-        <div style="margin-bottom:1.5rem"><label style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Message</label><textarea rows="5" placeholder="How can we help?" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;resize:vertical;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></textarea></div>
-        <button class="arrow-button" onclick="this.textContent='✓ Message sent!';this.style.background='#2d6a4f';this.disabled=true">Send message<div class="arrow"></div></button>
+        <div style="margin-bottom:1rem"><label style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Name</label><input id="cf-name" type="text" placeholder="Anna Müller" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></div>
+        <div style="margin-bottom:1rem"><label style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Email</label><input id="cf-email" type="email" placeholder="anna@yourcompany.ch" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></div>
+        <div style="margin-bottom:1.5rem"><label style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Message</label><textarea id="cf-message" rows="5" placeholder="How can we help?" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;resize:vertical;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></textarea></div>
+        <button class="arrow-button" id="cf-send" onclick="caSendContact(this)">Send message<div class="arrow"></div></button><div id="cf-status" role="status" style="margin-top:.85rem;font-size:.85rem"></div>
       </div>
     </div>
   </section>
@@ -11224,6 +11224,49 @@ var CA_DICTS = { de: CA_DE,
 })();
 </script>
 <script>
+function caSendContact(btn) {
+  // Real submit. This form was a dead button that only relabelled itself, and
+  // Careers / Partners / "Contact sales" all route here — so those leads were
+  // being thrown away. Posts to the same mailer as the demo form.
+  var v = function (id) { var e = document.getElementById(id); return e ? e.value.trim() : ''; };
+  var name = v('cf-name'), email = v('cf-email');
+  var st = document.getElementById('cf-status');
+  var say = function (msg, ok) {
+    if (!st) return;
+    st.textContent = msg;
+    st.style.color = ok ? '#0e6027' : '#a2191f';
+  };
+  if (!name || email.indexOf('@') < 1 || email.indexOf('.') < 0) {
+    say('Please add your name and a valid email address.', false);
+    return;
+  }
+  btn.disabled = true;
+  var label = btn.textContent;
+  btn.textContent = 'Sending...';
+  var parts = name.split(' ');
+  // API_BASE lives inside the concierge IIFE, so resolve our own (same rule
+  // as the analytics beacon: localhost in dev, the app origin in production).
+  var base = /localhost|127\.0\.0\.1/.test(location.hostname)
+    ? 'http://localhost:5001' : 'https://app.callamplify.com';
+  fetch(base + '/api/demo-request', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      topic: 'Contact', firstName: parts[0], lastName: parts.slice(1).join(' '),
+      email: email, company: v('cf-company'), message: v('cf-message')
+    })
+  }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function () {
+      btn.textContent = '\u2713 Message sent';
+      btn.style.background = '#2d6a4f';
+      say('Thanks - we will reply to ' + email + ' shortly.', true);
+    })
+    .catch(function () {
+      btn.disabled = false;
+      btn.textContent = label;
+      say('Could not send just now. Please email hello@callamplify.com.', false);
+    });
+}
+
 function caSubmitDemo(btn){
   var g=function(id){var el=document.getElementById(id);return el?(el.value||'').trim():'';};
   var de=(window.caGetLang&&caGetLang()==='de');
