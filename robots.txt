@@ -1,0 +1,10 @@
+# CallAmplify — https://www.callamplify.com
+User-agent: *
+Allow: /
+
+# The app is a private product surface, not content. Keeping crawlers out of it
+# avoids indexing login and gated pages that only frustrate a searcher.
+Disallow: /login
+Disallow: /home
+
+Sitemap: https://www.callamplify.com/sitemap.xml

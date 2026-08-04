@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  One entry, on purpose. The site is a single document whose sections are
+  reached by URL FRAGMENT (/#pricing), and search engines discard fragments:
+  a sitemap listing /#pricing, /#book-demo and friends would be silently
+  dropped, not indexed. Listing the sections separately would only look like
+  coverage we do not have.
+
+  To make the sections individually indexable they need real paths — separate
+  documents, or host-level routing that serves the page at /pricing — which is
+  a build, not a sitemap entry. The hreflang alternates below are the part that
+  genuinely helps today: they tell Google the four languages are the same page,
+  not duplicate content.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.callamplify.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.callamplify.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.callamplify.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.callamplify.com/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.callamplify.com/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.callamplify.com/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
