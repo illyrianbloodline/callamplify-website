@@ -8001,7 +8001,7 @@ var CA_DICTS = { de: CA_DE,
     row.appendChild(chip(t('How it works','So funktioniert’s'), howIcon, false,
       function(){ startChat(); ask(t('How does CallAmplify work?','Wie funktioniert CallAmplify?')); }));
     row.appendChild(chip(t('Start free trial','Kostenlos testen'), trialIcon, false,
-      function(){ window.location.href = API_BASE + '/login'; }));
+      function(){ if(window.caGoSignup){ caGoSignup(); } else { window.location.href = API_BASE + '/login?mode=signup'; } }));
     starts.appendChild(row);
     wrap.appendChild(starts);
     body.appendChild(wrap);
