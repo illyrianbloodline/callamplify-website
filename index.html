@@ -21,7 +21,18 @@
 <meta property="og:image" content="https://www.callamplify.com/og-card.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:locale" content="en"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:locale:alternate" content="de_DE"/>
+<meta property="og:locale:alternate" content="fr_FR"/>
+<meta property="og:locale:alternate" content="it_IT"/>
+<meta name="theme-color" content="#161616"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://www.callamplify.com/#org","name":"CallAmplify","url":"https://www.callamplify.com/","logo":"https://www.callamplify.com/callamplify-logo.png","email":"hello@callamplify.com","telephone":"+41525470117","address":{"@type":"PostalAddress","addressLocality":"Andelfingen","addressRegion":"ZH","postalCode":"8450","addressCountry":"CH"},"sameAs":["https://www.linkedin.com/company/callamplify","https://x.com/CallAmplify"]},
+ {"@type":"WebSite","@id":"https://www.callamplify.com/#website","url":"https://www.callamplify.com/","name":"CallAmplify","publisher":{"@id":"https://www.callamplify.com/#org"},"inLanguage":["en","de","fr","it"]},
+ {"@type":"SoftwareApplication","name":"CallAmplify","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.callamplify.com/","description":"Call tracking, instant text-back for missed callers, and every lead in one inbox. Built in Switzerland.","offers":{"@type":"AggregateOffer","priceCurrency":"CHF","lowPrice":"0","highPrice":"199","offerCount":"4"}}
+]}
+</script>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.callamplify.com/og-card.png"/>
 <meta name="twitter:title" content="CallAmplify — never lose a job to a missed call"/>
@@ -354,6 +365,20 @@ footer{border-top:1px solid var(--n100)}
 }
 @media(max-width:600px){
   .footer-cols-inner{grid-template-columns:1fr!important}
+}
+
+/* ─── REDUCED MOTION ─────────────────────────────────── */
+/* The page animates a lot (pulses, spins, sheens, counters); only two
+   sections carried their own reduced-motion rules. This global rule snaps
+   every CSS animation/transition to its end state for visitors who asked
+   for less motion. JS-driven motion is gated separately (slideshow timer). */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  html{scroll-behavior:auto!important}
 }
 
 /* ─── INLINE-GRID RESPONSIVE ─────────────────────────── */
@@ -1452,7 +1477,7 @@ footer{border-top:1px solid var(--n100)}
           <button type="button" class="ca-dot" aria-label="Slide 3" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--n50,#f4f4f4)"></button>
         </div>
       </div>
-      <script>(function(){var r=document.currentScript.closest('section');if(!r)return;var sl=r.querySelectorAll('.ca-slide'),dots=r.querySelectorAll('.ca-dot');if(sl.length<2)return;var i=0,t;function show(n){i=n;for(var j=0;j<sl.length;j++){sl[j].style.display=j===n?'grid':'none';}for(var k=0;k<dots.length;k++){dots[k].style.background=k===n?'#fff':'rgba(255,255,255,.4)';}}function reset(){clearInterval(t);t=setInterval(function(){show((i+1)%sl.length);},6000);}for(var d=0;d<dots.length;d++){(function(x){dots[x].onclick=function(){show(x);reset();};})(d);}show(0);reset();})();</script>
+      <script>(function(){var r=document.currentScript.closest('section');if(!r)return;var sl=r.querySelectorAll('.ca-slide'),dots=r.querySelectorAll('.ca-dot');if(sl.length<2)return;var i=0,t;function show(n){i=n;for(var j=0;j<sl.length;j++){sl[j].style.display=j===n?'grid':'none';}for(var k=0;k<dots.length;k++){dots[k].style.background=k===n?'#fff':'rgba(255,255,255,.4)';}}function reset(){clearInterval(t);if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;t=setInterval(function(){show((i+1)%sl.length);},6000);}for(var d=0;d<dots.length;d++){(function(x){dots[x].onclick=function(){show(x);reset();};})(d);}show(0);reset();})();</script>
     </div>
   </section>
   
@@ -4423,6 +4448,9 @@ function goTo(id, fromHistory) {
   window.addEventListener('DOMContentLoaded', function () {
     var id = pageFromHash();
     if (id) { goTo(id, true); try { history.replaceState({ page: id }, '', location.pathname + '#' + id); } catch (e) {} }
+    // Unknown hash: land on home (already the default render) and strip the
+    // dead fragment from the URL so it is not copied or bookmarked onward.
+    else if (location.hash) { try { history.replaceState({ page: 'home' }, '', location.pathname + location.search); } catch (e) {} }
   });
 })();
 
@@ -7811,6 +7839,16 @@ var CA_DICTS = { de: CA_DE,
   window.caGetLang = function () { return lang; };
 
   function detect() {
+    // 1. Explicit ?lang= wins — the hreflang alternates in <head> and
+    //    sitemap.xml advertise /?lang=de|en|fr|it, so those URLs must
+    //    actually serve that language. Persist it so the choice sticks.
+    try {
+      var q = (new URLSearchParams(location.search).get('lang') || '').toLowerCase().slice(0, 2);
+      if (q === 'de' || q === 'en' || q === 'fr' || q === 'it') {
+        try { localStorage.setItem('ca_lang', q); } catch (e) {}
+        return q;
+      }
+    } catch (e) {}
     try {
       var ls = localStorage.getItem('ca_lang');
       if (ls === 'de' || ls === 'en' || ls === 'fr' || ls === 'it') return ls;
