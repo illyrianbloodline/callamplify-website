@@ -144,7 +144,8 @@ header{
 .arrow-button:hover>.arrow::before,.arrow-button-outline:hover>.arrow::before,.arrow-button-ghost:hover>.arrow::before{opacity:1;width:8px}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:8px;background:none;border:none;cursor:pointer}
 .hamburger span{display:block;width:20px;height:1.5px;background:#fff}
-.mobile-nav{display:none;position:fixed;top:48px;left:0;right:0;z-index:99;background:#fff;border-bottom:1px solid var(--n100);flex-direction:column}
+.mobile-nav{display:none;position:fixed;top:48px;left:0;right:0;z-index:99;background:#fff;border-bottom:1px solid var(--n100);flex-direction:column;max-height:calc(100vh - 48px);overflow-y:auto;overscroll-behavior:contain}
+.mobile-nav-heading{height:40px;display:flex;align-items:flex-end;padding:0 2rem .35rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--n400)}
 .mobile-nav.open{display:flex}
 .mobile-nav .nav-tab{border-left:none;border-right:none;border-bottom:1px solid var(--n100);height:52px;padding:0 2rem}
 
@@ -790,13 +791,13 @@ footer{border-top:1px solid var(--n100)}
 
     <div class="header-cta">
       <a href="tel:+41525470117" class="ca-navphone" style="display:flex;align-items:center;gap:7px;color:#fff;font-size:.85rem;font-weight:600;text-decoration:none;padding:0 .9rem;white-space:nowrap"><svg width="12" height="12" viewBox="0 0 32 32" aria-hidden="true" style="border-radius:2px;flex-shrink:0"><rect width="32" height="32" fill="#DA291C"/><rect x="13" y="6" width="6" height="20" fill="#fff"/><rect x="6" y="13" width="20" height="6" fill="#fff"/></svg>+41 52 547 01 17</a>
-      <button type="button" class="btn-ghost-sm" id="search-btn" onclick="openSearch()" aria-label="Search" title="Search">
+      <button type="button" class="btn-ghost-sm" id="search-btn" onclick="openSearch()" aria-label="Search" title="Search" aria-expanded="false" aria-controls="search-overlay">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:block"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
       <button type="button" class="btn-ghost-sm" onclick="caGoSignin()">Sign in</button>
       <button type="button" class="ca-btn-secondary" onclick="goTo('book-demo')">Book a demo</button>
       <button type="button" class="ca-btn-primary" onclick="goTo('free-trial')">Start free trial</button>
-      <button type="button" class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <button type="button" class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -806,7 +807,7 @@ footer{border-top:1px solid var(--n100)}
 
 <!-- Mobile nav -->
 <nav class="mobile-nav" id="mobile-nav">
-  <button type="button" class="nav-tab" style="font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--n400);cursor:default;padding-bottom:0">What we offer</button>
+  <div class="mobile-nav-heading">What we offer</div>
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('feat-call-tracking');toggleMobile()">Call tracking &amp; recordings</button>
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('feat-ai-scoring');toggleMobile()">AI Receptionist</button>
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('feat-live-feed');toggleMobile()">Missed-call text-back</button>
@@ -814,7 +815,7 @@ footer{border-top:1px solid var(--n100)}
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('feat-attribution');toggleMobile()">ROI reports</button>
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('what-we-offer');toggleMobile()">Everything we offer</button>
   
-  <button type="button" class="nav-tab" style="font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--n400);cursor:default;padding-bottom:0">Who we serve</button>
+  <div class="mobile-nav-heading">Who we serve</div>
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('ind-homeservices');toggleMobile()">Home Services</button>
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('who-we-serve');toggleMobile()">All industries we serve</button>
   <button type="button" class="nav-tab" onclick="goTo('pricing');toggleMobile()">Pricing</button>
@@ -1339,7 +1340,7 @@ footer{border-top:1px solid var(--n100)}
 
     function caption(code, text){
       var el = document.querySelector('[data-demo-state="' + code + '"]');
-      if (el){ if (el.dataset.orig === undefined) el.dataset.orig = el.textContent; el.textContent = text; }
+      if (el){ if (el.dataset.orig === undefined) el.dataset.orig = el.textContent; el.textContent = caT(text); }
     }
     function restore(code){
       var el = document.querySelector('[data-demo-state="' + code + '"]');
@@ -4444,6 +4445,18 @@ window.addEventListener('DOMContentLoaded', function () {
     b.setAttribute('aria-expanded', body.style.display !== 'none' ? 'true' : 'false');
   });
 });
+// Translate a string the moment JS writes it. The i18n walker only owns text
+// that exists at walk time; anything JS assigns afterwards (status captions,
+// dynamic aria-labels) must translate itself.
+function caT(en) {
+  try {
+    var l = (window.caGetLang && caGetLang()) || 'en';
+    if (l === 'en') return en;
+    var d = (window.CA_DICTS || {})[l];
+    return (d && d[en]) || en;
+  } catch (e) { return en; }
+}
+
 // Keep Tab inside an open modal (search overlay, chat panel).
 function caTrapFocus(container, e) {
   if (e.key !== 'Tab') return;
@@ -4598,16 +4611,44 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-function toggleMobile() {
+function setMobileOpen(open) {
   var nav = document.getElementById('mobile-nav');
-  var open = nav.classList.toggle('open');
+  if (!nav) return;
+  nav.classList.toggle('open', open);
   // Announce the state — without it a screen reader gives no clue the menu
-  // opened, or that it is already open.
+  // opened, or that it is already open — and say which way the button goes.
   document.querySelectorAll('[onclick="toggleMobile()"]').forEach(function (b) {
     b.setAttribute('aria-expanded', open ? 'true' : 'false');
     b.setAttribute('aria-controls', 'mobile-nav');
+    b.setAttribute('aria-label', caT(open ? 'Close menu' : 'Open menu'));
   });
 }
+
+function toggleMobile() {
+  var nav = document.getElementById('mobile-nav');
+  setMobileOpen(!(nav && nav.classList.contains('open')));
+}
+
+// An open menu must be dismissible the two ways every menu is: Escape, and
+// a click anywhere outside it.
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    var nav = document.getElementById('mobile-nav');
+    if (nav && nav.classList.contains('open')) {
+      setMobileOpen(false);
+      var hb = document.getElementById('hamburger');
+      if (hb) hb.focus();
+    }
+  }
+});
+document.addEventListener('click', function (e) {
+  var nav = document.getElementById('mobile-nav');
+  var btn = document.getElementById('hamburger');
+  if (nav && btn && nav.classList.contains('open') &&
+      !nav.contains(e.target) && !btn.contains(e.target)) {
+    setMobileOpen(false);
+  }
+});
 
 
 </script>
@@ -7816,6 +7857,12 @@ Object.assign(CA_IT, {"Example estimate — assumes roughly 1 in 4 business call
 Object.assign(CA_DE, {"Early access": "Vorabzugang"});
 Object.assign(CA_FR, {"Early access": "Accès anticipé"});
 Object.assign(CA_IT, {"Early access": "Accesso anticipato"});
+Object.assign(CA_DE, {"Open menu": "Menü öffnen"});
+Object.assign(CA_FR, {"Open menu": "Ouvrir le menu"});
+Object.assign(CA_IT, {"Open menu": "Apri il menu"});
+Object.assign(CA_DE, {"Close menu": "Menü schliessen"});
+Object.assign(CA_FR, {"Close menu": "Fermer le menu"});
+Object.assign(CA_IT, {"Close menu": "Chiudi il menu"});
 Object.assign(CA_DE, {"Play — German demo call": "Abspielen — Demo-Anruf auf Deutsch"});
 Object.assign(CA_FR, {"Play — German demo call": "Lecture — appel de démonstration en allemand"});
 Object.assign(CA_IT, {"Play — German demo call": "Riproduci — chiamata demo in tedesco"});
@@ -8388,7 +8435,7 @@ window.CA_DICTS = CA_DICTS;
     fetch(API_BASE + '/api/concierge', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ messages: trimmedHistory(), lang: lng() })
-    }).then(function(r){ return r.json(); }).then(function(d){
+    }).then(function(r){ if(!r.ok) throw new Error('concierge_http_' + r.status); return r.json(); }).then(function(d){
       var tp=document.getElementById('ca-typing'); if(tp) tp.remove();
       if (d && d.reply) { bubble('ai', d.reply); history.push({role:'assistant', content:d.reply}); history = trimmedHistory(); }
       else failBubble();
@@ -8559,6 +8606,7 @@ window.CA_DICTS = CA_DICTS;
     caSearchOpener = document.activeElement;
     var ov = el('search-overlay'), inp = el('search-input');
     if(!ov) return;
+    var sBtn = el('search-btn'); if (sBtn) sBtn.setAttribute('aria-expanded', 'true');
     buildSuggestions();
     ov.style.display='block';
     el('search-results').style.display='none';
@@ -8570,6 +8618,7 @@ window.CA_DICTS = CA_DICTS;
   };
   window.closeSearch = function(){
     var ov = el('search-overlay'); if(ov) ov.style.display='none';
+    var sBtn2 = el('search-btn'); if (sBtn2) sBtn2.setAttribute('aria-expanded', 'false');
     document.body.style.overflow='';
     // Return focus where it came from, or the modal's opener is lost to a
     // keyboard user (focus falls back to <body>).
@@ -8752,7 +8801,7 @@ function caSubmitDemo(btn){
 </script>
 
 <!-- EU hosting badge (home only) -->
-<a id="ca-eu-badge" href="#" onclick="goTo('privacy-policy');return false;"
+<a id="ca-eu-badge" href="#privacy-policy" onclick="goTo('privacy-policy');return false;"
    aria-label="Hosted in the EU — read our privacy policy"
    title="App and database hosted in Frankfurt, EU">
   <span class="ca-eu-mark">EU</span>
