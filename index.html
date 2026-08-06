@@ -3472,7 +3472,8 @@ renderHub(1);
   <div style="max-width:640px;margin:0 auto;padding:4.5rem 2rem;text-align:center">
     <h1 style="font-size:1.6rem;font-weight:600;color:var(--n900);margin-bottom:.75rem">Privacy Policy</h1>
     <p style="font-size:.95rem;color:var(--n600);line-height:1.7;margin-bottom:1.75rem">Our privacy policy lives with the product, so there is only ever one version of it — the same document you are shown inside CallAmplify, kept current in one place.</p>
-    <a class="arrow-button" href="https://app.callamplify.com/privacy" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none">Read the Privacy Policy<div class="arrow"></div></a>
+    <p style="font-size:.78rem;color:var(--n400);line-height:1.6;margin:-.75rem 0 1.5rem">The full document is available in German and English. French and Italian versions are being prepared.</p>
+    <a class="arrow-button" href="https://app.callamplify.com/privacy" onclick="this.href=caLegalUrl('/privacy')" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none">Read the Privacy Policy<div class="arrow"></div></a>
   </div>
 </div><!-- /page-privacy-policy -->
 
@@ -3483,7 +3484,8 @@ renderHub(1);
   <div style="max-width:640px;margin:0 auto;padding:4.5rem 2rem;text-align:center">
     <h1 style="font-size:1.6rem;font-weight:600;color:var(--n900);margin-bottom:.75rem">Terms of Service</h1>
     <p style="font-size:.95rem;color:var(--n600);line-height:1.7;margin-bottom:1.75rem">Our terms live with the product, so there is only ever one version of them — the same document you agree to when you create an account.</p>
-    <a class="arrow-button" href="https://app.callamplify.com/terms" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none">Read the Terms<div class="arrow"></div></a>
+    <p style="font-size:.78rem;color:var(--n400);line-height:1.6;margin:-.75rem 0 1.5rem">The full document is available in German and English. French and Italian versions are being prepared.</p>
+    <a class="arrow-button" href="https://app.callamplify.com/terms" onclick="this.href=caLegalUrl('/terms')" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none">Read the Terms<div class="arrow"></div></a>
   </div>
 </div><!-- /page-terms -->
 
@@ -3494,7 +3496,8 @@ renderHub(1);
   <div style="max-width:640px;margin:0 auto;padding:4.5rem 2rem;text-align:center">
     <h1 style="font-size:1.6rem;font-weight:600;color:var(--n900);margin-bottom:.75rem">Cookie Policy</h1>
     <p style="font-size:.95rem;color:var(--n600);line-height:1.7;margin-bottom:1.75rem">Short version: we set only the cookies that keep you signed in, plus small functional browser storage on this site (your language, a selected plan, whether you closed the chat). We also run our own first-party, cookieless analytics to understand page visits. No advertising, retargeting or third-party cookies, and no consent banner because there is nothing optional to consent to. The full policy lives with the product.</p>
-    <a class="arrow-button" href="https://app.callamplify.com/cookies" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none">Read the Cookie Policy<div class="arrow"></div></a>
+    <p style="font-size:.78rem;color:var(--n400);line-height:1.6;margin:-.75rem 0 1.5rem">The full document is available in German and English. French and Italian versions are being prepared.</p>
+    <a class="arrow-button" href="https://app.callamplify.com/cookies" onclick="this.href=caLegalUrl('/cookies')" target="_blank" rel="noopener" style="display:inline-flex;text-decoration:none">Read the Cookie Policy<div class="arrow"></div></a>
   </div>
 </div><!-- /page-cookies -->
 
@@ -3966,7 +3969,7 @@ renderHub(1);
   <div style="max-width:var(--max);margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
     <span style="font-size:.78rem;color:var(--n400)">&copy; 2026 CallTrack GmbH. All rights reserved.</span>
     <div style="display:flex;gap:2rem">
-      <a href="#privacy-policy" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif" onclick="goTo('privacy-policy');return false;">Privacy policy</a><a href="https://app.callamplify.com/impressum" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif">Impressum</a>
+      <a href="#privacy-policy" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif" onclick="goTo('privacy-policy');return false;">Privacy policy</a><a href="https://app.callamplify.com/impressum" onclick="this.href=caLegalUrl('/impressum')" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif">Impressum</a>
       <a href="#terms" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif" onclick="goTo('terms');return false;">Terms of service</a>
       <a href="#cookies" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif" onclick="goTo('cookies');return false;">Cookie policy</a>
     </div>
@@ -4011,6 +4014,13 @@ function caAppBase(){
 function caContactTopic(topic){
   try { sessionStorage.setItem('ca_contact_topic', topic); } catch (e) {}
   goTo('contact');
+}
+// Legal documents live on the app; carry the visitor's selected language so
+// a German reader gets the German policy (FDPIC: privacy info in the site's
+// languages). Resolved at click time — the static href stays a working
+// fallback for crawlers and JS-off visitors.
+function caLegalUrl(path){
+  return caAppBase() + path + '?lang=' + encodeURIComponent(caLang());
 }
 function caLang(){try{var l=(window.caGetLang&&caGetLang())||'en';return (l==='de'||l==='fr'||l==='it')?l:'en';}catch(e){return 'en';}}
 function caGoSignup(){try{caTrack('cta','pricing','trial');}catch(e){}var u=caAppBase()+'/login?mode=signup&lang='+caLang();try{var p=sessionStorage.getItem('caPlan'),b=sessionStorage.getItem('caBilling');if(p)u+='&plan='+encodeURIComponent(p);if(b)u+='&billing='+encodeURIComponent(b);}catch(e){}window.location.href=u;}
@@ -7726,6 +7736,9 @@ Object.assign(CA_IT, {"Estimate based on industry averages — roughly 1 in 4 bu
 Object.assign(CA_DE, {"Early access": "Vorabzugang"});
 Object.assign(CA_FR, {"Early access": "Accès anticipé"});
 Object.assign(CA_IT, {"Early access": "Accesso anticipato"});
+Object.assign(CA_DE, {"The full document is available in German and English. French and Italian versions are being prepared.": "Das vollständige Dokument ist auf Deutsch und Englisch verfügbar. Französische und italienische Fassungen sind in Vorbereitung."});
+Object.assign(CA_FR, {"The full document is available in German and English. French and Italian versions are being prepared.": "Le document complet est disponible en allemand et en anglais. Les versions française et italienne sont en préparation."});
+Object.assign(CA_IT, {"The full document is available in German and English. French and Italian versions are being prepared.": "Il documento completo è disponibile in tedesco e in inglese. Le versioni francese e italiana sono in preparazione."});
 Object.assign(CA_DE, {"None — AI pauses at allowance": "Keine — KI pausiert am Limit"});
 Object.assign(CA_FR, {"None — AI pauses at allowance": "Aucuns — l’IA se met en pause au plafond"});
 Object.assign(CA_IT, {"None — AI pauses at allowance": "Nessuno — l’IA si ferma al limite"});
