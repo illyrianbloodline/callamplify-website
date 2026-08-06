@@ -2,9 +2,8 @@
 User-agent: *
 Allow: /
 
-# The app is a private product surface, not content. Keeping crawlers out of it
-# avoids indexing login and gated pages that only frustrate a searcher.
-Disallow: /login
-Disallow: /home
+# NOTE: robots.txt is per host. The app lives on app.callamplify.com and is
+# governed by ITS OWN robots.txt — rules written here could never apply to it.
+# (This file used to Disallow /login and /home, which do not exist on www.)
 
 Sitemap: https://www.callamplify.com/sitemap.xml
