@@ -8534,8 +8534,12 @@ function caSubmitDemo(btn){
         l:(localStorage.getItem('ca_lang')||'en'),
         m:innerWidth<720?1:0});
       sentRef=true;
-      if(navigator.sendBeacon){navigator.sendBeacon(API,new Blob([body],{type:'application/json'}));}
-      else{fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true});}
+      // NOT sendBeacon: it always sends credentials, and the JSON blob forces
+      // a CORS preflight the server (rightly, cookieless by design) refuses
+      // to answer with Allow-Credentials — every modern-browser hit was
+      // silently dropped. fetch keepalive survives unload like a beacon, and
+      // credentials:'omit' keeps the request genuinely cookieless.
+      fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true,credentials:'omit'}).catch(function(){});
     }catch(err){}
   }
   window.caTrack=send;
