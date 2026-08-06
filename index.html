@@ -4059,7 +4059,7 @@ function submitConnect() {
         oninput="runSearch(this.value)"
         onkeydown="searchKeyNav(event)"
       />
-      <button type="button" onclick="closeSearch()" style="
+      <button type="button" aria-label="Close search" onclick="closeSearch()" style="
         background:none;border:none;cursor:pointer;padding:.25rem;
         color:var(--n400);font-family:'IBM Plex Sans',sans-serif;font-size:.8rem;
         flex-shrink:0;
@@ -7934,6 +7934,18 @@ var CA_DICTS = { de: CA_DE,
     wrap.appendChild(b); body.appendChild(wrap); body.scrollTop = body.scrollHeight;
     return b;
   }
+  // Failure state renders a real CTA button — the old text told the visitor
+  // to "tap Start free trial" while showing no such button.
+  function failBubble(){
+    var b = bubble('ai', t("Sorry — I couldn't reach the assistant right now.","Entschuldigung — der Assistent ist gerade nicht erreichbar."));
+    var cta = document.createElement('button');
+    cta.type = 'button';
+    cta.textContent = t('Start free trial','Kostenlos testen');
+    cta.style.cssText = 'display:block;margin-top:.55rem;border:none;background:#0f62fe;color:#fff;border-radius:4px;padding:.5rem .8rem;font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer';
+    cta.onclick = function(){ if (window.caGoSignup) caGoSignup(); };
+    b.appendChild(cta);
+    body.scrollTop = body.scrollHeight;
+  }
   function typing(){
     var w = document.createElement('div'); w.id='ca-typing';
     w.style.cssText='display:flex;margin:0 0 12px;justify-content:flex-start';
@@ -7948,11 +7960,11 @@ var CA_DICTS = { de: CA_DE,
       body: JSON.stringify({ messages: history, lang: de()?'de':'en' })
     }).then(function(r){ return r.json(); }).then(function(d){
       var tp=document.getElementById('ca-typing'); if(tp) tp.remove();
-      var reply = (d && d.reply) || t("Sorry — I couldn't reach the assistant. Tap “Start free trial” to get going.","Entschuldigung — der Assistent ist nicht erreichbar. Tippen Sie auf „Kostenlos testen“.");
-      bubble('ai', reply); history.push({role:'assistant', content:reply});
+      if (d && d.reply) { bubble('ai', d.reply); history.push({role:'assistant', content:d.reply}); }
+      else failBubble();
     }).catch(function(){
       var tp=document.getElementById('ca-typing'); if(tp) tp.remove();
-      bubble('ai', t("Sorry — I couldn't reach the assistant. Tap “Start free trial” to get going.","Entschuldigung — der Assistent ist nicht erreichbar. Tippen Sie auf „Kostenlos testen“."));
+      failBubble();
     }).finally(function(){ busy=false; sendBtn.disabled=false; input.focus(); });
   }
   function send(){
@@ -8051,6 +8063,7 @@ var CA_DICTS = { de: CA_DE,
   }
   function paintStatics(){
     input.placeholder = t('Message Ample…','Ample schreiben…');
+    sendBtn.setAttribute('aria-label', t('Send message','Nachricht senden'));
     root.querySelector('#ca-cc-foot').textContent = t('Ample · answers about CallAmplify only','Ample · beantwortet nur Fragen zu CallAmplify');
   }
   var api = {
