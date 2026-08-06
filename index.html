@@ -3458,7 +3458,7 @@ renderHub(1);
 
       <!-- Form card -->
       <div style="background:#fff;padding:2.25rem 2.25rem 2.5rem">
-        <form id="demo-form" novalidate onsubmit="caSubmitDemo(document.getElementById('df-submit'));return false;"><input type="text" id="df-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0"/>
+        <form id="demo-form" novalidate onsubmit="caSubmitDemo(document.getElementById('df-submit'));return false;"><input type="text" id="df-hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0"/>
           <div style="font-size:1.05rem;font-weight:600;color:var(--n900);margin-bottom:.35rem">Request a demo</div>
           <div style="font-size:.82rem;color:var(--n500);margin-bottom:1.5rem">Tell us a bit about you and we'll be in touch to arrange a time.</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem">
@@ -3473,11 +3473,11 @@ renderHub(1);
           <div id="df-status" role="status" style="margin-top:.85rem;font-size:.85rem;text-align:center"></div>
           <p style="font-size:.72rem;color:var(--n400);text-align:center;margin:.75rem 0 0;line-height:1.5">No spam. By submitting, you agree we may contact you about CallAmplify using the details above. See our <a href="#privacy-policy" onclick="goTo('privacy-policy');return false;" style="color:var(--n500);text-decoration:underline">Privacy Policy</a>.</p>
         </form>
-        <div id="demo-success" style="display:none;text-align:center;padding:1.5rem 0">
+        <div id="demo-success" role="status" tabindex="-1" style="display:none;text-align:center;padding:1.5rem 0">
           <div style="width:52px;height:52px;border-radius:50%;background:#defbe6;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#24a148" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
           <div style="font-size:1.05rem;font-weight:600;color:var(--n900);margin-bottom:.4rem">Thanks — request received!</div>
           <div style="font-size:.88rem;color:var(--n600);line-height:1.6;max-width:300px;margin:0 auto">We'll email you shortly to arrange your demo. Or start your free trial now and hear it live right away.</div>
-          <button type="button" class="arrow-button" style="margin:1.25rem auto 0" onclick="caClearPlan();caGoSignup()">Start free trial now<div class="arrow"></div></button>
+          <button type="button" class="arrow-button" style="margin:1.25rem auto 0" onclick="caGoSignup()">Start free trial now<div class="arrow"></div></button>
         </div>
       </div>
     </div>
@@ -3769,7 +3769,7 @@ renderHub(1);
         <div style="font-size:1rem;font-weight:600;color:var(--n900);margin-bottom:1.5rem">Send us a message</div>
         <form id="contact-form" novalidate onsubmit="caSendContact(document.getElementById('cf-send'));return false;"><div style="margin-bottom:1rem"><label for="cf-name" style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Name</label><input id="cf-name" maxlength="160" required name="name" autocomplete="name" aria-describedby="cf-status" type="text" placeholder="Anna Müller" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></div>
         <div style="margin-bottom:1rem"><label for="cf-email" style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Email</label><input id="cf-email" maxlength="160" required name="email" autocomplete="email" aria-describedby="cf-status" type="email" placeholder="anna@yourcompany.ch" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></div>
-        <div style="margin-bottom:1.5rem"><label for="cf-message" style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Message</label><input type="text" id="cf-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0"/><textarea id="cf-message" required name="message" maxlength="2000" aria-describedby="cf-status" rows="5" placeholder="How can we help?" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;resize:vertical;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></textarea></div>
+        <div style="margin-bottom:1.5rem"><label for="cf-message" style="display:block;font-size:.75rem;font-weight:600;color:var(--n700);margin-bottom:.4rem">Message</label><input type="text" id="cf-hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0"/><textarea id="cf-message" required name="message" maxlength="2000" aria-describedby="cf-status" rows="5" placeholder="How can we help?" style="width:100%;padding:.65rem .85rem;border:1px solid var(--n100);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;outline:none;resize:vertical;box-sizing:border-box" onfocus="this.style.borderColor='var(--n900)'" onblur="this.style.borderColor='var(--n100)'"></textarea></div>
         <button type="submit" class="arrow-button" id="cf-send">Send message<div class="arrow"></div></button><div id="cf-status" role="status" style="margin-top:.85rem;font-size:.85rem"></div>
         <p style="font-size:.72rem;color:var(--n400);margin:.75rem 0 0;line-height:1.5">No spam. By submitting, you agree we may contact you about CallAmplify using the details above. See our <a href="#privacy-policy" onclick="goTo('privacy-policy');return false;" style="color:var(--n500);text-decoration:underline">Privacy Policy</a>.</p></form>
       </div>
@@ -4002,7 +4002,7 @@ renderHub(1);
   <div style="max-width:var(--max);margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
     <span style="font-size:.78rem;color:var(--n400)">&copy; 2026 CallTrack GmbH. All rights reserved.</span>
     <div style="display:flex;gap:2rem">
-      <a href="#privacy-policy" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif" onclick="goTo('privacy-policy');return false;">Privacy policy</a><a href="https://app.callamplify.com/impressum" data-legal-path="/impressum" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif">Impressum</a>
+      <a href="#privacy-policy" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif" onclick="goTo('privacy-policy');return false;">Privacy policy</a><a href="https://app.callamplify.com/impressum" data-legal-path="/impressum" target="_blank" rel="noopener noreferrer" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif">Impressum</a>
       <a href="#terms" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif" onclick="goTo('terms');return false;">Terms of service</a>
       <a href="#cookies" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif" onclick="goTo('cookies');return false;">Cookie policy</a>
     </div>
@@ -4354,7 +4354,7 @@ var ARTICLES = {
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">One inbox for calls, texts and WhatsApp</h2>
       <p>CallAmplify pulls your calls, your missed-call texts and — soon — your WhatsApp enquiries into a single list — each with the customer's name, what they need, and where it came from. You open one screen between jobs and see everything that's waiting, instead of hunting across three apps. Nothing hides, nothing gets forgotten.</p>
       <p>Meeting customers on the channel they prefer is good service. Making sure none of those channels leaks is good business. One inbox does both.</p>
-      <p style="margin-top:2rem;padding:1.25rem 1.5rem;background:var(--n50);border-left:3px solid var(--orange);color:var(--n600)">For a typical one-van business, half the enquiries already arrive on WhatsApp. Having them beside your calls in one list is the whole point — and it is why WhatsApp support is next on our list.</p>
+      <p style="margin-top:2rem;padding:1.25rem 1.5rem;background:var(--n50);border-left:3px solid var(--orange);color:var(--n600)">For many one-van businesses, a meaningful share of enquiries already arrive on WhatsApp. Having them beside your calls in one list is the whole point — and it is why WhatsApp support is next on our list.</p>
     `
   },
   a10: {
@@ -4378,12 +4378,12 @@ var ARTICLES = {
     hero:'background:var(--orange)',
     img:'assets/usecases/usecase-a11.webp',
     body:`
-      <p>Every business owner knows another who's still missing calls and losing jobs to voicemail. Tell them about CallAmplify and you don't just do them a favour — you get paid for it, every month of their first year.</p>
+      <p>Every business owner knows another who's still missing calls and losing jobs to voicemail. Tell them about CallAmplify and you don't just do them a favour — you earn bill credit for their first paid year.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">20% of their plan, for a full year</h2>
       <p>When someone signs up through your referral link, you earn 20% of what they pay, every month, for their first twelve months. They're set up in minutes; you get a credit that keeps coming as long as they're a customer in that first year.</p>
       <p style="font-size:.82rem;color:var(--n500);line-height:1.6">Referral credit applies to eligible paid subscriptions for the referred customer’s first 12 paid months. Credits are applied to your CallAmplify invoice automatically and are governed by our Terms of Service.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">A handful of referrals covers your own subscription</h2>
-      <p>The maths is simple. Refer a few businesses onto a paid plan and the credits add up to roughly what you pay yourself — so CallAmplify effectively runs for free. Refer more and it becomes a small income on the side, for recommending something you already use.</p>
+      <p>The maths is simple. Refer a few businesses onto a paid plan and the credits add up to roughly what you pay yourself — so CallAmplify effectively runs for free. Refer more and those credits can cover more of your own CallAmplify bill, for recommending something you already use.</p>
       <p>Grab your link from your dashboard, send it to the businesses in your contacts, and let it run. You were going to recommend it anyway — you may as well be paid for it.</p>
       <p style="margin-top:2rem;padding:1.25rem 1.5rem;background:var(--n50);border-left:3px solid var(--orange);font-style:italic;color:var(--n600)">"I sent it to four other plumbers I know. Two signed up — now my plan basically pays for itself." — "Marco", illustrative one-van plumber, Lucerne</p>
     `
@@ -8946,7 +8946,8 @@ function caSendContact(btn) {
     body: JSON.stringify({
       topic: contactTopic,
       firstName: parts[0], lastName: parts.slice(1).join(' '),
-      email: email, message: message, website: v('cf-hp')
+      email: email, message: message, honeypot: v('cf-hp'),
+      source: 'website_contact_form', language: caLang()
     })
   }).then(function (r) {
     if (!r.ok) throw new Error('contact_http_' + r.status);
@@ -8989,9 +8990,9 @@ function caSubmitDemo(btn){
   var orig=btn.innerHTML; btn.disabled=true; btn.setAttribute('aria-busy','true'); btn.style.opacity='.7'; btn.innerHTML=caFormMsg('sending');
   var base = caAppBase();
   fetch(base+'/api/demo-request',{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({firstName:g('df-first'),lastName:g('df-last'),email:email,phone:g('df-phone'),company:g('df-company'),industry:g('df-industry'),website:g('df-hp'),plan:caSelectedPlan(),billing:caSelectedBilling()})
+    body:JSON.stringify({firstName:g('df-first'),lastName:g('df-last'),email:email,phone:g('df-phone'),company:g('df-company'),industry:g('df-industry'),honeypot:g('df-hp'),source:'website_demo_form',language:caLang(),plan:caSelectedPlan(),billing:caSelectedBilling()})
   }).then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); }).then(function(d){
-    if(d&&d.ok){ btn.removeAttribute('aria-busy'); caClearPlan(); ['df-first','df-last','df-email','df-phone','df-company','df-industry','df-hp'].forEach(function(id){ var el2=document.getElementById(id); if(el2) el2.value=''; }); document.getElementById('demo-form').style.display='none'; document.getElementById('demo-success').style.display='block'; }
+    if(d&&d.ok){ btn.removeAttribute('aria-busy'); ['df-first','df-last','df-email','df-phone','df-company','df-industry','df-hp'].forEach(function(id){ var el2=document.getElementById(id); if(el2) el2.value=''; }); document.getElementById('demo-form').style.display='none'; var sp=document.getElementById('demo-success'); if(sp){ sp.style.display='block'; try{ sp.focus(); }catch(e){} } }
     else { throw new Error('bad'); }
   }).catch(function(){ btn.disabled=false; btn.removeAttribute('aria-busy'); btn.style.opacity=''; btn.innerHTML=orig; say(caFormMsg('sendFail'), false); });
 }
