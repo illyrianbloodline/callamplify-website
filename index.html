@@ -6,7 +6,7 @@
 <noscript><style>html:not(.ca-ready) body{opacity:1!important}</style></noscript>
 <script>setTimeout(function(){document.documentElement.classList.add('ca-ready');},1600);</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CallAmplify — The AI Receptionist for Business. Never Miss a Job.</title>
+<title>CallAmplify — The AI Receptionist for Business. Recover More Jobs from Missed Calls.</title>
 <link rel="canonical" href="https://www.callamplify.com/"/>
 <link rel="alternate" hreflang="en" href="https://www.callamplify.com/?lang=en"/>
 <link rel="alternate" hreflang="de" href="https://www.callamplify.com/?lang=de"/>
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="CallAmplify"/>
 <meta property="og:url" content="https://www.callamplify.com/"/>
-<meta property="og:title" content="CallAmplify — never lose a job to a missed call"/>
+<meta property="og:title" content="CallAmplify — recover more jobs from missed calls"/>
 <meta property="og:description" content="Call tracking, instant text-back for missed callers, and every job in one inbox. Built in Switzerland. 14-day free trial."/>
 <meta property="og:image" content="https://www.callamplify.com/og-card.png"/>
 <meta property="og:image:width" content="1200"/>
@@ -35,9 +35,9 @@
 </script>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.callamplify.com/og-card.png"/>
-<meta name="twitter:title" content="CallAmplify — never lose a job to a missed call"/>
+<meta name="twitter:title" content="CallAmplify — recover more jobs from missed calls"/>
 <meta name="twitter:description" content="Call tracking, instant text-back for missed callers, and every job in one inbox. Built in Switzerland. 14-day free trial."/>
-<meta name="description" content="Never lose a job to a missed call: call tracking, instant text-back for missed callers, and every job in one inbox. AI call answering from Growth up. Built in Switzerland, 14-day free trial."/>
+<meta name="description" content="Recover more jobs from missed calls: call tracking, instant text-back for missed callers, and every job in one inbox. AI call answering from Growth up. Built in Switzerland, 14-day free trial."/>
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"/>
 <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <!-- IBM Plex self-hosted: the fonts were the site's ONLY third-party
@@ -699,7 +699,7 @@ footer{border-top:1px solid var(--n100)}
               <div class="mega-links-label">Built for solo businesses</div>
               <div class="mega-links-grid">
                 <button type="button" class="mega-link" onclick="closeMega();goTo('ind-homeservices')">
-                  <div><div class="mega-link-text">Plumbers</div><div class="mega-link-sub">Never miss an emergency call-out</div></div>
+                  <div><div class="mega-link-text">Plumbers</div><div class="mega-link-sub">Emergency call-outs, captured day and night</div></div>
                   <span class="mega-link-arrow">›</span>
                 </button>
                 <button type="button" class="mega-link" onclick="closeMega();goTo('ind-homeservices')">
@@ -854,9 +854,9 @@ footer{border-top:1px solid var(--n100)}
     <div class="hero2-grid">
       <div>
         <h1 style="font-weight:700;font-size:clamp(34px,4.8vw,84px);line-height:1.02;letter-spacing:-.03em;margin:0 0 0 -.04em;color:var(--n900)">
-          <span style="display:block">Never lose a job</span>
-          <span style="display:block">to a missed call</span>
-          <span style="display:block;color:#0f62fe">again.</span>
+          <span style="display:block">Turn missed calls</span>
+          <span style="display:block">into booked jobs</span>
+          <span style="display:block;color:#0f62fe">automatically.</span>
         </h1>
         <p style="font-size:clamp(16px,1.25vw,19px);line-height:1.6;max-width:58ch;margin:22px 0 0;color:var(--n600)">You’re on a job, the phone rings out, and the caller dials the next business. CallAmplify texts back anyone you miss the moment the call drops — and from Growth up, its AI receptionist answers in your name and captures the job — day, night, or weekend.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px">
@@ -1341,7 +1341,12 @@ footer{border-top:1px solid var(--n100)}
     }
     function icon(code, svg){
       var b = document.querySelector('[data-demo="' + code + '"] button');
-      if (b){ b.innerHTML = svg; b.setAttribute('aria-label', svg === PAUSE ? 'Pause' : 'Play'); }
+      if (b){
+        b.innerHTML = svg;
+        var lbl = svg === PAUSE ? 'Pause' : 'Play';
+        try { var d = (window.CA_DICTS || {})[caGetLang()]; if (d && d[lbl]) lbl = d[lbl]; } catch (e) {}
+        b.setAttribute('aria-label', lbl);
+      }
     }
     function audioUnavailable(code){
       playing = null; icon(code, PLAY); caption(code, 'Recording unavailable right now');
@@ -1566,7 +1571,7 @@ footer{border-top:1px solid var(--n100)}
             </div>
             <div style="margin-top:.5rem;padding-top:1rem;border-top:1px solid rgba(47,158,68,.2)">
               <div style="font-size:.72rem;color:#8d8d8d;margin-bottom:.25rem">Result</div>
-              <div style="font-size:1.25rem;font-weight:700;color:#2f9e44">Never lose a job to a missed call</div>
+              <div style="font-size:1.25rem;font-weight:700;color:#2f9e44">Stop losing jobs to missed calls</div>
             </div>
           </div>
         </div>
@@ -1655,7 +1660,7 @@ footer{border-top:1px solid var(--n100)}
           <h2 style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:600;letter-spacing:-.03em;color:var(--n900);line-height:1.1;margin-bottom:1rem">Calculate What Missed Calls Cost You.</h2>
           <p style="font-size:1rem;color:var(--n600);line-height:1.75;max-width:420px">1 in 4 calls to a business goes unanswered &mdash; and 8 in 10 of those callers never ring back. Once you see your number, it stops being theoretical.</p>
           <div style="margin-top:2rem;display:flex;flex-direction:column;gap:.5rem">
-            <div style="display:flex;align-items:center;gap:.6rem;font-size:.875rem;color:var(--n600)"><span style="color:var(--orange);font-weight:700">✓</span> Estimate: assumes 1 in 4 calls goes unanswered and 4 in 5 of those never call back</div>
+            <div style="display:flex;align-items:center;gap:.6rem;font-size:.875rem;color:var(--n600)"><span style="color:var(--orange);font-weight:700">✓</span> Example assumptions: 1 in 4 calls goes unanswered and 4 in 5 of those never call back</div>
             <div style="display:flex;align-items:center;gap:.6rem;font-size:.875rem;color:var(--n600)"><span style="color:var(--orange);font-weight:700">✓</span> No email required to calculate</div>
             <div style="display:flex;align-items:center;gap:.6rem;font-size:.875rem;color:var(--n600)"><span style="color:var(--orange);font-weight:700">✓</span> Results appear instantly</div>
           </div>
@@ -1697,7 +1702,7 @@ footer{border-top:1px solid var(--n100)}
                 <div id="calc-annual" style="font-size:1.25rem;font-weight:700;color:#e03131"></div>
               </div>
             </div>
-            <div style="font-size:.72rem;color:var(--n400);margin-top:.85rem;line-height:1.55">Estimate based on industry averages — roughly 1 in 4 business calls goes unanswered and 8 in 10 missed callers never ring back. Your numbers will vary.</div>
+            <div style="font-size:.72rem;color:var(--n400);margin-top:.85rem;line-height:1.55">Example estimate — assumes roughly 1 in 4 business calls goes unanswered and 8 in 10 missed callers never ring back. Adjust the inputs to your own numbers.</div>
           </div>
 
           <button type="button" class="arrow-button" onclick="goTo('free-trial')">Start free trial<div class="arrow"></div></button>
@@ -1709,6 +1714,9 @@ footer{border-top:1px solid var(--n100)}
   </section>
 
   <script>
+  function caNumLocale() {
+    try { return { de: 'de-CH', fr: 'fr-CH', it: 'it-CH' }[caGetLang()] || 'en-CH'; } catch (e) { return 'de-CH'; }
+  }
   function calcLeak() {
     // 25% of business calls go unanswered; 80% of missed callers never ring back
     var calls  = parseFloat(document.getElementById('calc-spend').value)  || 0;
@@ -1718,9 +1726,9 @@ footer{border-top:1px solid var(--n100)}
     var lostCallers = Math.round(calls * 0.25 * 0.8);
     var leak        = Math.round(lostCallers * value);
     var annual      = leak * 12;
-    document.getElementById('calc-money').textContent    = 'CHF ' + leak.toLocaleString("de-CH");
-    document.getElementById('calc-annual').textContent   = 'CHF ' + annual.toLocaleString("de-CH");
-    document.getElementById('calc-untracked').textContent = lostCallers.toLocaleString("de-CH");
+    document.getElementById('calc-money').textContent    = 'CHF ' + leak.toLocaleString(caNumLocale());
+    document.getElementById('calc-annual').textContent   = 'CHF ' + annual.toLocaleString(caNumLocale());
+    document.getElementById('calc-untracked').textContent = lostCallers.toLocaleString(caNumLocale());
     result.style.display = 'block';
   }
   </script>
@@ -1901,7 +1909,7 @@ footer{border-top:1px solid var(--n100)}
       <div class="grid-cell">
         <div class="cell-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <div class="cell-h">Home Services</div>
-        <p class="cell-p">Plumbers, electricians and more: never miss a job call, and see which advert earned it.</p>
+        <p class="cell-p">Plumbers, electricians and more: catch more job calls, and see which advert earned it.</p>
         <button type="button" class="btn-orange-text" onclick="goTo('ind-homeservices')">View solution<div class="arrow" style="border-right-color:var(--orange);border-bottom-color:var(--orange)"></div></button>
       </div>
       <div class="grid-cell">
@@ -2172,7 +2180,7 @@ footer{border-top:1px solid var(--n100)}
       <h2 style="font-size:clamp(1.55rem,2.6vw,2.15rem);font-weight:600;letter-spacing:-.03em;color:#fff;margin:1.05rem 0 .55rem;line-height:1.14">Turn every missed call into a booked job</h2>
       <p style="font-size:1rem;color:rgba(255,255,255,.66);line-height:1.6;margin-bottom:1.6rem">In every plan, with no add-on fee: the moment you cannot pick up, Ample texts the caller back, captures the job, and ranks the lead in your inbox.</p>
       <div style="display:flex;flex-direction:column;gap:.9rem;margin-bottom:1.8rem">
-        <div style="display:flex;gap:.7rem;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="11" fill="#8b5cf6"/><path d="M7 12.4l3.3 3.3L17.2 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.5"><strong style="color:#fff">Answers in seconds, 24/7.</strong> Every missed call gets an instant AI text-back — before they ring the next business.</div><div style="font-size:.78rem;color:var(--n400);margin-top:.5rem;line-height:1.6;text-align:center">No surprise overage charges — if you regularly exceed the included AI minutes, AI answering pauses and calls simply forward to you while we help you pick the right plan.</div></div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="11" fill="#8b5cf6"/><path d="M7 12.4l3.3 3.3L17.2 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.5"><strong style="color:#fff">Answers in seconds, 24/7.</strong> Every missed call gets an instant AI text-back — before they ring the next business.</div><div style="font-size:.78rem;color:var(--n400);margin-top:.5rem;line-height:1.6;text-align:center">No surprise overage charges — if you regularly exceed the included AI minutes, AI answering pauses and calls simply forward to you while we help you pick the right plan.</div><div style="font-size:.78rem;color:var(--n400);margin-top:.35rem;line-height:1.6;text-align:center">Prices are in CHF. VAT/MWST, if applicable, is shown at checkout.</div></div>
         <div style="display:flex;gap:.7rem;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="11" fill="#8b5cf6"/><path d="M7 12.4l3.3 3.3L17.2 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.5"><strong style="color:#fff">Captures the job.</strong> Name, number, and what they need, written down and dropped in your inbox.</div></div>
         <div style="display:flex;gap:.7rem;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="11" fill="#8b5cf6"/><path d="M7 12.4l3.3 3.3L17.2 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.5"><strong style="color:#fff">Ranks the hot leads first.</strong> So you call back the ready-to-book jobs, not the tyre-kickers.</div></div>
       </div>
@@ -2909,7 +2917,7 @@ renderHub(1);
   </section>
   <section style="background:#fff;padding:2.4rem 0;border-bottom:1px solid var(--n100)">
     <div style="max-width:var(--max);margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:3rem">
-      <div><div style="width:44px;height:44px;background:var(--n900);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 3.18 2 2 0 0 1 5.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.37 8.6a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.6rem">Never miss a call again</div><p style="font-size:.9rem;line-height:1.7;color:var(--n600)">From Growth up, the after-hours AI answers, qualifies, and logs every call — even at midnight. Emergency jobs get captured before they call your competitor.</p></div>
+      <div><div style="width:44px;height:44px;background:var(--n900);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 3.18 2 2 0 0 1 5.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.37 8.6a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.6rem">Miss fewer calls from day one</div><p style="font-size:.9rem;line-height:1.7;color:var(--n600)">From Growth up, the after-hours AI answers, qualifies, and logs every call — even at midnight. Emergency jobs get captured before they call your competitor.</p></div>
       <div><div style="width:44px;height:44px;background:var(--n900);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.6rem">Know which ads fill your calendar</div><p style="font-size:.9rem;line-height:1.7;color:var(--n600)">Dynamic Number Insertion shows which Google Ads campaign, keyword, or local listing drove each call — so you stop funding ads that don't convert to jobs.</p></div>
       <div><div style="width:44px;height:44px;background:var(--n900);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div style="font-size:1rem;font-weight:700;color:var(--n900);margin-bottom:.6rem">Score every technician call</div><p style="font-size:.9rem;line-height:1.7;color:var(--n600)">AI scores every call for professionalism and booking rate. See which team members convert enquiries into booked jobs — and which need coaching.</p></div>
     </div>
@@ -2966,6 +2974,7 @@ renderHub(1);
         <div style="font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1.25rem">Call Tracking</div>
         <h1 style="font-size:clamp(2rem,3.8vw,3.2rem);font-weight:600;letter-spacing:-.03em;color:#fff;line-height:1.05;margin-bottom:1.25rem">Know exactly which advert brought in every job</h1>
         <p style="font-size:1.1rem;line-height:1.8;color:rgba(255,255,255,.6);margin-bottom:2rem;max-width:440px">CallAmplify gives each advert and channel its own tracking number &mdash; so when the phone rings, you know if it was Google, Facebook, your van, or a flyer that earned the call.</p>
+      <p style="font-size:.78rem;color:var(--n500);line-height:1.6;margin-top:1rem;max-width:60ch">Recording with consent built in: callers hear a short notice before recording starts, in line with Swiss all-party consent rules — and the recording settings stay under your control.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap">
           <button type="button" class="arrow-button" onclick="goTo('free-trial')">Start free trial<div class="arrow"></div></button>
           <button type="button" class="arrow-button-ghost" onclick="goTo('book-demo')">Book a demo<div class="arrow"></div></button>
@@ -3025,7 +3034,7 @@ renderHub(1);
     <!-- copy -->
     <div>
       <div style="font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem">Call recordings &amp; transcripts</div>
-      <h2 style="font-size:1.85rem;font-weight:600;letter-spacing:-.02em;color:var(--n900);margin-bottom:.85rem">Never lose a detail from a call again</h2>
+      <h2 style="font-size:1.85rem;font-weight:600;letter-spacing:-.02em;color:var(--n900);margin-bottom:.85rem">Stop losing the details from your calls</h2>
       <p style="font-size:.98rem;color:var(--n600);line-height:1.75;margin-bottom:1.75rem">Every call is recorded, written up word-for-word, and boiled down to a one-line summary &mdash; so you can quote the job right, even if you took the call with your hands full.</p>
       <div style="display:flex;flex-direction:column;gap:1.1rem">
         <div style="display:flex;gap:.85rem"><div style="width:26px;height:26px;background:var(--n900);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="6 4 20 12 6 20 6 4"/></svg></div><div><div style="font-size:.95rem;font-weight:700;color:var(--n900);margin-bottom:.2rem">Listen back anytime</div><div style="font-size:.88rem;color:var(--n600);line-height:1.6">Every call saved in your inbox. Replay it on site to double-check exactly what the customer asked for.</div></div></div>
@@ -3195,7 +3204,7 @@ renderHub(1);
       </div>
     </div>
   </div></section>
-  <section class="cta-section"><div class="cta-box"><div class="cta-grid"><div class="cta-left"><div class="eyebrow">Get started</div><h2>Never let another job ring out.</h2><p>The AI answers from your very first call. Set up in minutes.</p></div><div class="cta-right"><button type="button" class="arrow-button" onclick="goTo('free-trial')">Start free trial<div class="arrow"></div></button><button type="button" class="arrow-button-outline" onclick="goTo('pricing')">View pricing<div class="arrow"></div></button></div></div></div></section>
+  <section class="cta-section"><div class="cta-box"><div class="cta-grid"><div class="cta-left"><div class="eyebrow">Get started</div><h2>Don’t let the next job ring out.</h2><p>The AI answers from your very first call. Set up in minutes.</p></div><div class="cta-right"><button type="button" class="arrow-button" onclick="goTo('free-trial')">Start free trial<div class="arrow"></div></button><button type="button" class="arrow-button-outline" onclick="goTo('pricing')">View pricing<div class="arrow"></div></button></div></div></div></section>
 </div>
 
 <!-- ═══════════════════════════════════════════
@@ -3272,7 +3281,7 @@ renderHub(1);
       </div>
     </div>
     <div style="padding-top:1rem">
-      <h2 style="font-size:1.8rem;font-weight:600;letter-spacing:-.02em;color:var(--n900);margin-bottom:.75rem">Never lose a job to a missed call again</h2>
+      <h2 style="font-size:1.8rem;font-weight:600;letter-spacing:-.02em;color:var(--n900);margin-bottom:.75rem">Stop losing jobs to missed calls</h2>
       <p style="font-size:.95rem;color:var(--n600);line-height:1.7;margin-bottom:2rem">You can't answer every call when you're working with both hands. Missed-call text-back makes sure the customer still hears from you &mdash; instantly.</p>
       <div class="feat-acc-item" style="border-bottom:1px solid var(--n100)"><button type="button" onclick="featAcc(this)" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0;background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;text-align:left"><span style="font-size:1rem;font-weight:600;color:var(--n900)">Instant auto-text on every miss</span><span class="feat-acc-icon" style="font-size:1.4rem;color:var(--orange);font-weight:300;flex-shrink:0">+</span></button><div class="feat-acc-body" style="display:none;padding-bottom:1.25rem"><p style="font-size:.9rem;line-height:1.75;color:var(--n600)">The moment a call rings out, the caller gets a text in your business name &mdash; usually before they've even had time to look up another number.</p></div></div>
       <div class="feat-acc-item" style="border-bottom:1px solid var(--n100)"><button type="button" onclick="featAcc(this)" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0;background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;text-align:left"><span style="font-size:1rem;font-weight:600;color:var(--n900)">They can reply &mdash; you'll see it</span><span class="feat-acc-icon" style="font-size:1.4rem;color:var(--orange);font-weight:300;flex-shrink:0">+</span></button><div class="feat-acc-body" style="display:none;padding-bottom:1.25rem"><p style="font-size:.9rem;line-height:1.75;color:var(--n600)">Customers text back what they need, and it lands in your CallAmplify inbox alongside the call &mdash; so you've got the full picture before you call them back.</p></div></div>
@@ -4095,14 +4104,14 @@ function caGoSignin(){window.location.href=caAppBase()+'/login?mode=signin&lang=
 const SEARCH_INDEX = [
   /* HOME */
   {page:'case-studies', label:'Examples', heading:'Example scenarios', body:'What CallAmplify looks like in practice - composite example stories from plumbing, landscaping, electrical and heating trades'},
-  {page:'home',  label:'Home',  heading:'Never lose a job to a missed call again', body:'From the Growth plan up, an AI receptionist answers every call, captures the job and texts back missed callers - for solo businesses, plumbers, electricians, HVAC, after hours and weekends'},
+  {page:'home',  label:'Home',  heading:'Stop losing jobs to missed calls', body:'From the Growth plan up, an AI receptionist answers every call, captures the job and texts back missed callers - for solo businesses, plumbers, electricians, HVAC, after hours and weekends'},
   {page:'home',  label:'Home',  heading:'See where every call comes from', body:'calls by source Google Facebook WhatsApp direct booked revenue deposited to your account CHF AI answers lead captured'},
 
   /* SOLUTIONS */
   {page:'solutions', label:'Solutions', heading:'Call Tracking & Lead Attribution', body:'call tracking lead attribution dynamic number insertion DNI source attribution campaigns channels Google Ads Facebook organic direct referral multi-channel'},
   {page:'solutions', label:'Solutions', heading:'AI Receptionist', body:'From the Growth plan up, the AI receptionist answers calls 24/7, captures job details and texts back missed callers'},
   {page:'solutions', label:'Solutions', heading:'Lead inbox', body:'lead inbox calls texts WhatsApp one list recordings transcripts job details callback'},
-  {page:'solutions', label:'Solutions', heading:'Missed-call text-back', body:'missed call text back instant SMS auto reply caller waits never lose a job after hours export'},
+  {page:'solutions', label:'Solutions', heading:'Missed-call text-back', body:'missed call text back instant SMS auto reply caller waits recover jobs after hours export'},
   
   {page:'solutions', label:'Solutions', heading:'ROI reports', body:'ROI reports return on ad spend which advert pays cost per job booked revenue by source CHF'},
 
@@ -4323,7 +4332,7 @@ var ARTICLES = {
     body:`
       <p>A lot of call services look cheap until you read the small print: a low headline price, then a charge for every minute, every extra number, every feature. Your bill swings with how busy you are — and your busiest, best months cost you the most. We don't do that.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">Flat means flat</h2>
-      <p>One price, every month, whatever happens. Whether the AI answers ten calls or two hundred, your bill doesn't move. No per-minute fees, no surprise charges for a busy week, no "that's an add-on." You always know exactly what you're paying, which makes it easy to see that one recovered job covers it many times over.</p>
+      <p>One flat price, every month. Whether the AI answers ten calls or two hundred, your bill doesn't move — and if you regularly exceed your plan's AI-minute allowance, AI answering simply pauses and calls forward to you as normal, never a surprise charge. No per-minute fees, no surprise charges for a busy week, no "that's an add-on." You always know exactly what you're paying, which makes it easy to see that one recovered job covers it many times over.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">Pick a plan by what you need, not by usage</h2>
       <p>Our plans differ by what's included — how many tracking numbers, whether you want WhatsApp and ROI reports, whether you've got a team — not by how much you use them. A busy month is a good month. Your software shouldn't punish you for it.</p>
       <p>Every plan starts with a 14-day free trial and no card required, so you can see the value before you pay a franc.</p>
@@ -4395,6 +4404,33 @@ function caCardKey(e, el){
   if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
 }
 
+var CA_HOME_META = {
+  en: { t: 'CallAmplify — The AI Receptionist for Business. Recover More Jobs from Missed Calls.',
+        d: 'Recover more jobs from missed calls: call tracking, instant text-back for missed callers, and every job in one inbox. AI call answering from Growth up. Built in Switzerland, 14-day free trial.' },
+  de: { t: 'CallAmplify — Der KI-Empfang für Ihr Unternehmen. Mehr Aufträge aus verpassten Anrufen.',
+        d: 'Mehr Aufträge aus verpassten Anrufen: Call-Tracking, sofortige SMS an verpasste Anrufer und jeder Auftrag in einem Posteingang. KI-Anrufannahme ab Growth. Gebaut in der Schweiz, 14 Tage gratis testen.' },
+  fr: { t: 'CallAmplify — La réception IA pour votre entreprise. Récupérez plus de mandats des appels manqués.',
+        d: 'Récupérez plus de mandats des appels manqués : suivi des appels, SMS instantané aux appelants manqués et chaque mandat dans une seule boîte. Réponse IA dès Growth. Conçu en Suisse, essai gratuit de 14 jours.' },
+  it: { t: 'CallAmplify — La reception IA per la Sua azienda. Più incarichi dalle chiamate perse.',
+        d: 'Più incarichi dalle chiamate perse: call tracking, SMS immediato a chi non ha ricevuto risposta e ogni incarico in un’unica casella. Risposta IA da Growth. Fatto in Svizzera, prova gratuita di 14 giorni.' }
+};
+var caCurrentPage = 'home';
+function caApplyMeta() {
+  var l = 'en';
+  try { l = (window.caGetLang && caGetLang()) || 'en'; } catch (e) {}
+  var home = CA_HOME_META[l] || CA_HOME_META.en;
+  var base = CA_TITLES[caCurrentPage];
+  if (base && l !== 'en') {
+    // translate the page word before " — CallAmplify" via the site dicts
+    var d = (window.CA_DICTS || {})[l];
+    var parts = base.split(' — CallAmplify');
+    if (d && d[parts[0]]) base = d[parts[0]] + ' — CallAmplify';
+  }
+  document.title = base || home.t;
+  var md = document.querySelector('meta[name="description"]');
+  if (md) md.setAttribute('content', home.d);
+}
+window.caApplyMeta = caApplyMeta;
 var CA_TITLES = {
   pricing: 'Pricing — CallAmplify',
   'book-demo': 'Book a demo — CallAmplify',
@@ -4424,7 +4460,8 @@ var CA_TITLES = {
 };
 var CA_HOME_TITLE = document.title;
 function goTo(id, fromHistory) {
-  document.title = CA_TITLES[id] || CA_HOME_TITLE;
+  caCurrentPage = id;
+  caApplyMeta();
   const page = document.getElementById('page-' + id);
   if (!page) return;
   // Give every page an address. Without this the whole site was one URL: nobody
@@ -4912,7 +4949,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Meta Ads — seasonal offer": "Meta Ads – Saisonangebot",
   "12 calls": "12 Anrufe",
   "After-hours AI answered 14 calls last night — 6 booked": "Die After-Hours-KI nahm letzte Nacht 14 Anrufe an – 6 gebucht",
-  "Never miss a call again": "Verpassen Sie nie wieder einen Anruf",
+  "Miss fewer calls from day one": "Verpassen Sie weniger Anrufe — ab dem ersten Tag",
   "From Growth up, the after-hours AI answers, qualifies, and logs every call — even at midnight. Emergency jobs get captured before they call your competitor.": "Ab Growth nimmt die After-Hours-KI jeden Anruf an, qualifiziert und protokolliert ihn \u2014 sogar um Mitternacht. Notfall-Aufträge werden erfasst, bevor der Kunde die Konkurrenz anruft.",
   "Know which ads fill your calendar": "Wissen Sie, welche Anzeigen Ihren Kalender füllen",
   "Dynamic Number Insertion shows which Google Ads campaign, keyword, or local listing drove each call — so you stop funding ads that don't convert to jobs.": "Dynamic Number Insertion zeigt, welche Google-Ads-Kampagne, welches Keyword oder welcher lokale Eintrag jeden Anruf ausgelöst hat – damit Sie keine Anzeigen mehr finanzieren, die keine Aufträge bringen.",
@@ -5070,7 +5107,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "missed-call text-back": "SMS bei verpasstem Anruf",
   "Calculate What Missed Calls Cost You.": "Berechnen Sie, was verpasste Anrufe Sie kosten.",
   "1 in 4 calls to a business goes unanswered — and 8 in 10 of those callers never ring back. Once you see your number, it stops being theoretical.": "Jeder 4. Anruf bei einem Unternehmen bleibt unbeantwortet — und 8 von 10 dieser Anrufer melden sich nie wieder. Sobald Sie Ihre Zahl sehen, ist sie nicht mehr theoretisch.",
-  "Estimate: assumes 1 in 4 calls goes unanswered and 4 in 5 of those never call back": "Sch\u00e4tzung: angenommen, 1 von 4 Anrufen bleibt unbeantwortet und 4 von 5 dieser Anrufenden melden sich nie wieder",
+  "Example assumptions: 1 in 4 calls goes unanswered and 4 in 5 of those never call back": "Beispielannahmen: 1 von 4 Anrufen bleibt unbeantwortet und 4 von 5 dieser Anrufenden melden sich nie wieder",
   "Your Missed-Call Cost": "Ihre Kosten durch verpasste Anrufe",
   "Calls You Get per Month": "Anrufe pro Monat",
   "Average Job Value (CHF)": "Durchschnittlicher Auftragswert (CHF)",
@@ -5114,7 +5151,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Your front office, even when you can't pick up": "Ihr Empfang — auch wenn Sie gerade nicht abheben können",
   "It answers, captures the job, and texts back anyone you miss — automatically.": "Sie antwortet, erfasst den Auftrag und schreibt jedem verpassten Anrufer — automatisch.",
   "Built for solo businesses": "Gebaut für Solo-Unternehmer",
-  "Never miss an emergency call-out": "Verpassen Sie keinen Notfall-Einsatz mehr",
+  "Emergency call-outs, captured day and night": "Notfall-Einsätze werden erfasst — Tag und Nacht",
   "Catch every job while you're on site": "Sichern Sie jeden Auftrag, während Sie auf der Baustelle sind",
   "Answer after-hours boiler calls": "Heizungs-Notrufe auch nach Feierabend beantworten",
   "Landscapers & gardeners": "Gärtner & Landschaftsbau",
@@ -5161,7 +5198,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "An AI receptionist answers every call — day, night, or mid-job (from Growth up)": "Eine KI-Empfangskraft beantwortet jeden Anruf \u2014 Tag, Nacht oder mitten im Einsatz (ab Growth)",
   "Miss one anyway? The caller gets an instant text back": "Doch einen verpasst? Der Anrufer erhält sofort eine SMS",
   "Every lead in one inbox — with exactly what each caller wanted": "Jeder Lead in einem Posteingang — mit genau dem, was der Anrufer wollte",
-  "Never lose a job to a missed call": "Kein Auftrag geht mehr an einen verpassten Anruf verloren",
+  "Stop losing jobs to missed calls": "Schluss mit Aufträgen, die an verpasste Anrufe verloren gehen",
   "Every missed call is a job your competitor picks up instead. CallAmplify makes sure you're the one who answers.": "Jeder verpasste Anruf ist ein Auftrag, den stattdessen Ihr Mitbewerber holt. CallAmplify sorgt dafür, dass Sie derjenige sind, der antwortet.",
   "Always answered": "Immer beantwortet",
   "Every call picked up — from Growth up": "Jeder Anruf angenommen \u2014 ab Growth",
@@ -5194,7 +5231,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Open one screen to see who called, what they needed, and which marketing brought them in — no voicemails to dig through.": "Ein Bildschirm zeigt Ihnen, wer angerufen hat, was gebraucht wurde und welches Marketing den Anruf gebracht hat — ohne Combox.",
   "● New lead — just now": "● Neuer Lead — gerade eben",
   "Boiler repair · high urgency · from Google": "Boiler-Reparatur · hohe Dringlichkeit · über Google",
-  "Plumbers, electricians and more: never miss a job call, and see which advert earned it.": "Sanitäre, Elektriker und mehr: Verpassen Sie keinen Auftragsanruf und sehen Sie, welche Werbung ihn gebracht hat.",
+  "Plumbers, electricians and more: catch more job calls, and see which advert earned it.": "Sanitäre, Elektriker und mehr: Fangen Sie mehr Auftragsanrufe ein und sehen Sie, welche Werbung sie gebracht hat.",
   "Marketing Intelligence": "Marketing-Intelligenz",
   "Simple plans that pay for themselves": "Einfache Pläne, die sich selbst bezahlen",
   "One booked job usually covers the month. Every plan includes a 14-day free trial — no card required.": "Ein gebuchter Auftrag deckt meist den ganzen Monat. Jeder Plan enthält 14 Tage Gratis-Test — keine Karte nötig.",
@@ -5254,7 +5291,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "AI summary": "KI-Zusammenfassung",
   "Boiler leak in Zürich 8003. Urgent — wants a callback today. From Google Ads.": "Boiler undicht in Zürich 8003. Dringend — möchte heute einen Rückruf. Über Google Ads.",
   "Call recordings & transcripts": "Anrufaufnahmen & Transkripte",
-  "Never lose a detail from a call again": "Verlieren Sie nie wieder ein Detail aus einem Anruf",
+  "Stop losing the details from your calls": "Verlieren Sie keine Details aus Ihren Anrufen mehr",
   "Every call is recorded, written up word-for-word, and boiled down to a one-line summary — so you can quote the job right, even if you took the call with your hands full.": "Jeder Anruf wird aufgenommen, Wort für Wort verschriftlicht und auf eine Zeile zusammengefasst — damit Sie den Auftrag richtig offerieren, auch wenn Sie den Anruf mit vollen Händen entgegengenommen haben.",
   "Listen back anytime": "Jederzeit nachhören",
   "Every call saved in your inbox. Replay it on site to double-check exactly what the customer asked for.": "Jeder Anruf in Ihrem Posteingang gespeichert. Hören Sie ihn auf der Baustelle nochmals an, um genau zu prüfen, was der Kunde wollte.",
@@ -5330,7 +5367,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Source": "Quelle",
   "Captured": "Erfasst",
   "Sun 14:32": "So 14:32",
-  "Never let another job ring out.": "Lassen Sie keinen Auftrag mehr ins Leere klingeln.",
+  "Don’t let the next job ring out.": "Lassen Sie den nächsten Auftrag nicht ins Leere klingeln.",
   "The AI answers from your very first call. Set up in minutes.": "Die KI antwortet ab Ihrem allerersten Anruf. In Minuten eingerichtet.",
   "Can't pick up? They still hear from you.": "Können Sie nicht abnehmen? Der Kunde hört trotzdem von Ihnen.",
   "The second a call goes unanswered, the caller gets a friendly text in your name — so they wait for you instead of scrolling to the next business.": "In der Sekunde, in der ein Anruf unbeantwortet bleibt, erhält der Anrufer eine freundliche SMS in Ihrem Namen — damit er auf Sie wartet, statt zum nächsten Betrieb weiterzuscrollen.",
@@ -5349,7 +5386,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Written in your words": "In Ihren Worten geschrieben",
   "German, French, Italian or English": "Deutsch, Franz\u00f6sisch, Italienisch oder Englisch",
   "Sent within seconds": "In Sekunden versendet",
-  "Never lose a job to a missed call again": "Verlieren Sie nie wieder einen Auftrag an einen verpassten Anruf",
+  "Stop losing jobs to missed calls": "Schluss mit Aufträgen, die an verpasste Anrufe verloren gehen",
   "You can't answer every call when you're working with both hands. Missed-call text-back makes sure the customer still hears from you — instantly.": "Sie können nicht jeden Anruf annehmen, wenn Sie mit beiden Händen arbeiten. Die SMS-Rückmeldung sorgt dafür, dass der Kunde trotzdem von Ihnen hört — sofort.",
   "Instant auto-text on every miss": "Sofortige Auto-SMS bei jedem verpassten Anruf",
   "The moment a call rings out, the caller gets a text in your business name — usually before they've even had time to look up another number.": "Sobald ein Anruf ins Leere klingelt, erhält der Anrufer eine SMS in Ihrem Firmennamen — meist bevor er Zeit hatte, eine andere Nummer zu suchen.",
@@ -5440,9 +5477,9 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Analyses your audience and campaigns, so every franc of advertising works harder.": "Analysiert Ihre Zielgruppe und Kampagnen, damit jeder Werbefranken härter arbeitet.",
   "Keeps the operation humming — bookings, follow-ups and automations running on time.": "Hält den Betrieb am Laufen — Buchungen, Nachfassungen und Automatisierungen laufen pünktlich.",
   "Build your digital team —": "Bauen Sie Ihr digitales Team auf —",
-  "Never lose a job": "Nie wieder einen Auftrag",
-  "to a missed call": "an einen verpassten Anruf",
-  "again.": "verlieren.",
+  "Turn missed calls": "Aus verpassten Anrufen",
+  "into booked jobs": "werden gebuchte Aufträge",
+  "automatically.": "— automatisch.",
   "You’re on a job, the phone rings out, and the caller dials the next business. CallAmplify texts back anyone you miss the moment the call drops — and from Growth up, its AI receptionist answers in your name and captures the job — day, night, or weekend.": "CallAmplify schreibt jedem verpassten Anrufer sofort per SMS zur\u00fcck \u2014 und ab Growth nimmt die KI-Empfangskraft in Ihrem Namen ab und erfasst den Auftrag",
   "Meet your AI team": "Lernen Sie Ihr KI-Team kennen",
   "See it answer a call": "Hören Sie es einen Anruf annehmen",
@@ -5878,7 +5915,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Meta Ads \u2014 seasonal offer": "Meta Ads \u2014 offre saisonni\u00e8re",
   "12 calls": "12 appels",
   "After-hours AI answered 14 calls last night \u2014 6 booked": "La r\u00e9ceptionniste IA a r\u00e9pondu \u00e0 14 appels hier soir en dehors des heures d'ouverture \u2014 6 mandats confirm\u00e9s",
-  "Never miss a call again": "Ne manquez plus jamais un appel",
+  "Miss fewer calls from day one": "Manquez moins d’appels dès le premier jour",
   "From Growth up, the after-hours AI answers, qualifies, and logs every call \u2014 even at midnight. Emergency jobs get captured before they call your competitor.": "D\u00e8s Growth, l'IA apr\u00e8s les heures d'ouverture r\u00e9pond, qualifie et consigne chaque appel \u2014 même \u00e0 minuit. Les urgences sont captur\u00e9es avant que le client n'appelle la concurrence.",
   "Know which ads fill your calendar": "Sachez quelles annonces remplissent votre agenda",
   "Dynamic Number Insertion shows which Google Ads campaign, keyword, or local listing drove each call \u2014 so you stop funding ads that don't convert to jobs.": "L'insertion dynamique de num\u00e9ro indique quelle campagne Google Ads, quel mot-cl\u00e9 ou quelle fiche locale a g\u00e9n\u00e9r\u00e9 chaque appel \u2014 pour arr\u00eater de financer des annonces qui ne se convertissent pas en mandats.",
@@ -6010,7 +6047,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "missed-call text-back": "SMS de rappel automatique en cas d'appel manqu\u00e9",
   "Calculate What Missed Calls Cost You.": "Calculez ce que vous co\u00fbtent les appels manqu\u00e9s.",
   "1 in 4 calls to a business goes unanswered \u2014 and 8 in 10 of those callers never ring back. Once you see your number, it stops being theoretical.": "1 appel sur 4 destin\u00e9 \u00e0 une entreprise reste sans r\u00e9ponse \u2014 et 8 appelants sur 10 ne rappellent jamais. Une fois que vous voyez votre propre chiffre, cela cesse d'\u00eatre th\u00e9orique.",
-  "Estimate: assumes 1 in 4 calls goes unanswered and 4 in 5 of those never call back": "Estimation : en supposant qu\u2019un appel sur quatre reste sans r\u00e9ponse et que quatre appelants sur cinq ne rappellent jamais",
+  "Example assumptions: 1 in 4 calls goes unanswered and 4 in 5 of those never call back": "Hypothèses d’exemple : un appel sur quatre reste sans réponse et quatre appelants sur cinq ne rappellent jamais",
   "Your Missed-Call Cost": "Le co\u00fbt de vos appels manqu\u00e9s",
   "Calls You Get per Month": "Nombre d'appels re\u00e7us par mois",
   "Average Job Value (CHF)": "Valeur moyenne d'un mandat (CHF)",
@@ -6049,7 +6086,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Your front office, even when you can't pick up": "Votre accueil, m\u00eame quand vous ne pouvez pas r\u00e9pondre",
   "It answers, captures the job, and texts back anyone you miss \u2014 automatically.": "Elle r\u00e9pond, capte le mandat, et envoie un SMS \u00e0 tout appelant manqu\u00e9 \u2014 automatiquement.",
   "Built for solo businesses": "Con\u00e7u pour les ind\u00e9pendants",
-  "Never miss an emergency call-out": "Ne manquez plus jamais un appel d'urgence",
+  "Emergency call-outs, captured day and night": "Les urgences sont capturées, jour et nuit",
   "Catch every job while you're on site": "Captez chaque mandat m\u00eame sur un chantier",
   "Answer after-hours boiler calls": "R\u00e9pondez aux appels de chaudi\u00e8re en dehors des heures ouvr\u00e9es",
   "Landscapers & gardeners": "Paysagistes et jardiniers",
@@ -6098,7 +6135,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "An AI receptionist answers every call \u2014 day, night, or mid-job (from Growth up)": "Une r\u00e9ceptionniste IA r\u00e9pond à chaque appel \u2014 jour, nuit ou en plein chantier (dès Growth)",
   "Miss one anyway? The caller gets an instant text back": "Un appel manqu\u00e9 malgr\u00e9 tout ? L'appelant re\u00e7oit aussit\u00f4t un SMS de rappel automatique",
   "Every lead in one inbox \u2014 with exactly what each caller wanted": "Chaque prospect dans une seule bo\u00eete de r\u00e9ception \u2014 avec exactement ce que chaque appelant voulait",
-  "Never lose a job to a missed call": "Ne perdez plus jamais un mandat \u00e0 cause d'un appel manqu\u00e9",
+  "Stop losing jobs to missed calls": "Arrêtez de perdre des mandats à cause d’appels manqués",
   "Every missed call is a job your competitor picks up instead. CallAmplify makes sure you're the one who answers.": "Chaque appel manqu\u00e9 est un mandat que votre concurrent r\u00e9cup\u00e8re \u00e0 votre place. CallAmplify veille \u00e0 ce que ce soit vous qui r\u00e9pondiez.",
   "Always answered": "Toujours r\u00e9pondu",
   "Every call picked up — from Growth up": "Chaque appel d\u00e9croch\u00e9 \u2014 d\u00e8s Growth",
@@ -6131,7 +6168,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Open one screen to see who called, what they needed, and which marketing brought them in \u2014 no voicemails to dig through.": "Ouvrez un seul \u00e9cran pour voir qui a appel\u00e9, ce qu'il voulait, et quelle action marketing l'a amen\u00e9 \u2014 sans messagerie vocale \u00e0 fouiller.",
   "\u25cf New lead \u2014 just now": "\u25cf Nouveau prospect \u2014 \u00e0 l'instant",
   "Boiler repair \u00b7 high urgency \u00b7 from Google": "R\u00e9paration de chaudi\u00e8re \u00b7 urgence \u00e9lev\u00e9e \u00b7 via Google",
-  "Plumbers, electricians and more: never miss a job call, and see which advert earned it.": "Plombiers, \u00e9lectriciens et plus : ne manquez plus jamais un appel pour un mandat, et d\u00e9couvrez quelle publicit\u00e9 vous l'a apport\u00e9.",
+  "Plumbers, electricians and more: catch more job calls, and see which advert earned it.": "Plombiers, électriciens et plus : captez plus d’appels de mandats et découvrez quelle publicité les a apportés.",
   "Simple plans that pay for themselves": "Des forfaits simples qui s'autofinancent",
   "One booked job usually covers the month. Every plan includes a 14-day free trial \u2014 no card required.": "Un mandat confirm\u00e9 couvre g\u00e9n\u00e9ralement le co\u00fbt du mois. Chaque forfait inclut un essai gratuit de 14 jours \u2014 sans carte requise.",
   "/month": "/mois",
@@ -6185,7 +6222,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "AI summary": "R\u00e9sum\u00e9 IA",
   "Boiler leak in Z\u00fcrich 8003. Urgent \u2014 wants a callback today. From Google Ads.": "Fuite de chaudi\u00e8re \u00e0 Zurich 8003. Urgent \u2014 souhaite \u00eatre rappel\u00e9 aujourd'hui. Via Google Ads.",
   "Call recordings & transcripts": "Enregistrements et transcriptions des appels",
-  "Never lose a detail from a call again": "Ne perdez plus jamais un d\u00e9tail d'un appel",
+  "Stop losing the details from your calls": "Ne perdez plus les détails de vos appels",
   "Every call is recorded, written up word-for-word, and boiled down to a one-line summary \u2014 so you can quote the job right, even if you took the call with your hands full.": "Chaque appel est enregistr\u00e9, retranscrit mot pour mot, et r\u00e9sum\u00e9 en une seule ligne \u2014 pour que vous puissiez \u00e9tablir le bon devis, m\u00eame si vous avez pris l'appel les mains occup\u00e9es.",
   "Listen back anytime": "R\u00e9\u00e9coutez \u00e0 tout moment",
   "Every call saved in your inbox. Replay it on site to double-check exactly what the customer asked for.": "Chaque appel est sauvegard\u00e9 dans votre bo\u00eete de r\u00e9ception. R\u00e9\u00e9coutez-le sur place pour v\u00e9rifier exactement ce que le client a demand\u00e9.",
@@ -6261,7 +6298,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Source": "Source",
   "Captured": "Capt\u00e9",
   "Sun 14:32": "Dim. 14:32",
-  "Never let another job ring out.": "Ne laissez plus jamais un mandat sonner dans le vide.",
+  "Don’t let the next job ring out.": "Ne laissez pas le prochain mandat sonner dans le vide.",
   "The AI answers from your very first call. Set up in minutes.": "L'IA r\u00e9pond d\u00e8s votre tout premier appel. Configuration en quelques minutes.",
   "Can't pick up? They still hear from you.": "Vous ne pouvez pas d\u00e9crocher ? L'appelant a quand m\u00eame de vos nouvelles.",
   "The second a call goes unanswered, the caller gets a friendly text in your name \u2014 so they wait for you instead of scrolling to the next business.": "D\u00e8s qu'un appel reste sans r\u00e9ponse, l'appelant re\u00e7oit un SMS amical en votre nom \u2014 il patiente ainsi au lieu de passer \u00e0 l'entreprise suivante.",
@@ -6280,7 +6317,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Written in your words": "R\u00e9dig\u00e9 dans vos propres mots",
   "German, French, Italian or English": "allemand, fran\u00e7ais, italien ou anglais",
   "Sent within seconds": "Envoy\u00e9 en quelques secondes",
-  "Never lose a job to a missed call again": "Ne perdez plus jamais un mandat \u00e0 cause d'un appel manqu\u00e9",
+  "Stop losing jobs to missed calls": "Arrêtez de perdre des mandats à cause d’appels manqués",
   "You can't answer every call when you're working with both hands. Missed-call text-back makes sure the customer still hears from you \u2014 instantly.": "Vous ne pouvez pas r\u00e9pondre \u00e0 chaque appel quand vous travaillez avec vos deux mains. Le SMS de rappel automatique garantit que le client re\u00e7oit tout de m\u00eame de vos nouvelles \u2014 instantan\u00e9ment.",
   "Instant auto-text on every miss": "SMS automatique instantan\u00e9 \u00e0 chaque appel manqu\u00e9",
   "The moment a call rings out, the caller gets a text in your business name \u2014 usually before they've even had time to look up another number.": "D\u00e8s qu'un appel sonne dans le vide, l'appelant re\u00e7oit un SMS au nom de votre entreprise \u2014 g\u00e9n\u00e9ralement avant m\u00eame qu'il ait eu le temps de chercher un autre num\u00e9ro.",
@@ -6355,9 +6392,9 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Analyses your audience and campaigns, so every franc of advertising works harder.": "Analyse votre audience et vos campagnes, pour que chaque franc publicitaire soit plus rentable.",
   "Keeps the operation humming \u2014 bookings, follow-ups and automations running on time.": "Fait tourner l'op\u00e9ration sans accroc \u2014 r\u00e9servations, relances et automatisations \u00e0 l'heure.",
   "Build your digital team \u2014": "Constituez votre \u00e9quipe num\u00e9rique \u2014",
-  "Never lose a job": "Ne perdez plus jamais un mandat",
-  "to a missed call": "\u00e0 cause d'un appel",
-  "again.": "manqu\u00e9.",
+  "Turn missed calls": "Transformez les appels manqués",
+  "into booked jobs": "en mandats confirmés",
+  "automatically.": "— automatiquement.",
   "You\u2019re on a job, the phone rings out, and the caller dials the next business. CallAmplify texts back anyone you miss the moment the call drops \u2014 and from Growth up, its AI receptionist answers in your name and captures the job \u2014 day, night, or weekend.": "CallAmplify renvoie un SMS \u00e0 chaque appel manqu\u00e9 d\u00e8s qu\u2019il raccroche \u2014 et d\u00e8s Growth, la r\u00e9ceptionniste IA r\u00e9pond en votre nom et capture le mandat",
   "Meet your AI team": "D\u00e9couvrez votre \u00e9quipe IA",
   "See it answer a call": "Voyez-la r\u00e9pondre \u00e0 un appel",
@@ -6745,7 +6782,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Meta Ads \u2014 seasonal offer": "Meta Ads \u2014 offerta stagionale",
   "12 calls": "12 chiamate",
   "After-hours AI answered 14 calls last night \u2014 6 booked": "La receptionist IA fuori orario ha risposto a 14 chiamate ieri notte \u2014 6 incarichi confermati",
-  "Never miss a call again": "Non perda mai pi\u00f9 una chiamata",
+  "Miss fewer calls from day one": "Meno chiamate perse, dal primo giorno",
   "From Growth up, the after-hours AI answers, qualifies, and logs every call \u2014 even at midnight. Emergency jobs get captured before they call your competitor.": "Da Growth in su, l'IA fuori orario risponde, qualifica e registra ogni chiamata \u2014 anche a mezzanotte. Le urgenze vengono catturate prima che il cliente chiami la concorrenza.",
   "Know which ads fill your calendar": "Scopra quali annunci riempiono la sua agenda",
   "Dynamic Number Insertion shows which Google Ads campaign, keyword, or local listing drove each call \u2014 so you stop funding ads that don't convert to jobs.": "L'inserimento dinamico del numero (Dynamic Number Insertion) mostra quale campagna Google Ads, parola chiave o inserzione locale ha generato ogni chiamata \u2014 cos\u00ec smette di finanziare annunci che non si traducono in incarichi.",
@@ -6876,7 +6913,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "missed-call text-back": "SMS di richiamo automatico",
   "Calculate What Missed Calls Cost You.": "Calcoli quanto le costano le chiamate perse.",
   "1 in 4 calls to a business goes unanswered \u2014 and 8 in 10 of those callers never ring back. Once you see your number, it stops being theoretical.": "1 chiamata su 4 a un'impresa resta senza risposta \u2014 e 8 chiamanti su 10 non richiamano pi\u00f9. Una volta visto il Suo numero, smette di essere teorico.",
-  "Estimate: assumes 1 in 4 calls goes unanswered and 4 in 5 of those never call back": "Stima: ipotizzando che 1 chiamata su 4 resti senza risposta e che 4 di quei chiamanti su 5 non richiamino mai",
+  "Example assumptions: 1 in 4 calls goes unanswered and 4 in 5 of those never call back": "Ipotesi di esempio: 1 chiamata su 4 resta senza risposta e 4 di quei chiamanti su 5 non richiamano mai",
   "Your Missed-Call Cost": "Il costo delle Sue chiamate perse",
   "Calls You Get per Month": "Chiamate ricevute al mese",
   "Average Job Value (CHF)": "Valore medio dell'incarico (CHF)",
@@ -6915,7 +6952,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Your front office, even when you can't pick up": "La Sua reception, anche quando non pu\u00f2 rispondere",
   "It answers, captures the job, and texts back anyone you miss \u2014 automatically.": "Risponde, registra l'incarico e invia automaticamente un SMS a chi non riesce a rispondere.",
   "Built for solo businesses": "Pensato per imprese individuali",
-  "Never miss an emergency call-out": "Non perda mai un intervento d'emergenza",
+  "Emergency call-outs, captured day and night": "Gli interventi d’emergenza vengono registrati, giorno e notte",
   "Catch every job while you're on site": "Non si lasci sfuggire nessun incarico mentre \u00e8 in cantiere",
   "Answer after-hours boiler calls": "Risponda alle chiamate per caldaie fuori orario",
   "Landscapers & gardeners": "Paesaggisti e giardinieri",
@@ -6964,7 +7001,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "An AI receptionist answers every call \u2014 day, night, or mid-job (from Growth up)": "Una receptionist IA risponde a ogni chiamata \u2014 giorno, notte o durante un intervento (da Growth in su)",
   "Miss one anyway? The caller gets an instant text back": "Ne perde comunque una? Chi chiama riceve subito un SMS di richiamo automatico",
   "Every lead in one inbox \u2014 with exactly what each caller wanted": "Ogni contatto in un'unica posta in arrivo \u2014 con esattamente ci\u00f2 che ogni chiamante desiderava",
-  "Never lose a job to a missed call": "Non perda mai un incarico per una chiamata persa",
+  "Stop losing jobs to missed calls": "Basta incarichi persi per chiamate senza risposta",
   "Every missed call is a job your competitor picks up instead. CallAmplify makes sure you're the one who answers.": "Ogni chiamata persa \u00e8 un incarico che finisce al suo concorrente. CallAmplify garantisce che sia lei a rispondere.",
   "Always answered": "Sempre risposto",
   "Every call picked up — from Growth up": "Ogni chiamata gestita \u2014 da Growth in su",
@@ -6997,7 +7034,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Open one screen to see who called, what they needed, and which marketing brought them in \u2014 no voicemails to dig through.": "Apra un'unica schermata per vedere chi ha chiamato, cosa serviva e quale canale di marketing lo ha portato da lei \u2014 senza segreterie telefoniche da consultare.",
   "\u25cf New lead \u2014 just now": "\u25cf Nuovo contatto \u2014 proprio ora",
   "Boiler repair \u00b7 high urgency \u00b7 from Google": "Riparazione caldaia \u00b7 alta urgenza \u00b7 da Google",
-  "Plumbers, electricians and more: never miss a job call, and see which advert earned it.": "Idraulici, elettricisti e altre imprese: non perda mai una chiamata di lavoro e scopra quale annuncio l'ha generata.",
+  "Plumbers, electricians and more: catch more job calls, and see which advert earned it.": "Idraulici, elettricisti e altre imprese: catturi più chiamate di lavoro e scopra quale annuncio le ha generate.",
   "Simple plans that pay for themselves": "Piani semplici che si ripagano da soli",
   "One booked job usually covers the month. Every plan includes a 14-day free trial \u2014 no card required.": "Di solito un solo incarico confermato copre il costo del mese. Ogni piano include una prova gratuita di 14 giorni \u2014 nessuna carta richiesta.",
   "/month": "/mese",
@@ -7051,7 +7088,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "AI summary": "Riepilogo IA",
   "Boiler leak in Z\u00fcrich 8003. Urgent \u2014 wants a callback today. From Google Ads.": "Perdita dalla caldaia a Zurigo 8003. Urgente \u2014 richiede un richiamo oggi. Da Google Ads.",
   "Call recordings & transcripts": "Registrazioni delle chiamate e trascrizioni",
-  "Never lose a detail from a call again": "Non perda mai pi\u00f9 un dettaglio di una chiamata",
+  "Stop losing the details from your calls": "Non perda più i dettagli delle sue chiamate",
   "Every call is recorded, written up word-for-word, and boiled down to a one-line summary \u2014 so you can quote the job right, even if you took the call with your hands full.": "Ogni chiamata viene registrata, trascritta parola per parola e sintetizzata in una riga di riepilogo \u2014 cos\u00ec pu\u00f2 fare il preventivo giusto, anche se ha risposto con le mani occupate.",
   "Listen back anytime": "Riascolti quando vuole",
   "Every call saved in your inbox. Replay it on site to double-check exactly what the customer asked for.": "Ogni chiamata viene salvata nella sua posta in arrivo. La riascolti sul posto per verificare esattamente cosa ha chiesto il cliente.",
@@ -7127,7 +7164,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Source": "Fonte",
   "Captured": "Acquisito",
   "Sun 14:32": "Dom 14:32",
-  "Never let another job ring out.": "Non lasci pi\u00f9 squillare a vuoto un altro incarico.",
+  "Don’t let the next job ring out.": "Non lasci squillare a vuoto il prossimo incarico.",
   "The AI answers from your very first call. Set up in minutes.": "L'IA risponde gi\u00e0 dalla prima chiamata. Configurazione in pochi minuti.",
   "Can't pick up? They still hear from you.": "Non pu\u00f2 rispondere? Riceveranno comunque sue notizie.",
   "The second a call goes unanswered, the caller gets a friendly text in your name \u2014 so they wait for you instead of scrolling to the next business.": "Nell'istante in cui una chiamata resta senza risposta, chi chiama riceve un SMS cordiale a suo nome \u2014 cos\u00ec aspetta lei invece di scorrere fino alla prossima azienda.",
@@ -7146,7 +7183,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Written in your words": "Scritto con le sue parole",
   "German, French, Italian or English": "tedesco, francese, italiano o inglese",
   "Sent within seconds": "Inviato in pochi secondi",
-  "Never lose a job to a missed call again": "Non perda mai pi\u00f9 un incarico per una chiamata persa",
+  "Stop losing jobs to missed calls": "Basta incarichi persi per chiamate senza risposta",
   "You can't answer every call when you're working with both hands. Missed-call text-back makes sure the customer still hears from you \u2014 instantly.": "Non pu\u00f2 rispondere a ogni chiamata quando lavora con entrambe le mani. L'SMS di richiamo automatico per le chiamate perse garantisce che il cliente riceva comunque sue notizie \u2014 all'istante.",
   "Instant auto-text on every miss": "SMS automatico immediato per ogni chiamata persa",
   "The moment a call rings out, the caller gets a text in your business name \u2014 usually before they've even had time to look up another number.": "Nel momento in cui una chiamata squilla a vuoto, chi chiama riceve un SMS a nome della sua azienda \u2014 di solito prima ancora che abbia il tempo di cercare un altro numero.",
@@ -7221,9 +7258,9 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "Analyses your audience and campaigns, so every franc of advertising works harder.": "Analizza il Suo pubblico e le campagne, cos\u00ec ogni franco investito in pubblicit\u00e0 rende di pi\u00f9.",
   "Keeps the operation humming \u2014 bookings, follow-ups and automations running on time.": "Mantiene l'attivit\u00e0 fluida \u2014 prenotazioni, follow-up e automazioni sempre puntuali.",
   "Build your digital team \u2014": "Costruisca il Suo team digitale \u2014",
-  "Never lose a job": "Non perda mai pi\u00f9 un incarico",
-  "to a missed call": "per una chiamata",
-  "again.": "persa.",
+  "Turn missed calls": "Trasformi le chiamate perse",
+  "into booked jobs": "in incarichi prenotati",
+  "automatically.": "— automaticamente.",
   "You\u2019re on a job, the phone rings out, and the caller dials the next business. CallAmplify texts back anyone you miss the moment the call drops \u2014 and from Growth up, its AI receptionist answers in your name and captures the job \u2014 day, night, or weekend.": "CallAmplify risponde via SMS a ogni chiamata persa nell\u2019istante in cui cade \u2014 e da Growth in su la reception IA risponde a nome suo e registra l\u2019incarico",
   "Meet your AI team": "Conosca il Suo team IA",
   "See it answer a call": "Guardi come risponde a una chiamata",
@@ -7730,12 +7767,66 @@ Object.assign(CA_IT, {"SMS text-back": "Richiamo via SMS"});
 Object.assign(CA_DE, {"Add a number any time — then your calls log themselves.": "Jederzeit eine Nummer dazubuchen — dann protokollieren sich Ihre Anrufe selbst."});
 Object.assign(CA_FR, {"Add a number any time — then your calls log themselves.": "Ajoutez un numéro quand vous voulez — vos appels s'enregistrent alors tout seuls."});
 Object.assign(CA_IT, {"Add a number any time — then your calls log themselves.": "Aggiungete un numero quando volete — le chiamate si registrano da sole."});
-Object.assign(CA_DE, {"Estimate based on industry averages — roughly 1 in 4 business calls goes unanswered and 8 in 10 missed callers never ring back. Your numbers will vary.": "Schätzung auf Basis von Branchendurchschnitten — rund 1 von 4 Anrufen bei Unternehmen bleibt unbeantwortet, und 8 von 10 verpassten Anrufern rufen nie zurück. Ihre Zahlen können abweichen."});
-Object.assign(CA_FR, {"Estimate based on industry averages — roughly 1 in 4 business calls goes unanswered and 8 in 10 missed callers never ring back. Your numbers will vary.": "Estimation basée sur des moyennes du secteur — environ 1 appel sur 4 reste sans réponse et 8 appelants manqués sur 10 ne rappellent jamais. Vos chiffres peuvent varier."});
-Object.assign(CA_IT, {"Estimate based on industry averages — roughly 1 in 4 business calls goes unanswered and 8 in 10 missed callers never ring back. Your numbers will vary.": "Stima basata su medie di settore — circa 1 chiamata su 4 resta senza risposta e 8 chiamanti su 10 non richiamano mai. I Suoi numeri possono variare."});
+Object.assign(CA_DE, {"Example estimate — assumes roughly 1 in 4 business calls goes unanswered and 8 in 10 missed callers never ring back. Adjust the inputs to your own numbers.": "Beispielrechnung — angenommen, rund 1 von 4 Anrufen bleibt unbeantwortet und 8 von 10 verpassten Anrufern rufen nie zurück. Passen Sie die Eingaben an Ihre Zahlen an."});
+Object.assign(CA_FR, {"Example estimate — assumes roughly 1 in 4 business calls goes unanswered and 8 in 10 missed callers never ring back. Adjust the inputs to your own numbers.": "Estimation d’exemple — suppose qu’environ 1 appel sur 4 reste sans réponse et que 8 appelants manqués sur 10 ne rappellent jamais. Ajustez les champs à vos propres chiffres."});
+Object.assign(CA_IT, {"Example estimate — assumes roughly 1 in 4 business calls goes unanswered and 8 in 10 missed callers never ring back. Adjust the inputs to your own numbers.": "Stima di esempio — ipotizza che circa 1 chiamata su 4 resti senza risposta e che 8 chiamanti su 10 non richiamino mai. Adatti i campi ai Suoi numeri."});
 Object.assign(CA_DE, {"Early access": "Vorabzugang"});
 Object.assign(CA_FR, {"Early access": "Accès anticipé"});
 Object.assign(CA_IT, {"Early access": "Accesso anticipato"});
+Object.assign(CA_DE, {"Conversation search": "Gesprächssuche"});
+Object.assign(CA_FR, {"Conversation search": "Recherche de conversations"});
+Object.assign(CA_IT, {"Conversation search": "Ricerca conversazioni"});
+Object.assign(CA_DE, {"Privacy": "Datenschutz"});
+Object.assign(CA_FR, {"Privacy": "Confidentialité"});
+Object.assign(CA_IT, {"Privacy": "Privacy"});
+Object.assign(CA_DE, {"Search": "Suche"});
+Object.assign(CA_FR, {"Search": "Recherche"});
+Object.assign(CA_IT, {"Search": "Cerca"});
+Object.assign(CA_DE, {"Menu": "Menü"});
+Object.assign(CA_FR, {"Menu": "Menu"});
+Object.assign(CA_IT, {"Menu": "Menu"});
+Object.assign(CA_DE, {"Play": "Abspielen"});
+Object.assign(CA_FR, {"Play": "Lecture"});
+Object.assign(CA_IT, {"Play": "Riproduci"});
+Object.assign(CA_DE, {"Pause": "Pause"});
+Object.assign(CA_FR, {"Pause": "Pause"});
+Object.assign(CA_IT, {"Pause": "Pausa"});
+Object.assign(CA_DE, {"Close": "Schliessen"});
+Object.assign(CA_FR, {"Close": "Fermer"});
+Object.assign(CA_IT, {"Close": "Chiudi"});
+Object.assign(CA_DE, {"Close search": "Suche schliessen"});
+Object.assign(CA_FR, {"Close search": "Fermer la recherche"});
+Object.assign(CA_IT, {"Close search": "Chiudi la ricerca"});
+Object.assign(CA_DE, {"Language": "Sprache"});
+Object.assign(CA_FR, {"Language": "Langue"});
+Object.assign(CA_IT, {"Language": "Lingua"});
+Object.assign(CA_DE, {"Search CallAmplify": "CallAmplify durchsuchen"});
+Object.assign(CA_FR, {"Search CallAmplify": "Rechercher sur CallAmplify"});
+Object.assign(CA_IT, {"Search CallAmplify": "Cerca su CallAmplify"});
+Object.assign(CA_DE, {"Site search": "Website-Suche"});
+Object.assign(CA_FR, {"Site search": "Recherche sur le site"});
+Object.assign(CA_IT, {"Site search": "Ricerca nel sito"});
+Object.assign(CA_DE, {"Search results": "Suchergebnisse"});
+Object.assign(CA_FR, {"Search results": "Résultats de recherche"});
+Object.assign(CA_IT, {"Search results": "Risultati di ricerca"});
+Object.assign(CA_DE, {"Slide 1": "Folie 1"});
+Object.assign(CA_FR, {"Slide 1": "Diapositive 1"});
+Object.assign(CA_IT, {"Slide 1": "Diapositiva 1"});
+Object.assign(CA_DE, {"Slide 2": "Folie 2"});
+Object.assign(CA_FR, {"Slide 2": "Diapositive 2"});
+Object.assign(CA_IT, {"Slide 2": "Diapositiva 2"});
+Object.assign(CA_DE, {"Slide 3": "Folie 3"});
+Object.assign(CA_FR, {"Slide 3": "Diapositive 3"});
+Object.assign(CA_IT, {"Slide 3": "Diapositiva 3"});
+Object.assign(CA_DE, {"Hosted in the EU — read our privacy policy": "In der EU gehostet — Datenschutzerklärung lesen"});
+Object.assign(CA_FR, {"Hosted in the EU — read our privacy policy": "Hébergé dans l’UE — lire la politique de confidentialité"});
+Object.assign(CA_IT, {"Hosted in the EU — read our privacy policy": "Ospitato nell’UE — leggere l’informativa privacy"});
+Object.assign(CA_DE, {"Prices are in CHF. VAT/MWST, if applicable, is shown at checkout.": "Preise in CHF. Allfällige MWST wird beim Checkout ausgewiesen."});
+Object.assign(CA_FR, {"Prices are in CHF. VAT/MWST, if applicable, is shown at checkout.": "Prix en CHF. La TVA éventuelle est indiquée au moment du paiement."});
+Object.assign(CA_IT, {"Prices are in CHF. VAT/MWST, if applicable, is shown at checkout.": "Prezzi in CHF. L’eventuale IVA è indicata al momento del pagamento."});
+Object.assign(CA_DE, {"Recording with consent built in: callers hear a short notice before recording starts, in line with Swiss all-party consent rules — and the recording settings stay under your control.": "Aufzeichnung mit eingebauter Einwilligung: Anrufer hören vor Beginn der Aufzeichnung einen kurzen Hinweis — im Einklang mit den Schweizer Regeln zur Zustimmung aller Beteiligten. Die Aufnahme-Einstellungen bleiben in Ihrer Hand."});
+Object.assign(CA_FR, {"Recording with consent built in: callers hear a short notice before recording starts, in line with Swiss all-party consent rules — and the recording settings stay under your control.": "Enregistrement avec consentement intégré : les appelants entendent un bref avis avant le début de l’enregistrement, conformément aux règles suisses du consentement de toutes les parties. Les réglages restent sous votre contrôle."});
+Object.assign(CA_IT, {"Recording with consent built in: callers hear a short notice before recording starts, in line with Swiss all-party consent rules — and the recording settings stay under your control.": "Registrazione con consenso integrato: chi chiama sente un breve avviso prima dell’inizio della registrazione, in linea con le regole svizzere sul consenso di tutte le parti. Le impostazioni restano sotto il Suo controllo."});
 Object.assign(CA_DE, {"The full document is available in German and English. French and Italian versions are being prepared.": "Das vollständige Dokument ist auf Deutsch und Englisch verfügbar. Französische und italienische Fassungen sind in Vorbereitung."});
 Object.assign(CA_FR, {"The full document is available in German and English. French and Italian versions are being prepared.": "Le document complet est disponible en allemand et en anglais. Les versions française et italienne sont en préparation."});
 Object.assign(CA_IT, {"The full document is available in German and English. French and Italian versions are being prepared.": "Il documento completo è disponibile in tedesco e in inglese. Le versioni francese e italiana sono in preparazione."});
@@ -7941,11 +8032,15 @@ Object.assign(CA_IT, {"Terms of Service": "Condizioni di servizio"});
 var CA_DICTS = { de: CA_DE,
                    fr: (typeof CA_FR !== 'undefined') ? CA_FR : {},
                    it: (typeof CA_IT !== 'undefined') ? CA_IT : {} };
+// Exposed for the page-title localizer and the audio player's aria labels —
+// the dicts themselves are IIFE-scoped.
+window.CA_DICTS = CA_DICTS;
 
   /* ===== engine ===== */
   var SKIP_TAGS = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TEXTAREA: 1 };
   var origText = new WeakMap();   // text node -> english original
   var origPh = new WeakMap();     // input/textarea -> english placeholder
+  var origAria = new WeakMap();   // element -> english aria-label
   var lang = 'en';
 
   function inSkip(node) {
@@ -7986,6 +8081,15 @@ var CA_DICTS = { de: CA_DE,
     el.setAttribute('placeholder', tr2 != null ? tr2 : en);
   }
 
+  function applyAria(el) {
+    var en = origAria.get(el);
+    if (en === undefined) { en = el.getAttribute('aria-label') || ''; origAria.set(el, en); }
+    var key = en.trim(); if (!key) return;
+    var d3 = (lang !== 'en') ? (CA_DICTS[lang] || {}) : null;
+    var tr3 = d3 ? d3[key] : null;
+    el.setAttribute('aria-label', tr3 != null ? tr3 : en);
+  }
+
   function walk(root) {
     if (!root) return;
     if (root.nodeType === 3) { applyTextNode(root); return; }
@@ -7997,6 +8101,9 @@ var CA_DICTS = { de: CA_DE,
     for (var i = 0; i < batch.length; i++) applyTextNode(batch[i]);
     var phs = root.querySelectorAll ? root.querySelectorAll('[placeholder]') : [];
     for (var j = 0; j < phs.length; j++) applyPlaceholder(phs[j]);
+    var ars = root.querySelectorAll ? root.querySelectorAll('[aria-label]') : [];
+    if (root.nodeType === 1 && root.hasAttribute && root.hasAttribute('aria-label')) applyAria(root);
+    for (var k2 = 0; k2 < ars.length; k2++) applyAria(ars[k2]);
   }
 
   function setLang(l) {
@@ -8005,6 +8112,7 @@ var CA_DICTS = { de: CA_DE,
     document.documentElement.lang = lang;
     walk(document.body);
     syncSwitchUI();
+    try { if (window.caApplyMeta) caApplyMeta(); } catch (e) {}
     // The Ample widget renders its own strings (t(), not CA_DE) — repaint it.
     try { if (window.caConcierge && window.caConcierge.relang) window.caConcierge.relang(); } catch (e) {}
     try { if (window.setBilling && window.__caBillMode) window.setBilling(window.__caBillMode); } catch (e) {}
