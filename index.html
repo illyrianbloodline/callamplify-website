@@ -1582,51 +1582,6 @@ footer{border-top:1px solid var(--n100)}
     </div>
   </section>
 
-  <script>
-  (function() {
-    var track   = document.getElementById('cs-track'); if(!track) return;
-    var countEl = document.getElementById('cs-count');
-    var prevBtn = document.getElementById('cs-prev');
-    var nextBtn = document.getElementById('cs-next');
-    var total   = 8;
-    var visible = 4;
-    var current = 0;
-
-    function update() {
-      var pct = (current / total) * 100;
-      track.style.transform = 'translateX(-' + pct + '%)';
-      countEl.textContent = (current + 1) + ' / ' + total;
-      prevBtn.style.opacity = current === 0 ? '0.35' : '1';
-      prevBtn.style.pointerEvents = current === 0 ? 'none' : 'auto';
-      var max = total - visible;
-      nextBtn.style.opacity = current >= max ? '0.35' : '1';
-      nextBtn.style.pointerEvents = current >= max ? 'none' : 'auto';
-    }
-
-    window.csMove = function(dir) {
-      var max = total - visible;
-      current = Math.max(0, Math.min(max, current + dir));
-      update();
-    };
-
-    function checkSize() {
-      visible = window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-      var cards = track.querySelectorAll('.cs-card');
-      var w = (100 / visible) + '%';
-      cards.forEach(function(card) {
-        card.style.minWidth = 'calc(' + (100/total) + '% * ' + (total/visible) + ')';
-        card.style.width    = 'calc(' + (100/total) + '% * ' + (total/visible) + ')';
-      });
-      current = Math.min(current, total - visible);
-      update();
-    }
-
-    window.addEventListener('resize', checkSize);
-    checkSize();
-    update();
-  })();
-  </script>
-
 
   <!-- ROI & ATTRIBUTION TRUST BAR ─────────────── -->
   <section style="border-top:1px solid var(--n100);background:#fff;padding:4rem 0">
@@ -1722,7 +1677,7 @@ footer{border-top:1px solid var(--n100)}
           </div>
 
           <!-- Result box -->
-          <div id="calc-result" style="background:var(--n50);border:1px solid var(--n100);padding:1.5rem;margin-bottom:1.5rem;display:none">
+          <div id="calc-result" role="status" style="background:var(--n50);border:1px solid var(--n100);padding:1.5rem;margin-bottom:1.5rem;display:none">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--n400);margin-bottom:.4rem">Estimated revenue at risk</div>
             <div style="display:flex;align-items:baseline;gap:.5rem;margin-bottom:.5rem">
               <span id="calc-money" style="font-size:2.5rem;font-weight:700;letter-spacing:-.04em;color:#e03131;line-height:1"></span>
@@ -3768,7 +3723,7 @@ renderHub(1);
         </div>
         <div style="margin-bottom:1.55rem">
           <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--n400);margin-bottom:.75rem">Address</div>
-          <div style="font-size:.95rem;line-height:1.8;color:var(--n700)">CallTrack GmbH<br>Canton of Zurich<br>Switzerland<br><span data-no-i18n style="color:var(--n500);font-size:.85rem">UID: CHE-138.143.105<br>CH-ID: CH-020-4090869-0</span></div>
+          <div style="font-size:.95rem;line-height:1.8;color:var(--n700)">CallTrack GmbH<br>Canton of Zurich<br>Switzerland</div>
         </div>
         <div>
           <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--n400);margin-bottom:.75rem">Response time</div>
@@ -4009,7 +3964,7 @@ renderHub(1);
     </div>
   </div>
   <div style="max-width:var(--max);margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-    <span style="font-size:.78rem;color:var(--n400)">&copy; 2026 CallTrack GmbH &middot; 8450 Andelfingen (ZH), Switzerland &middot; UID CHE-138.143.105 &middot; CH-ID CH-020-4090869-0</span>
+    <span style="font-size:.78rem;color:var(--n400)">&copy; 2026 CallTrack GmbH. All rights reserved.</span>
     <div style="display:flex;gap:2rem">
       <button type="button" style="font-size:.78rem;color:var(--n400);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:0" onclick="goTo('privacy-policy')">Privacy policy</button><button type="button" style="font-size:.78rem;color:var(--n400);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:0" onclick="window.location.href='https://app.callamplify.com/impressum'">Impressum</button>
       <button type="button" style="font-size:.78rem;color:var(--n400);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:0" onclick="goTo('terms')">Terms of service</button>
@@ -4047,9 +4002,15 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+// Single source of truth for the app origin: localhost when developing the
+// site locally (the solo app runs on 5001), the production app otherwise.
+function caAppBase(){
+  return /localhost|127\.0\.0\.1/.test(location.hostname)
+    ? 'http://localhost:5001' : 'https://app.callamplify.com';
+}
 function caLang(){try{var l=(window.caGetLang&&caGetLang())||'en';return (l==='de'||l==='fr'||l==='it')?l:'en';}catch(e){return 'en';}}
-function caGoSignup(){try{caTrack('cta','pricing','trial');}catch(e){}var u='https://app.callamplify.com/login?mode=signup&lang='+caLang();try{var p=sessionStorage.getItem('caPlan'),b=sessionStorage.getItem('caBilling');if(p)u+='&plan='+encodeURIComponent(p);if(b)u+='&billing='+encodeURIComponent(b);}catch(e){}window.location.href=u;}
-function caGoSignin(){window.location.href='https://app.callamplify.com/login?mode=signin&lang='+caLang();}
+function caGoSignup(){try{caTrack('cta','pricing','trial');}catch(e){}var u=caAppBase()+'/login?mode=signup&lang='+caLang();try{var p=sessionStorage.getItem('caPlan'),b=sessionStorage.getItem('caBilling');if(p)u+='&plan='+encodeURIComponent(p);if(b)u+='&billing='+encodeURIComponent(b);}catch(e){}window.location.href=u;}
+function caGoSignin(){window.location.href=caAppBase()+'/login?mode=signin&lang='+caLang();}
 </script>
 <div id="search-overlay" role="dialog" aria-modal="true" aria-label="Site search" style="
   display:none;position:fixed;inset:0;z-index:500;
@@ -4066,7 +4027,7 @@ function caGoSignin(){window.location.href='https://app.callamplify.com/login?mo
       display:flex;align-items:center;gap:.75rem;padding:.85rem 1.25rem;
     ">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8d8d8d" stroke-width="2" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input id="search-input" type="text" aria-label="Search CallAmplify"
+      <input id="search-input" type="text" aria-label="Search CallAmplify" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list"
         placeholder="Search CallAmplify…"
         autocomplete="off" spellcheck="false"
         style="
@@ -4084,7 +4045,7 @@ function caGoSignin(){window.location.href='https://app.callamplify.com/login?mo
     </div>
 
     <!-- Results -->
-    <div id="search-results" style="
+    <div id="search-results" role="listbox" aria-label="Search results" style="
       background:#fff;border:1px solid var(--n100);border-top:none;
       max-height:480px;overflow-y:auto;display:none;
     "></div>
@@ -4375,6 +4336,8 @@ function openArticle(id) {
     : '<div style="height:220px;' + a.hero + ';display:flex;align-items:center;justify-content:center">' +
       '<div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3)">' + a.type.toUpperCase() + '</div>' +
       '</div>';
+  // Article bodies are hardcoded, trusted strings authored in this file. If
+  // articles ever come from a CMS/API, sanitize before this line.
   document.getElementById('article-body').innerHTML = a.body;
   goTo('article');
   window.scrollTo(0, 0);
@@ -4523,47 +4486,7 @@ function toggleMobile() {
   });
 }
 
-(function() {
-    var track   = document.getElementById('cs-track'); if(!track) return;
-    var countEl = document.getElementById('cs-count');
-    var prevBtn = document.getElementById('cs-prev');
-    var nextBtn = document.getElementById('cs-next');
-    var total   = 8;
-    var visible = 4;
-    var current = 0;
 
-    function update() {
-      var pct = (current / total) * 100;
-      track.style.transform = 'translateX(-' + pct + '%)';
-      countEl.textContent = (current + 1) + ' / ' + total;
-      prevBtn.style.opacity = current === 0 ? '0.35' : '1';
-      prevBtn.style.pointerEvents = current === 0 ? 'none' : 'auto';
-      var max = total - visible;
-      nextBtn.style.opacity = current >= max ? '0.35' : '1';
-      nextBtn.style.pointerEvents = current >= max ? 'none' : 'auto';
-    }
-
-    window.csMove = function(dir) {
-      var max = total - visible;
-      current = Math.max(0, Math.min(max, current + dir));
-      update();
-    };
-
-    function checkSize() {
-      visible = window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-      var cards = track.querySelectorAll('.cs-card');
-      cards.forEach(function(card) {
-        card.style.minWidth = 'calc(' + (100/total) + '% * ' + (total/visible) + ')';
-        card.style.width    = 'calc(' + (100/total) + '% * ' + (total/visible) + ')';
-      });
-      current = Math.min(current, total - visible);
-      update();
-    }
-
-    window.addEventListener('resize', checkSize);
-    checkSize();
-    update();
-  })();
 </script>
 <script>
 function setPricingBilling(mode) {
@@ -8173,7 +8096,7 @@ var CA_DICTS = { de: CA_DE,
 
 <!-- AI SALES CONCIERGE -->
 <script>(function(){
-  var API_BASE = 'https://app.callamplify.com';   // app origin that hosts /api/concierge
+  var API_BASE = caAppBase();   // app origin that hosts /api/concierge
   var busy = false, started = false, history = [];
   var root, body, input, sendBtn;
   function lng(){ try { return (window.caGetLang && caGetLang()) || 'en'; } catch(e){ return 'en'; } }
@@ -8404,7 +8327,7 @@ var CA_DICTS = { de: CA_DE,
   window.runSearch = function(q){
     q=(q||'').trim();
     var res=el('search-results'), hint=el('search-hint'), sug=el('search-suggestions');
-    if(!q){ res.style.display='none'; hint.style.display='none'; sug.style.display='block'; _results=[]; if(typeof activeIdx!=='undefined') activeIdx=-1; return; }
+    if(!q){ res.style.display='none'; hint.style.display='none'; sug.style.display='block'; _results=[]; if(typeof activeIdx!=='undefined') activeIdx=-1; var sIn0=el('search-input'); if(sIn0){ sIn0.setAttribute('aria-expanded','false'); sIn0.removeAttribute('aria-activedescendant'); } return; }
     var ql=q.toLowerCase();
     var hits=(typeof SEARCH_INDEX!=='undefined'?SEARCH_INDEX:[]).map(function(it){
       var hay=(it.heading+' '+it.body+' '+it.label).toLowerCase(), sc=0;
@@ -8422,12 +8345,13 @@ var CA_DICTS = { de: CA_DE,
     var esc=function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
     res.innerHTML=hits.map(function(h,i){
       var it=h.it;
-      return '<button type="button" class="cacc-sr" data-i="'+i+'" onclick="goSearchResult('+i+')" style="display:block;width:100%;text-align:left;background:none;border:none;border-bottom:1px solid var(--n100);padding:1rem 1.25rem;cursor:pointer;font-family:inherit">'
+      return '<button type="button" role="option" id="sr-'+i+'" aria-selected="false" class="cacc-sr" data-i="'+i+'" onclick="goSearchResult('+i+')" style="display:block;width:100%;text-align:left;background:none;border:none;border-bottom:1px solid var(--n100);padding:1rem 1.25rem;cursor:pointer;font-family:inherit">'
         +'<div style="font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.3rem">'+esc(it.label)+'</div>'
         +'<div style="font-size:.95rem;font-weight:600;color:var(--n900);margin-bottom:.2rem">'+window.highlight(esc(it.heading),q)+'</div>'
         +'<div style="font-size:.82rem;color:var(--n600);line-height:1.5">'+window.highlight(esc(window.excerpt(it.body,q)),q)+'</div></button>';
     }).join('');
     res.style.display='block';
+    var sIn1=el('search-input'); if(sIn1){ sIn1.setAttribute('aria-expanded','true'); sIn1.removeAttribute('aria-activedescendant'); }
   };
 
   window.goSearchResult = function(i){ var it=_results[i]; if(it){ window.closeSearch(); if(window.goTo) goTo(it.page); } };
@@ -8440,7 +8364,9 @@ var CA_DICTS = { de: CA_DE,
       if(activeIdx<0) activeIdx=0;
       else activeIdx = e.key==='ArrowDown' ? Math.min(_results.length-1, activeIdx+1) : Math.max(0, activeIdx-1);
       var btns=document.querySelectorAll('#search-results .cacc-sr');
-      btns.forEach(function(b,idx){ b.style.background = idx===activeIdx?'var(--n50)':'none'; });
+      btns.forEach(function(b,idx){ var on = idx===activeIdx; b.style.background = on?'var(--n50)':'none'; b.setAttribute('aria-selected', on?'true':'false'); });
+      var sIn = el('search-input');
+      if (sIn && btns[activeIdx]) sIn.setAttribute('aria-activedescendant', 'sr-' + activeIdx);
       if(btns[activeIdx]) btns[activeIdx].scrollIntoView({block:'nearest'});
     }
   };
@@ -8514,13 +8440,11 @@ function caSendContact(btn) {
   }
   say('', true);
   btn.disabled = true;
+  btn.setAttribute('aria-busy', 'true');
   var label = btn.textContent;
   btn.textContent = caFormMsg('sending');
   var parts = name.split(' ');
-  // API_BASE lives inside the concierge IIFE, so resolve our own (same rule
-  // as the analytics beacon: localhost in dev, the app origin in production).
-  var base = /localhost|127\.0\.0\.1/.test(location.hostname)
-    ? 'http://localhost:5001' : 'https://app.callamplify.com';
+  var base = caAppBase();
   fetch(base + '/api/demo-request', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -8529,12 +8453,14 @@ function caSendContact(btn) {
     })
   }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
     .then(function () {
+      btn.removeAttribute('aria-busy');
       btn.textContent = caFormMsg('sent');
       btn.style.background = '#2d6a4f';
       say(caFormMsg('thanks').replace('{email}', email), true);
     })
     .catch(function () {
       btn.disabled = false;
+      btn.removeAttribute('aria-busy');
       btn.textContent = label;
       say(caFormMsg('sendFail'), false);
     });
@@ -8550,15 +8476,14 @@ function caSubmitDemo(btn){
   if(e2) e2.setAttribute('aria-invalid', badEmail?'true':'false');
   if(badFirst||badEmail){ say(caFormMsg('demoInvalid'), false); return; }
   say('', true);
-  var orig=btn.innerHTML; btn.disabled=true; btn.style.opacity='.7'; btn.innerHTML=caFormMsg('sending');
-  var base = /localhost|127\.0\.0\.1/.test(location.hostname)
-    ? 'http://localhost:5001' : 'https://app.callamplify.com';
+  var orig=btn.innerHTML; btn.disabled=true; btn.setAttribute('aria-busy','true'); btn.style.opacity='.7'; btn.innerHTML=caFormMsg('sending');
+  var base = caAppBase();
   fetch(base+'/api/demo-request',{method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({firstName:g('df-first'),lastName:g('df-last'),email:email,phone:g('df-phone'),company:g('df-company'),industry:g('df-industry'),website:g('df-hp')})
   }).then(function(r){return r.json();}).then(function(d){
     if(d&&d.ok){ document.getElementById('demo-form').style.display='none'; document.getElementById('demo-success').style.display='block'; }
     else { throw new Error('bad'); }
-  }).catch(function(){ btn.disabled=false; btn.style.opacity=''; btn.innerHTML=orig; say(caFormMsg('sendFail'), false); });
+  }).catch(function(){ btn.disabled=false; btn.removeAttribute('aria-busy'); btn.style.opacity=''; btn.innerHTML=orig; say(caFormMsg('sendFail'), false); });
 }
 </script>
 
@@ -8579,8 +8504,7 @@ function caSubmitDemo(btn){
    in localStorage and are disclosed on the cookies page).
    The server keys uniqueness to a daily-rotating anonymous hash. */
 (function(){
-  var API='https://app.callamplify.com/api/t';
-  if(/localhost|127\.0\.0\.1/.test(location.hostname)) API='http://localhost:5001/api/t';
+  var API=caAppBase()+'/api/t';
   var qs=new URLSearchParams(location.search);
   var utm={us:qs.get('utm_source')||'',um:qs.get('utm_medium')||'',uc:qs.get('utm_campaign')||''};
   var sentRef=false;
