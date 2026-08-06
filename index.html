@@ -150,7 +150,9 @@ header{
 .mobile-nav{display:none;position:fixed;top:48px;left:0;right:0;z-index:99;background:#fff;border-bottom:1px solid var(--n100);flex-direction:column;max-height:calc(100vh - 48px);overflow-y:auto;overscroll-behavior:contain}
 .mobile-nav-heading{height:40px;display:flex;align-items:flex-end;padding:0 2rem .35rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--n400)}
 .mobile-nav.open{display:flex}
-.mobile-nav .nav-tab{border-left:none;border-right:none;border-bottom:1px solid var(--n100);height:52px;padding:0 2rem}
+.mobile-nav .nav-tab{border-left:none;border-right:none;border-bottom:1px solid var(--n100);height:52px;padding:0 2rem;color:#161616}
+.mobile-nav .nav-tab:hover,.mobile-nav .nav-tab:focus-visible{background:#f4f4f4;color:#161616}
+.mobile-nav .nav-tab.active{color:#0f62fe;font-weight:600}
 
 /* ─── HERO ───────────────────────────────────────────── */
 .hero{padding-bottom:1px;padding-top:0.75rem}
@@ -372,7 +374,7 @@ footer{border-top:1px solid var(--n100)}
   .footer-cols-inner{grid-template-columns:1fr!important}
 }
 
-a.nav-tab{text-decoration:none;color:inherit;box-sizing:border-box}
+a.nav-tab{text-decoration:none;box-sizing:border-box}
 .footer-link{font-size:.875rem;color:var(--n600);text-decoration:none;font-family:'IBM Plex Sans',sans-serif;text-align:left;display:inline-block}
 .footer-link:hover,.footer-link:focus-visible{color:var(--orange);text-decoration:underline}
 
@@ -8657,7 +8659,7 @@ window.CA_DICTS = CA_DICTS;
     var top = document.createElement('div');
     top.style.cssText='flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem 0 1rem';
     top.innerHTML =
-      '<img loading="lazy" decoding="async" width="320" height="89" src="ample-logo.png" alt="Ample" style="height:38px;display:block;margin:0 auto 1.1rem"/>'+
+      '<img loading="lazy" decoding="async" width="320" height="89" src="ample-logo.png" alt="Ample" style="height:38px;width:auto;display:block;margin:0 auto 1.1rem"/>'+
       '<div style="font-size:1.15rem;font-weight:600;color:#161616;margin-bottom:.4rem">'+t('How can I help?','Wie kann ich helfen?','Comment puis-je aider ?','Come posso aiutare?')+'</div>'+
       '<div style="font-size:.86rem;color:#6f6f6f;line-height:1.5;max-width:270px">'+t("I’m Ample. I’ll answer anything about CallAmplify — pricing, setup, or whether it fits your business — in about a minute.","Ich bin Ample. Ich beantworte alles zu CallAmplify — Preise, Einrichtung oder ob es zu Ihrem Gewerbe passt — in etwa einer Minute.","Je suis Ample. Je réponds à tout sur CallAmplify — tarifs, mise en place ou compatibilité avec votre activité — en une minute environ.","Sono Ample. Rispondo a tutto su CallAmplify — prezzi, configurazione o idoneità alla Sua attività — in circa un minuto.")+'</div>';
     wrap.appendChild(top);
@@ -8706,7 +8708,7 @@ window.CA_DICTS = CA_DICTS;
     root.style.cssText='position:fixed;bottom:1.5rem;right:1.5rem;width:420px;max-width:calc(100vw - 2rem);height:calc(100vh - 6.5rem);z-index:400;background:#fff;border:1px solid #e0e0e0;border-radius:6px;box-shadow:0 28px 70px rgba(0,0,0,.26);display:none;flex-direction:column;font-family:\'IBM Plex Sans\',sans-serif;overflow:hidden';
     root.innerHTML =
       '<div style="display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;border-bottom:1px solid #eee">'+
-        '<div style="display:flex;align-items:center;gap:.55rem">'+'<img loading="lazy" decoding="async" width="320" height="89" src="ample-logo.png" alt="Ample" style="height:22px;display:block"/>'+
+        '<div style="display:flex;align-items:center;gap:.55rem">'+'<img loading="lazy" decoding="async" width="320" height="89" src="ample-logo.png" alt="Ample" style="height:22px;width:auto;display:block"/>'+
           ''+
           '<span style="width:8px;height:8px;border-radius:50%;background:#24a148;display:inline-block;animation:caccPulse 1.4s ease-in-out infinite"></span></div>'+
         '<button type="button" id="ca-cc-x" aria-label="Close" style="background:none;border:none;color:#8d8d8d;cursor:pointer;font-size:1.4rem;line-height:1;padding:0 .2rem">×</button>'+
