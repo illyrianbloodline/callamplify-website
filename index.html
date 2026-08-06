@@ -1499,7 +1499,7 @@ footer{border-top:1px solid var(--n100)}
           <button type="button" class="ca-dot" aria-label="Show the electrician story" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--n50,#f4f4f4)"></button>
         </div>
       </div>
-      <script>(function(){var r=document.currentScript.closest('section');if(!r)return;var sl=r.querySelectorAll('.ca-slide'),dots=r.querySelectorAll('.ca-dot');if(sl.length<2)return;var i=0,t,paused=false;function show(n){i=n;for(var j=0;j<sl.length;j++){sl[j].style.display=j===n?'grid':'none';}for(var k=0;k<dots.length;k++){dots[k].style.background=k===n?'#fff':'rgba(255,255,255,.4)';dots[k].setAttribute('aria-current',k===n?'true':'false');}}function reset(){clearInterval(t);if(paused)return;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;t=setInterval(function(){show((i+1)%sl.length);},6000);}var pauseBtn=r.querySelector('.ca-carousel-pause');function setPaused(next){paused=next;if(pauseBtn){pauseBtn.setAttribute('aria-pressed',paused?'true':'false');pauseBtn.textContent=caT(paused?'Resume':'Pause');}reset();}if(pauseBtn){pauseBtn.addEventListener('click',function(){setPaused(!paused);});}var userPaused=false;if(pauseBtn){pauseBtn.addEventListener('click',function(){userPaused=paused;});}r.addEventListener('mouseenter',function(){paused=true;clearInterval(t);});r.addEventListener('mouseleave',function(){if(!userPaused){paused=false;reset();}});r.addEventListener('focusin',function(){paused=true;clearInterval(t);});r.addEventListener('focusout',function(){if(!userPaused){paused=false;reset();}});for(var d=0;d<dots.length;d++){(function(x){dots[x].onclick=function(){show(x);reset();};})(d);}show(0);reset();})();</script>
+      <script>(function(){var r=document.currentScript.closest('section');if(!r)return;var sl=r.querySelectorAll('.ca-slide'),dots=r.querySelectorAll('.ca-dot');if(sl.length<2)return;var i=0,t;function show(n){i=n;for(var j=0;j<sl.length;j++){sl[j].style.display=j===n?'grid':'none';}for(var k=0;k<dots.length;k++){dots[k].style.background=k===n?'#fff':'rgba(255,255,255,.4)';dots[k].setAttribute('aria-current',k===n?'true':'false');}}function reset(){clearInterval(t);if(effectivePaused())return;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;t=setInterval(function(){show((i+1)%sl.length);},6000);}var pauseBtn=r.querySelector('.ca-carousel-pause');var userPaused=false,hoverPaused=false;function effectivePaused(){return userPaused||hoverPaused;}function syncPauseButton(){if(!pauseBtn)return;pauseBtn.setAttribute('aria-pressed',userPaused?'true':'false');pauseBtn.textContent=caT(userPaused?'Resume':'Pause');}if(pauseBtn){pauseBtn.addEventListener('click',function(){userPaused=!userPaused;syncPauseButton();reset();});}r.addEventListener('mouseenter',function(){hoverPaused=true;clearInterval(t);});r.addEventListener('mouseleave',function(){hoverPaused=false;reset();});r.addEventListener('focusin',function(){hoverPaused=true;clearInterval(t);});r.addEventListener('focusout',function(){hoverPaused=false;reset();});for(var d=0;d<dots.length;d++){(function(x){dots[x].onclick=function(){show(x);reset();};})(d);}show(0);syncPauseButton();reset();})();</script>
     </div>
   </section>
   
@@ -3524,7 +3524,7 @@ renderHub(1);
 <div id="page-cookies" class="page">
   <div style="max-width:640px;margin:0 auto;padding:4.5rem 2rem;text-align:center">
     <h1 style="font-size:1.6rem;font-weight:600;color:var(--n900);margin-bottom:.75rem">Cookie Policy</h1>
-    <p style="font-size:.95rem;color:var(--n600);line-height:1.7;margin-bottom:1.75rem">Short version: we set only the cookies that keep you signed in, plus small functional browser storage on this site (your language, a selected plan, whether you closed the chat). We also run our own first-party, cookieless analytics to understand page visits. No advertising, retargeting or third-party cookies, and no consent banner because there is nothing optional to consent to. The full policy lives with the product.</p>
+    <p style="font-size:.95rem;color:var(--n600);line-height:1.7;margin-bottom:1.75rem">Short version: we set only the cookies that keep you signed in, plus small functional browser storage on this site (your language, a selected plan, whether you closed the chat). We also run our own first-party, cookieless analytics to understand page visits. No advertising, retargeting or third-party marketing cookies. We do not show a cookie banner because this site sets no optional marketing cookies. The full policy lives with the product.</p>
     <p style="font-size:.78rem;color:var(--n400);line-height:1.6;margin:-.75rem 0 1.5rem">The full document is available in German and English. French and Italian versions are being prepared.</p>
     <a class="arrow-button" href="https://app.callamplify.com/cookies" data-legal-path="/cookies" target="_blank" rel="noopener noreferrer" style="display:inline-flex;text-decoration:none">Read the Cookie Policy<div class="arrow"></div></a>
   </div>
@@ -3719,7 +3719,7 @@ renderHub(1);
       <div style="border:1px solid var(--n100);padding:2rem 2.5rem;margin-bottom:-1px">
         <div style="font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">02</div>
         <div style="font-size:1.15rem;font-weight:600;color:var(--n900);margin-bottom:.75rem">Privacy by design</div>
-        <div style="font-size:.95rem;line-height:1.75;color:var(--n600)">We are Swiss. Privacy is not a compliance checkbox for us — it is a founding principle. We never sell data, we never use your call data to train models, and the app and its database are hosted in Frankfurt, in the EU.</div>
+        <div style="font-size:.95rem;line-height:1.75;color:var(--n600)">We are Swiss. Privacy is not a compliance checkbox for us — it is a founding principle. We do not sell customer data, and we do not use your call data to train our own models. The app and its primary database are hosted in Frankfurt, in the EU.</div>
       </div>
       <div style="border:1px solid var(--n100);padding:2rem 2.5rem;margin-bottom:-1px">
         <div style="font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">03</div>
@@ -3734,7 +3734,7 @@ renderHub(1);
       <div style="border:1px solid var(--n100);padding:2rem 2.5rem;margin-bottom:-1px">
         <div style="font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem">05</div>
         <div style="font-size:1.15rem;font-weight:600;color:var(--n900);margin-bottom:.75rem">European first</div>
-        <div style="font-size:.95rem;line-height:1.75;color:var(--n600)">We are built for the Swiss and European market from the ground up. That means GDPR compliance, local language support, and pricing in CHF — not as an afterthought.</div>
+        <div style="font-size:.95rem;line-height:1.75;color:var(--n600)">We are built for the Swiss and European market from the ground up. That means GDPR-aligned product design, local language support, and pricing in CHF — not as an afterthought.</div>
       </div>
     </div>
   </section>
@@ -3981,16 +3981,16 @@ renderHub(1);
           <li><a href="#about" onclick="goTo('about');return false;" class="footer-link">About</a></li>
           <li><a href="#principles" onclick="goTo('principles');return false;" class="footer-link">Principles</a></li>
           <li><a href="#resources" onclick="goTo('resources');return false;" class="footer-link">Resources</a></li>
-          <li><a href="#resources" onclick="goTo('resources');return false;" class="footer-link">Guides &amp; articles</a></li>
+          <li><a href="#guides" onclick="goTo('guides');return false;" class="footer-link">Guides &amp; articles</a></li>
         </ul>
       </div>
       <div>
         <div style="font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--n400);margin-bottom:1rem">Get started</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem">
-          <li><button type="button" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left" onclick="goTo('free-trial')">Free trial</button></li>
-          <li><button type="button" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left" onclick="goTo('book-demo')">Book a demo<div class="arrow"></div></button></li>
+          <li><a href="#free-trial" onclick="goTo('free-trial');return false;" class="footer-link">Free trial</a></li>
+          <li><a href="#book-demo" onclick="goTo('book-demo');return false;" class="footer-link">Book a demo<div class="arrow"></div></a></li>
           <li><a href="#pricing" onclick="goTo('pricing');return false;" class="footer-link">View pricing</a></li>
-          <li><button type="button" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left" onclick="goTo('contact')">Contact sales</button></li>
+          <li><a href="#contact" onclick="goTo('contact');return false;" class="footer-link">Contact sales</a></li>
         </ul>
       </div>
     </div>
@@ -4293,7 +4293,7 @@ var ARTICLES = {
       <p>"Landscaping is a quote business," Lena says. "Someone wants their garden done, they ring three or four of us, and they go with the first one who gets back to them properly. If I call back at 7pm, they've already booked."</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">The fix: the AI takes the enquiry on the spot</h2>
       <p>Now the AI receptionist answers while Lena's working, takes down what the customer wants — the garden, the job, the rough timing — and lands it in her inbox as a ready-to-quote lead. Soon, WhatsApp enquiries will sit in the same list too. At lunch and at the end of the day she works through them, with everything she needs to price the job already there.</p>
-      <p>"I'm not losing quotes to voicemail anymore. I haven't lost one since I started, actually. The customer feels looked after, and I get to keep my hands in the soil." </p>
+      <p>"I'm losing far fewer quotes to voicemail now. The customer feels looked after, and I get to keep my hands in the soil." </p>
       <p style="margin-top:2rem;padding:1.25rem 1.5rem;background:var(--n50);border-left:3px solid var(--orange);font-style:italic;color:var(--n600)">"I'd been paying for a printed directory for six years. Turned out it brought me two calls. I moved that money to Google and never looked back." — "Lena", illustrative solo gardener, Zug</p>
     `
   },
@@ -4560,11 +4560,13 @@ var CA_NAV_PARENT = {
 };
 
 function goTo(id, fromHistory) {
+  // Confirm the target exists BEFORE touching title/meta state — a bad id used
+  // to leave the tab title describing a page the visitor never saw.
+  const page = document.getElementById('page-' + id);
+  if (!page) return;
   if (id !== 'article') window.__caArticleTitle = null;
   caCurrentPage = id;
   caApplyMeta();
-  const page = document.getElementById('page-' + id);
-  if (!page) return;
   // Give every page an address. Without this the whole site was one URL: nobody
   // could send a link to Pricing, Back did nothing, and the canonical/hreflang
   // tags pointed somewhere that could not reach these pages.
@@ -5142,7 +5144,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "All": "Alle",
   "Read guide": "Leitfaden lesen",
   "Example story": "Beispielgeschichte",
-  "We are Swiss. Privacy is not a compliance checkbox for us \u2014 it is a founding principle. We never sell data, we never use your call data to train models, and the app and its database are hosted in Frankfurt, in the EU.": "Wir sind Schweizer. Datenschutz ist f\u00fcr uns keine Compliance-Checkbox \u2014 er ist ein Gr\u00fcndungsprinzip. Wir verkaufen niemals Daten, wir trainieren keine Modelle mit Ihren Anrufdaten, und App und Datenbank werden in Frankfurt (EU) gehostet.",
+  "We are Swiss. Privacy is not a compliance checkbox for us \u2014 it is a founding principle. We do not sell customer data, and we do not use your call data to train our own models. The app and its primary database are hosted in Frankfurt, in the EU.": "Wir sind Schweizer. Datenschutz ist für uns keine Compliance-Checkbox — er ist ein Gründungsprinzip. Wir verkaufen keine Kundendaten und trainieren mit Ihren Anrufdaten keine eigenen Modelle. App und primäre Datenbank werden in Frankfurt (EU) gehostet.",
   "Example scenarios": "Beispielszenarien",
   "What it looks like in practice": "So sieht es in der Praxis aus",
   "Composite example stories from the trades we built CallAmplify for \u2014 the numbers are illustrative, the day-to-day is real.": "Zusammengesetzte Beispielgeschichten aus den Branchen, f\u00fcr die CallAmplify gebaut wurde \u2014 die Zahlen sind illustrativ, der Arbeitsalltag ist echt.",
@@ -6095,7 +6097,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "All": "Tout",
   "Read guide": "Lire le guide",
   "Example story": "Exemple illustratif",
-  "We are Swiss. Privacy is not a compliance checkbox for us \u2014 it is a founding principle. We never sell data, we never use your call data to train models, and the app and its database are hosted in Frankfurt, in the EU.": "Nous sommes suisses. La protection des donn\u00e9es n'est pas une case \u00e0 cocher pour nous \u2014 c'est un principe fondateur. Nous ne vendons jamais de donn\u00e9es, nous n'entra\u00eenons aucun mod\u00e8le avec vos donn\u00e9es d'appels, et l'application et sa base de donn\u00e9es sont h\u00e9berg\u00e9es \u00e0 Francfort, dans l'UE.",
+  "We are Swiss. Privacy is not a compliance checkbox for us \u2014 it is a founding principle. We do not sell customer data, and we do not use your call data to train our own models. The app and its primary database are hosted in Frankfurt, in the EU.": "Nous sommes suisses. La protection des données n’est pas une case à cocher — c’est un principe fondateur. Nous ne vendons pas les données des clients et n’entraînons aucun de nos propres modèles avec vos données d’appels. L’application et sa base de données principale sont hébergées à Francfort, dans l’UE.",
   "Example scenarios": "Sc\u00e9narios d'exemple",
   "What it looks like in practice": "\u00c0 quoi cela ressemble en pratique",
   "Composite example stories from the trades we built CallAmplify for \u2014 the numbers are illustrative, the day-to-day is real.": "Des histoires composites inspir\u00e9es des m\u00e9tiers pour lesquels CallAmplify a \u00e9t\u00e9 con\u00e7u \u2014 les chiffres sont illustratifs, le quotidien est r\u00e9el.",
@@ -6963,7 +6965,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "All": "Tutti",
   "Read guide": "Leggi la guida",
   "Example story": "Esempio illustrativo",
-  "We are Swiss. Privacy is not a compliance checkbox for us \u2014 it is a founding principle. We never sell data, we never use your call data to train models, and the app and its database are hosted in Frankfurt, in the EU.": "Siamo svizzeri. La protezione dei dati non \u00e8 una casella da spuntare per noi \u2014 \u00e8 un principio fondativo. Non vendiamo mai dati, non addestriamo modelli con i suoi dati delle chiamate e l'app e il suo database sono ospitati a Francoforte, nell'UE.",
+  "We are Swiss. Privacy is not a compliance checkbox for us \u2014 it is a founding principle. We do not sell customer data, and we do not use your call data to train our own models. The app and its primary database are hosted in Frankfurt, in the EU.": "Siamo svizzeri. La protezione dei dati non è una casella da spuntare — è un principio fondativo. Non vendiamo i dati dei clienti e non addestriamo modelli nostri con i suoi dati delle chiamate. L’app e il suo database principale sono ospitati a Francoforte, nell’UE.",
   "Example scenarios": "Scenari di esempio",
   "What it looks like in practice": "Come funziona nella pratica",
   "Composite example stories from the trades we built CallAmplify for \u2014 the numbers are illustrative, the day-to-day is real.": "Storie di esempio composite ispirate ai mestieri per cui \u00e8 stato creato CallAmplify \u2014 i numeri sono illustrativi, la quotidianit\u00e0 \u00e8 reale.",
@@ -8080,9 +8082,9 @@ Object.assign(CA_IT, {"We do not lock you in with annual contracts or export fee
 Object.assign(CA_DE, {"European first": "Europa zuerst"});
 Object.assign(CA_FR, {"European first": "L'Europe d'abord"});
 Object.assign(CA_IT, {"European first": "Prima l'Europa"});
-Object.assign(CA_DE, {"We are built for the Swiss and European market from the ground up. That means GDPR compliance, local language support, and pricing in CHF — not as an afterthought.": "Wir sind von Grund auf für den Schweizer und europäischen Markt gebaut. Das heisst DSGVO-Konformität, lokale Sprachen und Preise in CHF — nicht als Nachgedanke."});
-Object.assign(CA_FR, {"We are built for the Swiss and European market from the ground up. That means GDPR compliance, local language support, and pricing in CHF — not as an afterthought.": "Nous sommes conçus dès le départ pour le marché suisse et européen. Cela signifie conformité RGPD, langues locales et prix en CHF — pas après coup."});
-Object.assign(CA_IT, {"We are built for the Swiss and European market from the ground up. That means GDPR compliance, local language support, and pricing in CHF — not as an afterthought.": "Siamo costruiti da zero per il mercato svizzero ed europeo. Significa conformità GDPR, lingue locali e prezzi in CHF — non un ripensamento."});
+Object.assign(CA_DE, {"We are built for the Swiss and European market from the ground up. That means GDPR-aligned product design, local language support, and pricing in CHF — not as an afterthought.": "Wir sind von Grund auf für den Schweizer und europäischen Markt gebaut. Das heisst DSGVO-orientiertes Produktdesign, lokale Sprachen und Preise in CHF — nicht als Nachgedanke."});
+Object.assign(CA_FR, {"We are built for the Swiss and European market from the ground up. That means GDPR-aligned product design, local language support, and pricing in CHF — not as an afterthought.": "Nous sommes conçus dès le départ pour le marché suisse et européen. Cela signifie une conception produit alignée sur le RGPD, des langues locales et des prix en CHF — pas après coup."});
+Object.assign(CA_IT, {"We are built for the Swiss and European market from the ground up. That means GDPR-aligned product design, local language support, and pricing in CHF — not as an afterthought.": "Siamo costruiti da zero per il mercato svizzero ed europeo. Significa un design di prodotto allineato al GDPR, lingue locali e prezzi in CHF — non un ripensamento."});
 Object.assign(CA_DE, {"Our privacy policy lives with the product, so there is only ever one version of it — the same document you are shown inside CallAmplify, kept current in one place.": "Unsere Datenschutzerklärung lebt beim Produkt — es gibt immer nur eine Version: dasselbe Dokument, das Ihnen in CallAmplify angezeigt wird, an einem Ort aktuell gehalten."});
 Object.assign(CA_FR, {"Our privacy policy lives with the product, so there is only ever one version of it — the same document you are shown inside CallAmplify, kept current in one place.": "Notre politique de confidentialité vit avec le produit — il n'en existe qu'une seule version : le même document affiché dans CallAmplify, tenu à jour à un seul endroit."});
 Object.assign(CA_IT, {"Our privacy policy lives with the product, so there is only ever one version of it — the same document you are shown inside CallAmplify, kept current in one place.": "La nostra informativa sulla privacy vive con il prodotto — ne esiste una sola versione: lo stesso documento mostrato in CallAmplify, aggiornato in un unico posto."});
@@ -8095,9 +8097,9 @@ Object.assign(CA_IT, {"Our terms live with the product, so there is only ever on
 Object.assign(CA_DE, {"Read the Terms": "AGB lesen"});
 Object.assign(CA_FR, {"Read the Terms": "Lire les conditions"});
 Object.assign(CA_IT, {"Read the Terms": "Leggere le condizioni"});
-Object.assign(CA_DE, {"Short version: we set only the cookies that keep you signed in, plus small functional browser storage on this site (your language, a selected plan, whether you closed the chat). We also run our own first-party, cookieless analytics to understand page visits. No advertising, retargeting or third-party cookies, and no consent banner because there is nothing optional to consent to. The full policy lives with the product.": "Kurz gesagt: Wir setzen nur die Cookies, die Sie angemeldet halten, plus kleine funktionale Browser-Speicher auf dieser Seite (Ihre Sprache, ein gewählter Plan, ob Sie den Chat geschlossen haben). Zudem nutzen wir eine eigene, cookielose Statistik, um Seitenaufrufe zu verstehen. Keine Werbe-, Retargeting- oder Drittanbieter-Cookies — und kein Consent-Banner, weil es nichts Optionales zu bestätigen gibt. Die vollständige Richtlinie lebt beim Produkt."});
-Object.assign(CA_FR, {"Short version: we set only the cookies that keep you signed in, plus small functional browser storage on this site (your language, a selected plan, whether you closed the chat). We also run our own first-party, cookieless analytics to understand page visits. No advertising, retargeting or third-party cookies, and no consent banner because there is nothing optional to consent to. The full policy lives with the product.": "En bref : nous ne posons que les cookies qui vous gardent connecté, plus un petit stockage fonctionnel du navigateur sur ce site (votre langue, un plan sélectionné, la fermeture du chat). Nous utilisons aussi nos propres statistiques sans cookies pour comprendre les visites. Aucun cookie publicitaire, de reciblage ou de tiers — et pas de bannière de consentement, car il n'y a rien d'optionnel à accepter. La politique complète vit avec le produit."});
-Object.assign(CA_IT, {"Short version: we set only the cookies that keep you signed in, plus small functional browser storage on this site (your language, a selected plan, whether you closed the chat). We also run our own first-party, cookieless analytics to understand page visits. No advertising, retargeting or third-party cookies, and no consent banner because there is nothing optional to consent to. The full policy lives with the product.": "In breve: impostiamo solo i cookie che la tengono connessa, più una piccola memoria funzionale del browser su questo sito (la lingua, un piano selezionato, la chiusura della chat). Usiamo anche statistiche proprie senza cookie per capire le visite. Nessun cookie pubblicitario, di retargeting o di terzi — e nessun banner di consenso, perché non c'è nulla di opzionale da accettare. La politica completa vive con il prodotto."});
+Object.assign(CA_DE, {"Short version: we set only the cookies that keep you signed in, plus small functional browser storage on this site (your language, a selected plan, whether you closed the chat). We also run our own first-party, cookieless analytics to understand page visits. No advertising, retargeting or third-party marketing cookies. We do not show a cookie banner because this site sets no optional marketing cookies. The full policy lives with the product.": "Kurz gesagt: Wir setzen nur die Cookies, die Sie angemeldet halten, plus kleine funktionale Browser-Speicher auf dieser Seite (Ihre Sprache, ein gewählter Plan, ob Sie den Chat geschlossen haben). Zudem nutzen wir eine eigene, cookielose Statistik, um Seitenaufrufe zu verstehen. Keine Werbe-, Retargeting- oder Marketing-Cookies von Drittanbietern. Wir zeigen kein Cookie-Banner, weil diese Website keine optionalen Marketing-Cookies setzt. Die vollständige Richtlinie lebt beim Produkt."});
+Object.assign(CA_FR, {"Short version: we set only the cookies that keep you signed in, plus small functional browser storage on this site (your language, a selected plan, whether you closed the chat). We also run our own first-party, cookieless analytics to understand page visits. No advertising, retargeting or third-party marketing cookies. We do not show a cookie banner because this site sets no optional marketing cookies. The full policy lives with the product.": "En bref : nous ne posons que les cookies qui vous gardent connecté, plus un petit stockage fonctionnel du navigateur sur ce site (votre langue, un plan sélectionné, la fermeture du chat). Nous utilisons aussi nos propres statistiques sans cookies pour comprendre les visites. Aucun cookie publicitaire, de reciblage ou de marketing tiers. Nous n’affichons pas de bannière de cookies car ce site ne dépose aucun cookie marketing optionnel. La politique complète vit avec le produit."});
+Object.assign(CA_IT, {"Short version: we set only the cookies that keep you signed in, plus small functional browser storage on this site (your language, a selected plan, whether you closed the chat). We also run our own first-party, cookieless analytics to understand page visits. No advertising, retargeting or third-party marketing cookies. We do not show a cookie banner because this site sets no optional marketing cookies. The full policy lives with the product.": "In breve: impostiamo solo i cookie che la tengono connessa, più una piccola memoria funzionale del browser su questo sito (la lingua, un piano selezionato, la chiusura della chat). Usiamo anche statistiche proprie senza cookie per capire le visite. Nessun cookie pubblicitario, di retargeting o di marketing di terzi. Non mostriamo un banner dei cookie perché questo sito non imposta cookie di marketing opzionali. La politica completa vive con il prodotto."});
 Object.assign(CA_DE, {"Read the Cookie Policy": "Cookie-Richtlinie lesen"});
 Object.assign(CA_FR, {"Read the Cookie Policy": "Lire la politique de cookies"});
 Object.assign(CA_IT, {"Read the Cookie Policy": "Leggere la cookie policy"});
@@ -8401,7 +8403,11 @@ window.CA_DICTS = CA_DICTS;
       opts[i].focus();
     }
     btn.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowDown') { e.preventDefault(); open(); if (opts[0]) opts[0].focus(); }
+      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+        // preventDefault matters: without it the native button activation
+        // would re-toggle the menu we just opened.
+        e.preventDefault(); open(); if (opts[0]) opts[0].focus();
+      }
     });
     wrap.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.style.display === 'block') { e.preventDefault(); close(); btn.focus(); return; }
@@ -8672,6 +8678,7 @@ window.CA_DICTS = CA_DICTS;
     var ov = el('search-overlay'), inp = el('search-input');
     if(!ov) return;
     var sBtn = el('search-btn'); if (sBtn) sBtn.setAttribute('aria-expanded', 'true');
+    if (inp) { inp.setAttribute('aria-expanded', 'true'); inp.removeAttribute('aria-activedescendant'); }
     buildSuggestions();
     ov.style.display='block';
     el('search-results').style.display='none';
@@ -8684,6 +8691,7 @@ window.CA_DICTS = CA_DICTS;
   window.closeSearch = function(){
     var ov = el('search-overlay'); if(ov) ov.style.display='none';
     var sBtn2 = el('search-btn'); if (sBtn2) sBtn2.setAttribute('aria-expanded', 'false');
+    var inp2 = el('search-input'); if (inp2) { inp2.setAttribute('aria-expanded', 'false'); inp2.removeAttribute('aria-activedescendant'); }
     document.body.style.overflow='';
     // Return focus where it came from, or the modal's opener is lost to a
     // keyboard user (focus falls back to <body>).
@@ -8698,10 +8706,16 @@ window.CA_DICTS = CA_DICTS;
     var res=el('search-results'), hint=el('search-hint'), sug=el('search-suggestions');
     if(!q){ res.style.display='none'; hint.style.display='none'; sug.style.display='block'; _results=[]; if(typeof activeIdx!=='undefined') activeIdx=-1; var sIn0=el('search-input'); if(sIn0){ sIn0.setAttribute('aria-expanded','false'); sIn0.removeAttribute('aria-activedescendant'); } return; }
     var ql=q.toLowerCase();
+    // The index is authored in English. Without this, a visitor reading the
+    // German page and typing German words matched nothing. Each entry is
+    // searched as "english + translation", so either language finds it.
+    var _d = null;
+    try { _d = (window.CA_DICTS || {})[(window.caGetLang && caGetLang()) || 'en'] || null; } catch (e) {}
+    var tr = function (s) { return (_d && _d[s]) ? (s + ' ' + _d[s]) : s; };
     var hits=(typeof SEARCH_INDEX!=='undefined'?SEARCH_INDEX:[]).map(function(it){
-      var hay=(it.heading+' '+it.body+' '+it.label).toLowerCase(), sc=0;
-      if(it.heading.toLowerCase().indexOf(ql)!==-1) sc+=3;
-      if(it.label.toLowerCase().indexOf(ql)!==-1) sc+=2;
+      var hay=(tr(it.heading)+' '+tr(it.body)+' '+tr(it.label)).toLowerCase(), sc=0;
+      if(tr(it.heading).toLowerCase().indexOf(ql)!==-1) sc+=3;
+      if(tr(it.label).toLowerCase().indexOf(ql)!==-1) sc+=2;
       if(hay.indexOf(ql)!==-1) sc+=1;
       return {it:it, sc:sc};
     }).filter(function(x){return x.sc>0;}).sort(function(a,b){return b.sc-a.sc;}).slice(0,8);
