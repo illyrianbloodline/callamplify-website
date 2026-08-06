@@ -368,6 +368,12 @@ footer{border-top:1px solid var(--n100)}
   .footer-cols-inner{grid-template-columns:1fr!important}
 }
 
+/* ─── SEARCH OVERLAY VIEWPORT FIT ────────────────────── */
+#search-overlay > div{max-height:calc(100vh - 6rem);overflow:auto;}
+@media (max-width:640px){
+  #search-overlay > div{margin-top:1rem !important;padding:0 .75rem !important;max-height:calc(100vh - 2rem);}
+}
+
 /* ─── REDUCED MOTION ─────────────────────────────────── */
 /* The page animates a lot (pulses, spins, sheens, counters); only two
    sections carried their own reduced-motion rules. This global rule snaps
@@ -1339,11 +1345,12 @@ footer{border-top:1px solid var(--n100)}
       var el = document.querySelector('[data-demo-state="' + code + '"]');
       if (el && el.dataset.orig !== undefined) el.textContent = el.dataset.orig;
     }
+    var DEMO_NAMES = { de: 'German demo call', fr: 'French demo call', it: 'Italian demo call', en: 'English demo call' };
     function icon(code, svg){
       var b = document.querySelector('[data-demo="' + code + '"] button');
       if (b){
         b.innerHTML = svg;
-        var lbl = svg === PAUSE ? 'Pause' : 'Play';
+        var lbl = (svg === PAUSE ? 'Pause' : 'Play') + ' — ' + (DEMO_NAMES[code] || 'demo call');
         try { var d = (window.CA_DICTS || {})[caGetLang()]; if (d && d[lbl]) lbl = d[lbl]; } catch (e) {}
         b.setAttribute('aria-label', lbl);
       }
@@ -1374,6 +1381,8 @@ footer{border-top:1px solid var(--n100)}
         });
       });
     });
+    // name each button's language from first paint, not only after a click
+    document.querySelectorAll('[data-demo]').forEach(function (c) { icon(c.getAttribute('data-demo'), PLAY); });
     au.addEventListener('ended', stop);
     au.addEventListener('error', function(){
       if (playing){ audioUnavailable(playing); }
@@ -1481,12 +1490,12 @@ footer{border-top:1px solid var(--n100)}
           </div>
         </div>
         <div style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:9px;z-index:4;background:rgba(0,0,0,.35);padding:7px 11px;border-radius:999px">
-          <button type="button" class="ca-dot" aria-label="Slide 1" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:#fff"></button>
-          <button type="button" class="ca-dot" aria-label="Slide 2" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--n50,#f4f4f4)"></button>
-          <button type="button" class="ca-dot" aria-label="Slide 3" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--n50,#f4f4f4)"></button>
+          <button type="button" class="ca-dot" aria-label="Show the plumber story" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:#fff"></button>
+          <button type="button" class="ca-dot" aria-label="Show the gardener story" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--n50,#f4f4f4)"></button>
+          <button type="button" class="ca-dot" aria-label="Show the electrician story" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--n50,#f4f4f4)"></button>
         </div>
       </div>
-      <script>(function(){var r=document.currentScript.closest('section');if(!r)return;var sl=r.querySelectorAll('.ca-slide'),dots=r.querySelectorAll('.ca-dot');if(sl.length<2)return;var i=0,t;function show(n){i=n;for(var j=0;j<sl.length;j++){sl[j].style.display=j===n?'grid':'none';}for(var k=0;k<dots.length;k++){dots[k].style.background=k===n?'#fff':'rgba(255,255,255,.4)';dots[k].setAttribute('aria-current',k===n?'true':'false');}}function reset(){clearInterval(t);if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;t=setInterval(function(){show((i+1)%sl.length);},6000);}for(var d=0;d<dots.length;d++){(function(x){dots[x].onclick=function(){show(x);reset();};})(d);}show(0);reset();})();</script>
+      <script>(function(){var r=document.currentScript.closest('section');if(!r)return;var sl=r.querySelectorAll('.ca-slide'),dots=r.querySelectorAll('.ca-dot');if(sl.length<2)return;var i=0,t,paused=false;function show(n){i=n;for(var j=0;j<sl.length;j++){sl[j].style.display=j===n?'grid':'none';}for(var k=0;k<dots.length;k++){dots[k].style.background=k===n?'#fff':'rgba(255,255,255,.4)';dots[k].setAttribute('aria-current',k===n?'true':'false');}}function reset(){clearInterval(t);if(paused)return;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;t=setInterval(function(){show((i+1)%sl.length);},6000);}r.addEventListener('mouseenter',function(){paused=true;clearInterval(t);});r.addEventListener('mouseleave',function(){paused=false;reset();});r.addEventListener('focusin',function(){paused=true;clearInterval(t);});r.addEventListener('focusout',function(){paused=false;reset();});for(var d=0;d<dots.length;d++){(function(x){dots[x].onclick=function(){show(x);reset();};})(d);}show(0);reset();})();</script>
     </div>
   </section>
   
@@ -4344,6 +4353,7 @@ var ARTICLES = {
 function openArticle(id) {
   var a = ARTICLES[id];
   if (!a) return;
+  window.__caArticleTitle = a.title;
   document.getElementById('article-breadcrumb').textContent = a.type + ' \u00b7 ' + a.industry;
   document.getElementById('article-title').textContent = a.title;
   document.getElementById('article-meta').innerHTML =
@@ -4398,6 +4408,19 @@ window.addEventListener('DOMContentLoaded', function () {
     b.setAttribute('aria-expanded', body.style.display !== 'none' ? 'true' : 'false');
   });
 });
+// Keep Tab inside an open modal (search overlay, chat panel).
+function caTrapFocus(container, e) {
+  if (e.key !== 'Tab') return;
+  var nodes = container.querySelectorAll('a[href],button,input,select,textarea,[tabindex]:not([tabindex="-1"])');
+  nodes = Array.prototype.slice.call(nodes).filter(function (el) {
+    return !el.disabled && el.offsetParent !== null;
+  });
+  if (!nodes.length) return;
+  var first = nodes[0], last = nodes[nodes.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+}
+
 // Keyboard activation for clickable card <div>s (role="link" tabindex="0"):
 // Enter/Space triggers the same onclick the mouse would.
 function caCardKey(e, el){
@@ -4420,6 +4443,7 @@ function caApplyMeta() {
   try { l = (window.caGetLang && caGetLang()) || 'en'; } catch (e) {}
   var home = CA_HOME_META[l] || CA_HOME_META.en;
   var base = CA_TITLES[caCurrentPage];
+  if (caCurrentPage === 'article' && window.__caArticleTitle) base = window.__caArticleTitle + ' — CallAmplify';
   if (base && l !== 'en') {
     // translate the page word before " — CallAmplify" via the site dicts
     var d = (window.CA_DICTS || {})[l];
@@ -4460,6 +4484,7 @@ var CA_TITLES = {
 };
 var CA_HOME_TITLE = document.title;
 function goTo(id, fromHistory) {
+  if (id !== 'article') window.__caArticleTitle = null;
   caCurrentPage = id;
   caApplyMeta();
   const page = document.getElementById('page-' + id);
@@ -4541,34 +4566,6 @@ function toggleMobile() {
 
 </script>
 <script>
-function setPricingBilling(mode) {
-  var isAnnual = mode === 'annual';
-  ['tracker','closer','scaler'].forEach(function(p) {
-    document.querySelectorAll('.pm-'+p).forEach(function(el){ el.style.display = isAnnual ? 'none' : 'inline'; });
-    document.querySelectorAll('.pa-'+p).forEach(function(el){ el.style.display = isAnnual ? 'inline' : 'none'; });
-    document.querySelectorAll('.na-'+p).forEach(function(el){ el.style.display = isAnnual ? 'block' : 'none'; });
-  });
-  var mBtn = document.getElementById('toggle-monthly');
-  var aBtn = document.getElementById('toggle-annual');
-  if (mBtn && aBtn) {
-    if (isAnnual) {
-      mBtn.style.background = 'transparent'; mBtn.style.color = 'var(--n600)';
-      aBtn.style.background = 'var(--n900)'; aBtn.style.color = '#fff';
-    } else {
-      mBtn.style.background = 'var(--n900)'; mBtn.style.color = '#fff';
-      aBtn.style.background = 'transparent'; aBtn.style.color = 'var(--n600)';
-    }
-  }
-}
-function toggleMoreRows(btn) {
-  var rows = document.getElementById('more-rows');
-  var arrow = document.getElementById('more-arrow');
-  var isHidden = rows.style.display === 'none';
-  rows.style.display = isHidden ? 'block' : 'none';
-  arrow.innerHTML = isHidden ? '&uarr;' : '&darr;';
-  var label = btn.querySelector('.more-label');
-  if (label) label.textContent = isHidden ? 'See less' : 'See more';
-}
 function toggleFaqItem(btn) {
   var answer = btn.nextElementSibling;
   var icon = btn.querySelector('span');
@@ -7773,6 +7770,39 @@ Object.assign(CA_IT, {"Example estimate — assumes roughly 1 in 4 business call
 Object.assign(CA_DE, {"Early access": "Vorabzugang"});
 Object.assign(CA_FR, {"Early access": "Accès anticipé"});
 Object.assign(CA_IT, {"Early access": "Accesso anticipato"});
+Object.assign(CA_DE, {"Play — German demo call": "Abspielen — Demo-Anruf auf Deutsch"});
+Object.assign(CA_FR, {"Play — German demo call": "Lecture — appel de démonstration en allemand"});
+Object.assign(CA_IT, {"Play — German demo call": "Riproduci — chiamata demo in tedesco"});
+Object.assign(CA_DE, {"Pause — German demo call": "Pause — Demo-Anruf auf Deutsch"});
+Object.assign(CA_FR, {"Pause — German demo call": "Pause — appel de démonstration en allemand"});
+Object.assign(CA_IT, {"Pause — German demo call": "Pausa — chiamata demo in tedesco"});
+Object.assign(CA_DE, {"Play — French demo call": "Abspielen — Demo-Anruf auf Französisch"});
+Object.assign(CA_FR, {"Play — French demo call": "Lecture — appel de démonstration en français"});
+Object.assign(CA_IT, {"Play — French demo call": "Riproduci — chiamata demo in francese"});
+Object.assign(CA_DE, {"Pause — French demo call": "Pause — Demo-Anruf auf Französisch"});
+Object.assign(CA_FR, {"Pause — French demo call": "Pause — appel de démonstration en français"});
+Object.assign(CA_IT, {"Pause — French demo call": "Pausa — chiamata demo in francese"});
+Object.assign(CA_DE, {"Play — Italian demo call": "Abspielen — Demo-Anruf auf Italienisch"});
+Object.assign(CA_FR, {"Play — Italian demo call": "Lecture — appel de démonstration en italien"});
+Object.assign(CA_IT, {"Play — Italian demo call": "Riproduci — chiamata demo in italiano"});
+Object.assign(CA_DE, {"Pause — Italian demo call": "Pause — Demo-Anruf auf Italienisch"});
+Object.assign(CA_FR, {"Pause — Italian demo call": "Pause — appel de démonstration en italien"});
+Object.assign(CA_IT, {"Pause — Italian demo call": "Pausa — chiamata demo in italiano"});
+Object.assign(CA_DE, {"Play — English demo call": "Abspielen — Demo-Anruf auf Englisch"});
+Object.assign(CA_FR, {"Play — English demo call": "Lecture — appel de démonstration en anglais"});
+Object.assign(CA_IT, {"Play — English demo call": "Riproduci — chiamata demo in inglese"});
+Object.assign(CA_DE, {"Pause — English demo call": "Pause — Demo-Anruf auf Englisch"});
+Object.assign(CA_FR, {"Pause — English demo call": "Pause — appel de démonstration en anglais"});
+Object.assign(CA_IT, {"Pause — English demo call": "Pausa — chiamata demo in inglese"});
+Object.assign(CA_DE, {"Show the plumber story": "Geschichte des Sanitärs anzeigen"});
+Object.assign(CA_FR, {"Show the plumber story": "Voir l’histoire du plombier"});
+Object.assign(CA_IT, {"Show the plumber story": "Mostra la storia dell’idraulico"});
+Object.assign(CA_DE, {"Show the gardener story": "Geschichte des Gärtners anzeigen"});
+Object.assign(CA_FR, {"Show the gardener story": "Voir l’histoire du jardinier"});
+Object.assign(CA_IT, {"Show the gardener story": "Mostra la storia del giardiniere"});
+Object.assign(CA_DE, {"Show the electrician story": "Geschichte des Elektrikers anzeigen"});
+Object.assign(CA_FR, {"Show the electrician story": "Voir l’histoire de l’électricien"});
+Object.assign(CA_IT, {"Show the electrician story": "Mostra la storia dell’elettricista"});
 Object.assign(CA_DE, {"Conversation search": "Gesprächssuche"});
 Object.assign(CA_FR, {"Conversation search": "Recherche de conversations"});
 Object.assign(CA_IT, {"Conversation search": "Ricerca conversazioni"});
@@ -8386,6 +8416,7 @@ window.CA_DICTS = CA_DICTS;
     input = root.querySelector('#ca-cc-input');
     sendBtn = root.querySelector('#ca-cc-send');
     root.querySelector('#ca-cc-x').onclick = api.close;
+    root.addEventListener('keydown', function (e) { if (e.key === 'Escape') { api.close(); return; } caTrapFocus(root, e); });
     sendBtn.onclick = send;
     input.addEventListener('keydown', function(e){ if(e.key==='Enter') send(); });
   }
@@ -8460,6 +8491,7 @@ window.CA_DICTS = CA_DICTS;
     document.body.style.overflow='';
   };
   window.closeSearchOnBg = function(e){ if(e && e.target && e.target.id==='search-overlay') window.closeSearch(); };
+  (function(){ var ov = el('search-overlay'); if (ov) ov.addEventListener('keydown', function(e){ caTrapFocus(ov, e); }); })();
 
   window.runSearch = function(q){
     q=(q||'').trim();
