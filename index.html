@@ -2201,7 +2201,7 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
 
 
   <p style="text-align:center;font-size:.82rem;color:var(--n400);margin-top:2.9rem">All plans: 14-day free trial &middot; no card required &middot; cancel anytime &middot; flat monthly price, no per-minute fees</p>
-  <p style="text-align:center;font-size:.78rem;color:var(--n400);margin-top:.4rem">Bigger team or more numbers? <button type="button" onclick="goTo('contact')" style="background:none;border:none;color:var(--orange);font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.78rem;padding:0">Talk to us &rarr;</button></p>
+  <p style="text-align:center;font-size:.78rem;color:var(--n400);margin-top:.4rem">Bigger team or more numbers? <button type="button" onclick="caContactTopic('Sales enquiry — capacity')" style="background:none;border:none;color:var(--orange);font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.78rem;padding:0">Talk to us &rarr;</button></p>
 <style>
 .amp-band{background:linear-gradient(135deg,#0d0b1e 0%,#141127 55%,#1b1436 100%);border:1px solid rgba(139,92,246,.38);padding:2.75rem;display:grid;grid-template-columns:1.05fr .95fr;gap:2.75rem;align-items:center}
 .amp-band>div{min-width:0}
@@ -2222,10 +2222,10 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
       </div>
       <div style="display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap">
         <button type="button" class="arrow-button" onclick="goTo('free-trial')" style="background:linear-gradient(100deg,#a855f7,#6366f1);border:none">Start free trial<div class="arrow"></div></button>
-        <button type="button" onclick="goTo('contact')" style="background:none;border:none;color:#fff;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.92rem;padding:0">See how it works &rarr;</button>
+        <button type="button" onclick="caContactTopic('Demo request')" style="background:none;border:none;color:#fff;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.92rem;padding:0">See how it works &rarr;</button>
       </div>
       <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.14)">
-        <span style="font-size:1rem">🎙️</span><span style="font-size:.78rem;color:rgba(255,255,255,.55)">Live voice answering — early access.</span><button type="button" onclick="goTo('contact')" style="background:none;border:none;color:#c4b5fd;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.78rem;padding:0">Book a demo to join &rarr;</button>
+        <span style="font-size:1rem">🎙️</span><span style="font-size:.78rem;color:rgba(255,255,255,.55)">Live voice answering — early access.</span><button type="button" onclick="caContactTopic('Live voice agent — early access')" style="background:none;border:none;color:#c4b5fd;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.78rem;padding:0">Book a demo to join &rarr;</button>
       </div>
     </div>
     <div class="amp-illus">
@@ -2283,7 +2283,7 @@ window.setBilling = function(mode){
     <tbody><tr><td colspan="4" style="padding:1rem;text-align:center"><button type="button" aria-controls="ca-cmp-more" aria-expanded="false" onclick="var m=document.getElementById('ca-cmp-more');var o=m.style.display!=='none';m.style.display=o?'none':'table-row-group';this.setAttribute('aria-expanded',o?'false':'true');document.getElementById('ca-cmp-arrow').textContent=o?'↓':'↑';var lb=document.getElementById('ca-cmp-label');if(lb)lb.textContent=caT(o?'All features':'Hide extra features');" style="background:none;border:none;color:#0f62fe;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.9rem"><span id="ca-cmp-label">All features</span> <span id="ca-cmp-arrow">↓</span></button></td></tr></tbody>
   </table>
   </div>
-  <p style="font-size:.78rem;color:var(--n400);margin-top:.7rem;text-align:center">Need more numbers? Extra local number CHF 8/month <button type="button" onclick="goTo('contact')" style="background:none;border:none;color:var(--orange);font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.78rem;padding:0">Talk to us &rarr;</button></p>
+  <p style="font-size:.78rem;color:var(--n400);margin-top:.7rem;text-align:center">Need more numbers? Extra local number CHF 8/month <button type="button" onclick="caContactTopic('Sales enquiry — capacity')" style="background:none;border:none;color:var(--orange);font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:.78rem;padding:0">Talk to us &rarr;</button></p>
 </div>
 
 <!-- FAQ -->
@@ -4006,7 +4006,7 @@ renderHub(1);
           <li><a href="#free-trial" onclick="goTo('free-trial');return false;" class="footer-link">Free trial</a></li>
           <li><a href="#book-demo" onclick="goTo('book-demo');return false;" class="footer-link">Book a demo<div class="arrow"></div></a></li>
           <li><a href="#pricing" onclick="goTo('pricing');return false;" class="footer-link">View pricing</a></li>
-          <li><a href="#contact" onclick="goTo('contact');return false;" class="footer-link">Contact sales</a></li>
+          <li><a href="#contact" onclick="caContactTopic('Sales enquiry');return false;" class="footer-link">Contact sales</a></li>
         </ul>
       </div>
     </div>
