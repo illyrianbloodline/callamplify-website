@@ -369,6 +369,9 @@ footer{border-top:1px solid var(--n100)}
   .footer-cols-inner{grid-template-columns:1fr!important}
 }
 
+.footer-link{font-size:.875rem;color:var(--n600);text-decoration:none;font-family:'IBM Plex Sans',sans-serif;text-align:left;display:inline-block}
+.footer-link:hover,.footer-link:focus-visible{color:var(--orange);text-decoration:underline}
+
 /* ─── SEARCH OVERLAY VIEWPORT FIT ────────────────────── */
 #search-overlay > div{max-height:calc(100vh - 6rem);overflow:auto;}
 @media (max-width:640px){
@@ -3955,30 +3958,30 @@ renderHub(1);
       <div>
         <div style="font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--n400);margin-bottom:1rem">Product</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem">
-          <li><button type="button" onclick="goTo('feat-ai-scoring')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">AI receptionist</button></li>
-          <li><button type="button" onclick="goTo('feat-live-feed')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Missed-call text-back</button></li>
-          <li><button type="button" onclick="goTo('feat-call-tracking')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Call tracking &amp; recordings</button></li>
-          <li><button type="button" onclick="goTo('feat-form-chat')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Lead inbox</button></li>
-          <li><button type="button" onclick="goTo('pricing')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Pricing</button></li>
+          <li><a href="#feat-ai-scoring" onclick="goTo('feat-ai-scoring');return false;" class="footer-link">AI receptionist</a></li>
+          <li><a href="#feat-live-feed" onclick="goTo('feat-live-feed');return false;" class="footer-link">Missed-call text-back</a></li>
+          <li><a href="#feat-call-tracking" onclick="goTo('feat-call-tracking');return false;" class="footer-link">Call tracking &amp; recordings</a></li>
+          <li><a href="#feat-form-chat" onclick="goTo('feat-form-chat');return false;" class="footer-link">Lead inbox</a></li>
+          <li><a href="#pricing" onclick="goTo('pricing');return false;" class="footer-link">Pricing</a></li>
         </ul>
       </div>
       <div>
         <div style="font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--n400);margin-bottom:1rem">Solutions</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem">
-          <li><button type="button" onclick="goTo('ind-homeservices')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Plumbers</button></li>
-          <li><button type="button" onclick="goTo('ind-homeservices')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Electricians</button></li>
-          <li><button type="button" onclick="goTo('ind-homeservices')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Heating &amp; HVAC</button></li>
-          <li><button type="button" onclick="goTo('case-studies')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Example scenarios</button></li>
-          <li><button type="button" onclick="goTo('partners')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Refer &amp; earn</button></li>
+          <li><a href="#ind-homeservices" onclick="goTo('ind-homeservices');return false;" class="footer-link">Plumbers</a></li>
+          <li><a href="#ind-homeservices" onclick="goTo('ind-homeservices');return false;" class="footer-link">Electricians</a></li>
+          <li><a href="#ind-homeservices" onclick="goTo('ind-homeservices');return false;" class="footer-link">Heating &amp; HVAC</a></li>
+          <li><a href="#case-studies" onclick="goTo('case-studies');return false;" class="footer-link">Example scenarios</a></li>
+          <li><a href="#partners" onclick="goTo('partners');return false;" class="footer-link">Refer &amp; earn</a></li>
         </ul>
       </div>
       <div>
         <div style="font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--n400);margin-bottom:1rem">Company</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem">
-          <li><button type="button" onclick="goTo('about')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">About</button></li>
-          <li><button type="button" onclick="goTo('principles')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Principles</button></li>
-          <li><button type="button" onclick="goTo('resources')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Resources</button></li>
-          <li><button type="button" onclick="goTo('resources')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">Blog</button></li>
+          <li><a href="#about" onclick="goTo('about');return false;" class="footer-link">About</a></li>
+          <li><a href="#principles" onclick="goTo('principles');return false;" class="footer-link">Principles</a></li>
+          <li><a href="#resources" onclick="goTo('resources');return false;" class="footer-link">Resources</a></li>
+          <li><a href="#resources" onclick="goTo('resources');return false;" class="footer-link">Guides &amp; articles</a></li>
         </ul>
       </div>
       <div>
@@ -3986,7 +3989,7 @@ renderHub(1);
         <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem">
           <li><button type="button" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left" onclick="goTo('free-trial')">Free trial</button></li>
           <li><button type="button" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left" onclick="goTo('book-demo')">Book a demo<div class="arrow"></div></button></li>
-          <li><button type="button" onclick="goTo('pricing')" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left">View pricing</button></li>
+          <li><a href="#pricing" onclick="goTo('pricing');return false;" class="footer-link">View pricing</a></li>
           <li><button type="button" style="font-size:.875rem;color:var(--n600);background:none;border:none;cursor:pointer;padding:0;font-family:'IBM Plex Sans',sans-serif;text-align:left" onclick="goTo('contact')">Contact sales</button></li>
         </ul>
       </div>
@@ -4539,6 +4542,23 @@ var CA_TITLES = {
   cookies: 'Cookies — CallAmplify'
 };
 var CA_HOME_TITLE = document.title;
+// Detail pages belong to a top-level nav item; without this the header showed
+// nothing selected as soon as you opened a feature or industry page. Derived
+// from what the mega menus actually link to — the header has only four tabs,
+// so pages with no nav parent (guides, article, about, principles,
+// case-studies) deliberately highlight nothing rather than an unrelated tab.
+var CA_NAV_PARENT = {
+  'feat-ai-scoring': 'what-we-offer',
+  'feat-live-feed': 'what-we-offer',
+  'feat-call-tracking': 'what-we-offer',
+  'feat-form-chat': 'what-we-offer',
+  'feat-attribution': 'what-we-offer',
+  'search-calls': 'what-we-offer',
+  'solutions': 'what-we-offer',
+  'ind-homeservices': 'who-we-serve',
+  'partners': 'who-we-serve'
+};
+
 function goTo(id, fromHistory) {
   if (id !== 'article') window.__caArticleTitle = null;
   caCurrentPage = id;
@@ -4561,7 +4581,12 @@ function goTo(id, fromHistory) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   page.classList.add('active');
   document.querySelectorAll('.nav-tab[data-page]').forEach(tab => {
-    tab.classList.toggle('active', tab.dataset.page === id);
+    var activeNav = CA_NAV_PARENT[id] || id;
+    var isActive = tab.dataset.page === activeNav;
+    tab.classList.toggle('active', isActive);
+    // Visual highlight alone tells a screen-reader user nothing.
+    if (isActive) tab.setAttribute('aria-current', 'page');
+    else tab.removeAttribute('aria-current');
   });
   // Disable smooth scroll, jump to top, re-enable
   document.documentElement.style.scrollBehavior = 'auto';
@@ -7857,6 +7882,12 @@ Object.assign(CA_IT, {"Example estimate — assumes roughly 1 in 4 business call
 Object.assign(CA_DE, {"Early access": "Vorabzugang"});
 Object.assign(CA_FR, {"Early access": "Accès anticipé"});
 Object.assign(CA_IT, {"Early access": "Accesso anticipato"});
+Object.assign(CA_DE, {"Language": "Sprache"});
+Object.assign(CA_FR, {"Language": "Langue"});
+Object.assign(CA_IT, {"Language": "Lingua"});
+Object.assign(CA_DE, {"Guides & articles": "Guides & Artikel"});
+Object.assign(CA_FR, {"Guides & articles": "Guides et articles"});
+Object.assign(CA_IT, {"Guides & articles": "Guide e articoli"});
 Object.assign(CA_DE, {"Call CallAmplify at +41 52 547 01 17": "CallAmplify anrufen unter +41 52 547 01 17"});
 Object.assign(CA_FR, {"Call CallAmplify at +41 52 547 01 17": "Appeler CallAmplify au +41 52 547 01 17"});
 Object.assign(CA_IT, {"Call CallAmplify at +41 52 547 01 17": "Chiamare CallAmplify al +41 52 547 01 17"});
@@ -8306,9 +8337,16 @@ window.CA_DICTS = CA_DICTS;
   }
 
   /* ---- header dropdown ---- */
+  function caLangName(l) {
+    return ({ en: 'English', de: 'Deutsch', fr: 'Fran\u00e7ais', it: 'Italiano' })[l] || 'English';
+  }
+
   function syncSwitchUI() {
     var lbl = document.getElementById('ca-lang-label');
     if (lbl) lbl.textContent = lang.toUpperCase();
+    // "Language" alone never said WHICH language is active.
+    var lb = document.getElementById('ca-lang-btn');
+    if (lb) lb.setAttribute('aria-label', caT('Language') + ': ' + caLangName(lang));
     ['en', 'de', 'fr', 'it'].forEach(function (l) {
       var o = document.getElementById('ca-opt-' + l);
       if (o) o.setAttribute('aria-selected', lang === l);
@@ -8331,13 +8369,13 @@ window.CA_DICTS = CA_DICTS;
       '</button>' +
       '<div id="ca-lang-menu" role="listbox" style="display:none;position:absolute;top:calc(100% + 6px);right:0;min-width:190px;background:#fff;border:1px solid var(--n100);box-shadow:0 12px 32px rgba(0,0,0,.14);z-index:200;padding:4px">' +
         '<button type="button" id="ca-opt-en" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.55rem .7rem;background:none;border:none;cursor:pointer;font-family:inherit;font-size:.88rem;color:var(--n900);text-align:left">' +
-          '<span style="font-size:1rem">\uD83C\uDDEC\uD83C\uDDE7</span><span style="flex:1">English</span><span id="ca-check-en" style="color:var(--orange)">\u2713</span></button>' +
+          '<span style="flex:1">English</span><span id="ca-check-en" style="color:var(--orange)">\u2713</span></button>' +
         '<button type="button" id="ca-opt-de" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.55rem .7rem;background:none;border:none;cursor:pointer;font-family:inherit;font-size:.88rem;color:var(--n900);text-align:left">' +
-          '<span style="font-size:1rem">\uD83C\uDDE9\uD83C\uDDEA</span><span style="flex:1">Deutsch</span><span id="ca-check-de" style="color:var(--orange)">\u2713</span></button>' +
+          '<span style="flex:1">Deutsch</span><span id="ca-check-de" style="color:var(--orange)">\u2713</span></button>' +
         '<button type="button" id="ca-opt-fr" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.55rem .7rem;background:none;border:none;cursor:pointer;font-family:inherit;font-size:.88rem;color:var(--n900);text-align:left">' +
-          '<span style="font-size:1rem">\uD83C\uDDEB\uD83C\uDDF7</span><span style="flex:1">Fran\u00e7ais</span><span id="ca-check-fr" style="color:var(--orange)">\u2713</span></button>' +
+          '<span style="flex:1">Fran\u00e7ais</span><span id="ca-check-fr" style="color:var(--orange)">\u2713</span></button>' +
         '<button type="button" id="ca-opt-it" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.55rem .7rem;background:none;border:none;cursor:pointer;font-family:inherit;font-size:.88rem;color:var(--n900);text-align:left">' +
-          '<span style="font-size:1rem">\uD83C\uDDEE\uD83C\uDDF9</span><span style="flex:1">Italiano</span><span id="ca-check-it" style="color:var(--orange)">\u2713</span></button>' +
+          '<span style="flex:1">Italiano</span><span id="ca-check-it" style="color:var(--orange)">\u2713</span></button>' +
       '</div>';
     // insert after the search button (IBM masthead order: search, locale, auth, CTA)
     var searchBtn = cta.querySelector('#search-btn');
@@ -8349,8 +8387,23 @@ window.CA_DICTS = CA_DICTS;
     function open() { menu.style.display = 'block'; caret.style.transform = 'rotate(180deg)'; btn.setAttribute('aria-expanded', 'true'); }
     function close() { menu.style.display = 'none'; caret.style.transform = 'rotate(0deg)'; btn.setAttribute('aria-expanded', 'false'); }
     btn.addEventListener('click', function (e) { e.stopPropagation(); menu.style.display === 'block' ? close() : open(); });
+    // A role=listbox must be operable with the arrow keys, not just clicks.
+    var opts = Array.prototype.slice.call(wrap.querySelectorAll('button[role=option]'));
+    function focusOption(delta) {
+      var i = opts.indexOf(document.activeElement);
+      i = (i < 0) ? 0 : (i + delta + opts.length) % opts.length;
+      opts[i].focus();
+    }
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); open(); if (opts[0]) opts[0].focus(); }
+    });
     wrap.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menu.style.display === 'block') { e.preventDefault(); close(); btn.focus(); }
+      if (e.key === 'Escape' && menu.style.display === 'block') { e.preventDefault(); close(); btn.focus(); return; }
+      if (menu.style.display !== 'block') return;
+      if (e.key === 'ArrowDown') { e.preventDefault(); focusOption(1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); focusOption(-1); }
+      else if (e.key === 'Home') { e.preventDefault(); if (opts[0]) opts[0].focus(); }
+      else if (e.key === 'End') { e.preventDefault(); if (opts.length) opts[opts.length - 1].focus(); }
     });
     wrap.querySelector('#ca-opt-en').addEventListener('click', function () { setLang('en'); close(); });
     wrap.querySelector('#ca-opt-de').addEventListener('click', function () { setLang('de'); close(); });
