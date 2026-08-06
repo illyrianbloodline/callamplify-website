@@ -758,7 +758,7 @@ footer{border-top:1px solid var(--n100)}
                     <div style="width:28px;height:28px;background:rgba(245,78,0,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <span style="font-size:.78rem;color:rgba(255,255,255,.7)">Paid for their whole first year</span>
+                    <span style="font-size:.78rem;color:rgba(255,255,255,.7)">Referral credit for their first 12 paid months</span>
                   </div>
                   <div style="display:flex;align-items:center;gap:.75rem">
                     <div style="width:28px;height:28px;background:rgba(245,78,0,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
@@ -772,7 +772,7 @@ footer{border-top:1px solid var(--n100)}
                 <div style="font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:.5rem">For solo businesses</div>
                 <div style="font-size:.95rem;font-weight:600;color:#fff;line-height:1.35;margin-bottom:.5rem">Know a business owner who keeps missing calls?</div>
                 <div style="font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1rem">Send them your link &mdash; you earn 20% of their plan for a year, they're set up in minutes.</div>
-                <button type="button" class="arrow-button" onclick="closeMega();goTo('partners')" style="font-size:.78rem;padding:8px 14px">Get your referral link<div class="arrow"></div></button>
+                <button type="button" class="arrow-button" onclick="closeMega();goTo('partners')" style="font-size:.78rem;padding:8px 14px">Learn about referrals<div class="arrow"></div></button>
               </div>
             </div>
           </div>
@@ -1343,6 +1343,9 @@ footer{border-top:1px solid var(--n100)}
       var b = document.querySelector('[data-demo="' + code + '"] button');
       if (b){ b.innerHTML = svg; b.setAttribute('aria-label', svg === PAUSE ? 'Pause' : 'Play'); }
     }
+    function audioUnavailable(code){
+      playing = null; icon(code, PLAY); caption(code, 'Recording unavailable right now');
+    }
     function stop(){
       if (!playing) return;
       au.pause(); icon(playing, PLAY); restore(playing); playing = null;
@@ -1362,13 +1365,13 @@ footer{border-top:1px solid var(--n100)}
           // No recording in place yet. Say so plainly rather than leaving a
           // pulsing play button that swallows the click - the dead-button
           // pattern this section exists to avoid.
-          playing = null; icon(code, PLAY); caption(code, 'Recording coming soon');
+          audioUnavailable(code);
         });
       });
     });
     au.addEventListener('ended', stop);
     au.addEventListener('error', function(){
-      if (playing){ var c = playing; playing = null; icon(c, PLAY); caption(c, 'Recording coming soon'); }
+      if (playing){ audioUnavailable(playing); }
     });
 
     // click ripple - verbatim port of the DC component's handler
@@ -2294,7 +2297,7 @@ window.setBilling = function(mode){
       <div class="grid-cell"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem"><div class="cell-icon dark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="res-type-tag">Guide</div></div><div class="cell-h">How to build a cleaner lead attribution model</div><p style="font-size:.875rem;color:var(--n400);margin:.75rem 0">12 min read</p><button type="button" class="btn-orange-text" onclick="goTo('guides')">View guides<div class="arrow" style="border-right-color:var(--orange);border-bottom-color:var(--orange)"></div></button></div>
       <div class="grid-cell"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem"><div class="cell-icon dark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="res-type-tag">Playbook</div></div><div class="cell-h">The agency reporting stack for calls, forms, and revenue</div><p style="font-size:.875rem;color:var(--n400);margin:.75rem 0">8 min read</p><button type="button" class="btn-orange-text" onclick="goTo('guides')">View guides<div class="arrow" style="border-right-color:var(--orange);border-bottom-color:var(--orange)"></div></button></div>
       <div class="grid-cell"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem"><div class="cell-icon dark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="res-type-tag">Article</div></div><div class="cell-h">Why conversion count is not the same as lead quality</div><p style="font-size:.875rem;color:var(--n400);margin:.75rem 0">6 min read</p><button type="button" class="btn-orange-text" onclick="goTo('guides')">View guides<div class="arrow" style="border-right-color:var(--orange);border-bottom-color:var(--orange)"></div></button></div>
-      <div class="grid-cell"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem"><div class="cell-icon dark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="res-type-tag">Template</div></div><div class="cell-h">Monthly performance review format for demand teams</div><p style="font-size:.875rem;color:var(--n400);margin:.75rem 0">Download</p><button type="button" class="btn-orange-text" onclick="goTo('guides')">View guides<div class="arrow" style="border-right-color:var(--orange);border-bottom-color:var(--orange)"></div></button></div>
+      <div class="grid-cell"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem"><div class="cell-icon dark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="res-type-tag">Template</div></div><div class="cell-h">Monthly performance review format for demand teams</div><p style="font-size:.875rem;color:var(--n400);margin:.75rem 0">Template guide</p><button type="button" class="btn-orange-text" onclick="goTo('guides')">View guides<div class="arrow" style="border-right-color:var(--orange);border-bottom-color:var(--orange)"></div></button></div>
     </div>
   </div>
 
@@ -3649,9 +3652,9 @@ renderHub(1);
         <p style="font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.75;margin:0">We set out to build something better — a platform that's genuinely useful for agencies and businesses operating in the Swiss and European market.</p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
-        <div style="background:rgba(255,255,255,.06);padding:1.75rem;border:1px solid rgba(255,255,255,.08)"><div style="font-size:2rem;font-weight:700;color:var(--orange);margin-bottom:.4rem">2021</div><div style="font-size:.88rem;color:rgba(255,255,255,.5)">Founded in Zurich</div></div>
-        <div style="background:rgba(255,255,255,.06);padding:1.75rem;border:1px solid rgba(255,255,255,.08)"><div style="font-size:2rem;font-weight:700;color:var(--orange);margin-bottom:.4rem">500+</div><div style="font-size:.88rem;color:rgba(255,255,255,.5)">Businesses tracked</div></div>
-        <div style="background:rgba(255,255,255,.06);padding:1.75rem;border:1px solid rgba(255,255,255,.08)"><div style="font-size:2rem;font-weight:700;color:var(--orange);margin-bottom:.4rem">12</div><div style="font-size:.88rem;color:rgba(255,255,255,.5)">Team members</div></div>
+        <div style="background:rgba(255,255,255,.06);padding:1.75rem;border:1px solid rgba(255,255,255,.08)"><div style="font-size:2rem;font-weight:700;color:var(--orange);margin-bottom:.4rem">CH</div><div style="font-size:.88rem;color:rgba(255,255,255,.5)">Swiss company</div></div>
+        <div style="background:rgba(255,255,255,.06);padding:1.75rem;border:1px solid rgba(255,255,255,.08)"><div style="font-size:2rem;font-weight:700;color:var(--orange);margin-bottom:.4rem">EU</div><div style="font-size:.88rem;color:rgba(255,255,255,.5)">App &amp; database hosted in Frankfurt</div></div>
+        <div style="background:rgba(255,255,255,.06);padding:1.75rem;border:1px solid rgba(255,255,255,.08)"><div style="font-size:2rem;font-weight:700;color:var(--orange);margin-bottom:.4rem">4</div><div style="font-size:.88rem;color:rgba(255,255,255,.5)">Supported AI languages</div></div>
         <div style="background:rgba(255,255,255,.06);padding:1.75rem;border:1px solid rgba(255,255,255,.08)"><div style="font-size:2rem;font-weight:700;color:var(--orange);margin-bottom:.4rem">CH</div><div style="font-size:.88rem;color:rgba(255,255,255,.5)">Swiss company, EU hosting</div></div>
       </div>
     </div>
@@ -3751,7 +3754,7 @@ renderHub(1);
     <div style="max-width:var(--max);margin:0 auto;padding:0 2rem">
       <div style="font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem">Partners</div>
       <h1 style="font-size:clamp(2rem,3.5vw,2.8rem);font-weight:600;color:#fff;letter-spacing:-.03em;margin:0 0 1rem">Grow your agency with CallAmplify</h1>
-      <p style="font-size:1.05rem;color:rgba(255,255,255,.55);max-width:560px;line-height:1.75;margin:0">Join our partner programme and offer your clients world-class call tracking with a revenue share that rewards your growth.</p>
+      <p style="font-size:1.05rem;color:rgba(255,255,255,.55);max-width:560px;line-height:1.75;margin:0">Join our partner programme for referrals, client onboarding support, and monthly account credit. White-label dashboards and deeper agency integrations are planned, but not live yet.</p>
     </div>
   </section>
   <section style="padding:2.4rem 0;border-bottom:1px solid var(--n100)">
@@ -3760,6 +3763,7 @@ renderHub(1);
       <div style="border:1px solid var(--n100);padding:2rem">
         <div style="font-size:1rem;font-weight:600;color:var(--n900);margin-bottom:.6rem">20% revenue share</div>
         <div style="font-size:.88rem;line-height:1.7;color:var(--n600)">Earn 20% of every subscription your referred clients pay — as credit on your own bill, for their first 12 months.</div>
+        <div style="font-size:.75rem;line-height:1.6;color:var(--n400);margin-top:.75rem">Referral credit applies to eligible paid subscriptions for the referred customer’s first 12 paid months. Credits are applied to your CallAmplify invoice and are subject to our referral terms.</div>
       </div>
       <div style="border:1px solid var(--n100);padding:2rem">
         <div style="font-size:1rem;font-weight:600;color:var(--n900);margin-bottom:.6rem">Dedicated partner manager</div>
@@ -3774,8 +3778,8 @@ renderHub(1);
         <div style="font-size:.88rem;line-height:1.7;color:var(--n600)">You own the relationship — we never market to or poach the clients you bring.</div>
       </div>
       <div style="border:1px solid var(--n100);padding:2rem">
-        <div style="font-size:1rem;font-weight:600;color:var(--n900);margin-bottom:.6rem">Priority support</div>
-        <div style="font-size:.88rem;line-height:1.7;color:var(--n600)">Your clients go to the front of the queue during business hours.</div>
+        <div style="font-size:1rem;font-weight:600;color:var(--n900);margin-bottom:.6rem">Partner support</div>
+        <div style="font-size:.88rem;line-height:1.7;color:var(--n600)">Partner-referred clients receive business-hours support through your dedicated partner contact.</div>
       </div>
       <div style="border:1px solid var(--n100);padding:2rem">
         <div style="font-size:1rem;font-weight:600;color:var(--n900);margin-bottom:.6rem">Co-marketing opportunities</div>
@@ -3790,7 +3794,7 @@ renderHub(1);
           <div style="font-size:.9rem;color:rgba(255,255,255,.5)">20% recurring revenue share · Automatic monthly credit · Direct line to us</div>
         </div>
         <div style="display:flex;gap:.75rem;flex-shrink:0">
-          <button type="button" class="arrow-button" style="font-size:1rem;padding:14px 28px" onclick="goTo('contact')">Apply to become a partner<div class="arrow"></div></button>
+          <button type="button" class="arrow-button" style="font-size:1rem;padding:14px 28px" onclick="caContactTopic('Partner application')">Apply to become a partner<div class="arrow"></div></button>
           <button type="button" class="arrow-button-ghost-light" onclick="goTo('book-demo')">Book a demo<div class="arrow"></div></button>
         </div>
       </div>
@@ -3966,9 +3970,9 @@ renderHub(1);
   <div style="max-width:var(--max);margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
     <span style="font-size:.78rem;color:var(--n400)">&copy; 2026 CallTrack GmbH. All rights reserved.</span>
     <div style="display:flex;gap:2rem">
-      <button type="button" style="font-size:.78rem;color:var(--n400);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:0" onclick="goTo('privacy-policy')">Privacy policy</button><button type="button" style="font-size:.78rem;color:var(--n400);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:0" onclick="window.location.href='https://app.callamplify.com/impressum'">Impressum</button>
+      <button type="button" style="font-size:.78rem;color:var(--n400);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:0" onclick="goTo('privacy-policy')">Privacy policy</button><a href="https://app.callamplify.com/impressum" style="font-size:.78rem;color:var(--n400);text-decoration:none;font-family:'IBM Plex Sans',sans-serif">Impressum</a>
       <button type="button" style="font-size:.78rem;color:var(--n400);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:0" onclick="goTo('terms')">Terms of service</button>
-      <button type="button" style="font-size:.78rem;color:var(--n400);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:0" onclick="goTo('cookies')">Cookie settings</button>
+      <button type="button" style="font-size:.78rem;color:var(--n400);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:0" onclick="goTo('cookies')">Cookie policy</button>
     </div>
   </div>
 </footer>
@@ -4007,6 +4011,10 @@ window.addEventListener('DOMContentLoaded', function () {
 function caAppBase(){
   return /localhost|127\.0\.0\.1/.test(location.hostname)
     ? 'http://localhost:5001' : 'https://app.callamplify.com';
+}
+function caContactTopic(topic){
+  try { sessionStorage.setItem('ca_contact_topic', topic); } catch (e) {}
+  goTo('contact');
 }
 function caLang(){try{var l=(window.caGetLang&&caGetLang())||'en';return (l==='de'||l==='fr'||l==='it')?l:'en';}catch(e){return 'en';}}
 function caGoSignup(){try{caTrack('cta','pricing','trial');}catch(e){}var u=caAppBase()+'/login?mode=signup&lang='+caLang();try{var p=sessionStorage.getItem('caPlan'),b=sessionStorage.getItem('caBilling');if(p)u+='&plan='+encodeURIComponent(p);if(b)u+='&billing='+encodeURIComponent(b);}catch(e){}window.location.href=u;}
@@ -4294,8 +4302,9 @@ var ARTICLES = {
       <p>Every business owner knows another who's still missing calls and losing jobs to voicemail. Tell them about CallAmplify and you don't just do them a favour — you get paid for it, every month of their first year.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">20% of their plan, for a full year</h2>
       <p>When someone signs up through your referral link, you earn 20% of what they pay, every month, for their first twelve months. They're set up in minutes; you get a credit that keeps coming as long as they're a customer in that first year.</p>
+      <p style="font-size:.82rem;color:var(--n500);line-height:1.6">Referral credit applies to eligible paid subscriptions for the referred customer’s first 12 paid months. Credits are applied to your CallAmplify invoice and are subject to our referral terms.</p>
       <h2 style="font-size:1.4rem;font-weight:600;color:var(--n900);margin:2rem 0 .75rem;letter-spacing:-.02em">A handful of referrals covers your own subscription</h2>
-      <p>The maths is simple. Refer a few mates onto a Pro plan and the credits add up to roughly what you pay yourself — so CallAmplify effectively runs for free. Refer more and it becomes a small income on the side, for recommending something you already use.</p>
+      <p>The maths is simple. Refer a few businesses onto a paid plan and the credits add up to roughly what you pay yourself — so CallAmplify effectively runs for free. Refer more and it becomes a small income on the side, for recommending something you already use.</p>
       <p>Grab your link from your dashboard, send it to the businesses in your contacts, and let it run. You were going to recommend it anyway — you may as well be paid for it.</p>
       <p style="margin-top:2rem;padding:1.25rem 1.5rem;background:var(--n50);border-left:3px solid var(--orange);font-style:italic;color:var(--n600)">"I sent it to four other plumbers I know. Two signed up — now my plan basically pays for itself." — "Marco", illustrative one-van plumber, Lucerne</p>
     `
@@ -4793,7 +4802,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "© 2026 CallTrack GmbH. All rights reserved.": "© 2026 CallTrack GmbH. Alle Rechte vorbehalten.",
   "Privacy policy": "Datenschutz",
   "Terms of service": "Nutzungsbedingungen",
-  "Cookie settings": "Cookie-Einstellungen",
+  "Cookie policy": "Cookie-Richtlinie",
 
   /* ---- Solutions page ---- */
   "Standardize Your Success. Eliminate The Guesswork.": "Standardisieren Sie Ihren Erfolg. Schluss mit dem Rätselraten.",
@@ -5016,9 +5025,6 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "We built the call tracking tool we always wished existed": "Wir haben das Anrufverfolgungs-Tool gebaut, das wir uns immer gewünscht haben",
   "CallAmplify was founded in Zurich by a team of marketing and engineering veterans who spent years frustrated by US-centric call tracking tools that didn't understand European regulations, languages or business models.": "CallAmplify wurde in Zürich von einem Team erfahrener Marketing- und Engineering-Profis gegründet, die jahrelang von US-zentrierten Anrufverfolgungs-Tools frustriert waren, die europäische Vorschriften, Sprachen und Geschäftsmodelle nicht verstanden.",
   "We set out to build something better — a platform that's genuinely useful for agencies and businesses operating in the Swiss and European market.": "Wir wollten etwas Besseres bauen – eine Plattform, die für Agenturen und Unternehmen im Schweizer und europäischen Markt wirklich nützlich ist.",
-  "Founded in Zurich": "Gegründet in Zürich",
-  "Businesses tracked": "Erfasste Unternehmen",
-  "Team members": "Teammitglieder",
   "Swiss company, EU hosting": "Schweizer Unternehmen, Hosting in der EU",
   "Our mission": "Unsere Mission",
   "To give every European business and agency the same clarity over their marketing performance that big brands take for granted.": "Jedem europäischen Unternehmen und jeder Agentur dieselbe Klarheit über ihre Marketingleistung zu geben, die große Marken als selbstverständlich ansehen.",
@@ -5114,12 +5120,12 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "20% for 12 months": "20% für 12 Monate",
   "Refer another business, earn 20% of their plan": "Empfehlen Sie einen Kollegen und verdienen Sie 20% seines Abos",
   "20% of their plan, every month for a year": "20% ihres Tarifs, jeden Monat, ein Jahr lang",
-  "Paid for their whole first year": "Bezahlt für sein ganzes erstes Jahr",
+  "Referral credit for their first 12 paid months": "Empfehlungsgutschrift für die ersten 12 bezahlten Monate",
   "~5 referrals covers your own bill": "~5 Empfehlungen decken Ihre eigene Rechnung",
   "For solo businesses": "Für Solo-Unternehmer",
   "Know a business owner who keeps missing calls?": "Kennen Sie einen Kollegen, der ständig Anrufe verpasst?",
   "Send them your link — you earn 20% of their plan for a year, they're set up in minutes.": "Schicken Sie ihm Ihren Link — Sie verdienen ein Jahr lang 20% seines Abos, er ist in Minuten startklar.",
-  "Get your referral link": "Empfehlungslink holen",
+  "Learn about referrals": "Mehr über Empfehlungen",
   "New call": "Neuer Anruf",
   "now": "jetzt",
   "CALLS": "ANRUFE",
@@ -5776,7 +5782,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "\u00a9 2026 CallTrack GmbH. All rights reserved.": "\u00a9 2026 CallTrack GmbH. Tous droits r\u00e9serv\u00e9s.",
   "Privacy policy": "Politique de confidentialit\u00e9",
   "Terms of service": "Conditions d'utilisation",
-  "Cookie settings": "Param\u00e8tres des cookies",
+  "Cookie policy": "Politique de cookies",
   "Standardize Your Success. Eliminate The Guesswork.": "Standardisez votre r\u00e9ussite. \u00c9liminez les incertitudes.",
   "Different teams use lead data differently. These solution paths organize the platform by accountability, reporting needs, and operational workflow.": "Chaque \u00e9quipe utilise les donn\u00e9es de prospects diff\u00e9remment. Ces parcours organisent la plateforme selon la responsabilit\u00e9, les besoins de rapports et le flux de travail op\u00e9rationnel.",
   "View solution": "Voir la solution",
@@ -5969,9 +5975,6 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "We built the call tracking tool we always wished existed": "Nous avons cr\u00e9\u00e9 l'outil de suivi des appels que nous avons toujours esp\u00e9r\u00e9 voir exister",
   "CallAmplify was founded in Zurich by a team of marketing and engineering veterans who spent years frustrated by US-centric call tracking tools that didn't understand European regulations, languages or business models.": "CallAmplify a \u00e9t\u00e9 fond\u00e9e \u00e0 Zurich par une \u00e9quipe de v\u00e9t\u00e9rans du marketing et de l'ing\u00e9nierie, longtemps frustr\u00e9s par des outils de suivi des appels centr\u00e9s sur les \u00c9tats-Unis, qui ne comprenaient ni les r\u00e9glementations, ni les langues, ni les mod\u00e8les d'affaires europ\u00e9ens.",
   "We set out to build something better \u2014 a platform that's genuinely useful for agencies and businesses operating in the Swiss and European market.": "Nous avons voulu construire mieux \u2014 une plateforme r\u00e9ellement utile pour les agences et les entreprises qui op\u00e8rent sur le march\u00e9 suisse et europ\u00e9en.",
-  "Founded in Zurich": "Fond\u00e9e \u00e0 Zurich",
-  "Businesses tracked": "Entreprises suivies",
-  "Team members": "Membres de l'\u00e9quipe",
   "Swiss company, EU hosting": "Entreprise suisse, h\u00e9bergement dans l\u2019UE",
   "Our mission": "Notre mission",
   "To give every European business and agency the same clarity over their marketing performance that big brands take for granted.": "Offrir \u00e0 chaque entreprise et agence europ\u00e9enne la m\u00eame clart\u00e9 sur leurs performances marketing que celle que les grandes marques tiennent pour acquise.",
@@ -6052,12 +6055,12 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "20% for 12 months": "20% pendant 12 mois",
   "Refer another business, earn 20% of their plan": "Parrainez une autre entreprise, gagnez 20% de son abonnement",
   "20% of their plan, every month for a year": "20% de leur plan, chaque mois, pendant un an",
-  "Paid for their whole first year": "Toute leur premi\u00e8re ann\u00e9e financ\u00e9e",
+  "Referral credit for their first 12 paid months": "Crédit de parrainage pendant leurs 12 premiers mois payés",
   "~5 referrals covers your own bill": "~5 parrainages couvrent votre propre facture",
   "For solo businesses": "Pour les ind\u00e9pendants",
   "Know a business owner who keeps missing calls?": "Vous connaissez un coll\u00e8gue qui rate sans cesse des appels ?",
   "Send them your link \u2014 you earn 20% of their plan for a year, they're set up in minutes.": "Envoyez-lui votre lien \u2014 vous gagnez 20% de son abonnement pendant un an, et il est op\u00e9rationnel en quelques minutes.",
-  "Get your referral link": "Obtenez votre lien de parrainage",
+  "Learn about referrals": "En savoir plus sur le parrainage",
   "New call": "Nouvel appel",
   "now": "\u00e0 l'instant",
   "CALLS": "APPELS",
@@ -6646,7 +6649,7 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "\u00a9 2026 CallTrack GmbH. All rights reserved.": "\u00a9 2026 CallTrack GmbH. Tutti i diritti riservati.",
   "Privacy policy": "Informativa sulla privacy",
   "Terms of service": "Termini di servizio",
-  "Cookie settings": "Impostazioni cookie",
+  "Cookie policy": "Cookie policy",
   "Standardize Your Success. Eliminate The Guesswork.": "Standardizzi il suo successo. Elimini le congetture.",
   "Different teams use lead data differently. These solution paths organize the platform by accountability, reporting needs, and operational workflow.": "Team diversi utilizzano i dati sui lead in modo diverso. Questi percorsi organizzano la piattaforma in base a responsabilit\u00e0, esigenze di reportistica e flusso operativo.",
   "View solution": "Visualizzi la soluzione",
@@ -6838,9 +6841,6 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "We built the call tracking tool we always wished existed": "Abbiamo creato lo strumento di tracciamento delle chiamate che avremmo sempre voluto esistesse",
   "CallAmplify was founded in Zurich by a team of marketing and engineering veterans who spent years frustrated by US-centric call tracking tools that didn't understand European regulations, languages or business models.": "CallAmplify \u00e8 stata fondata a Zurigo da un team di veterani del marketing e dell'ingegneria, frustrati per anni da strumenti di tracciamento delle chiamate pensati per gli Stati Uniti, incapaci di comprendere le normative, le lingue e i modelli di business europei.",
   "We set out to build something better \u2014 a platform that's genuinely useful for agencies and businesses operating in the Swiss and European market.": "Ci siamo posti l'obiettivo di costruire qualcosa di migliore \u2014 una piattaforma davvero utile per agenzie e aziende attive nel mercato svizzero ed europeo.",
-  "Founded in Zurich": "Fondata a Zurigo",
-  "Businesses tracked": "Aziende monitorate",
-  "Team members": "Membri del team",
   "Swiss company, EU hosting": "Azienda svizzera, hosting nell\u2019UE",
   "Our mission": "La nostra missione",
   "To give every European business and agency the same clarity over their marketing performance that big brands take for granted.": "Offrire a ogni azienda e agenzia europea la stessa chiarezza sulle prestazioni di marketing che i grandi marchi danno per scontata.",
@@ -6921,12 +6921,12 @@ function fmt(n) { return 'CHF ' + Math.round(n).toLocaleString('de-CH'); }
   "20% for 12 months": "20% per 12 mesi",
   "Refer another business, earn 20% of their plan": "Consigli un'altra impresa e guadagni il 20% del suo piano",
   "20% of their plan, every month for a year": "il 20% del loro piano, ogni mese, per un anno",
-  "Paid for their whole first year": "Ripagato per tutto il primo anno",
+  "Referral credit for their first 12 paid months": "Credito di invito per i primi 12 mesi pagati",
   "~5 referrals covers your own bill": "~5 segnalazioni coprono la Sua fattura",
   "For solo businesses": "Per imprese individuali",
   "Know a business owner who keeps missing calls?": "Conosce un collega che perde sempre le chiamate?",
   "Send them your link \u2014 you earn 20% of their plan for a year, they're set up in minutes.": "Gli invii il Suo link \u2014 guadagna il 20% del suo piano per un anno, e lui sar\u00e0 operativo in pochi minuti.",
-  "Get your referral link": "Ottenga il Suo link di invito",
+  "Learn about referrals": "Scopra il programma di invito",
   "New call": "Nuova chiamata",
   "now": "ora",
   "CALLS": "CHIAMATE",
@@ -7472,9 +7472,9 @@ Object.assign(CA_IT, {"Capito e parlato": "Capito e parlato"});
 Object.assign(CA_DE, {"Playing...": "Läuft..."});
 Object.assign(CA_FR, {"Playing...": "Lecture..."});
 Object.assign(CA_IT, {"Playing...": "In riproduzione..."});
-Object.assign(CA_DE, {"Recording coming soon": "Aufnahme folgt in Kürze"});
-Object.assign(CA_FR, {"Recording coming soon": "Enregistrement à venir"});
-Object.assign(CA_IT, {"Recording coming soon": "Registrazione in arrivo"});
+Object.assign(CA_DE, {"Recording unavailable right now": "Aufnahme gerade nicht verfügbar"});
+Object.assign(CA_FR, {"Recording unavailable right now": "Enregistrement indisponible pour le moment"});
+Object.assign(CA_IT, {"Recording unavailable right now": "Registrazione momentaneamente non disponibile"});
 Object.assign(CA_DE, {"The same receptionist answers in German, French, Italian and English. Tap a sphere to hear a re-enacted demo call.": "Dieselbe Empfangskraft antwortet auf Deutsch, Französisch, Italienisch und Englisch. Tippen Sie auf eine Kugel, um ein nachgestelltes Demo-Gespräch zu hören."});
 Object.assign(CA_FR, {"The same receptionist answers in German, French, Italian and English. Tap a sphere to hear a re-enacted demo call.": "La même réception répond en allemand, français, italien et anglais. Touchez une sphère pour écouter un appel de démonstration reconstitué."});
 Object.assign(CA_IT, {"The same receptionist answers in German, French, Italian and English. Tap a sphere to hear a re-enacted demo call.": "La stessa reception risponde in tedesco, francese, italiano e inglese. Tocchi una sfera per ascoltare una chiamata dimostrativa ricostruita."});
@@ -7730,6 +7730,24 @@ Object.assign(CA_IT, {"Estimate based on industry averages — roughly 1 in 4 bu
 Object.assign(CA_DE, {"Early access": "Vorabzugang"});
 Object.assign(CA_FR, {"Early access": "Accès anticipé"});
 Object.assign(CA_IT, {"Early access": "Accesso anticipato"});
+Object.assign(CA_DE, {"Referral credit applies to eligible paid subscriptions for the referred customer’s first 12 paid months. Credits are applied to your CallAmplify invoice and are subject to our referral terms.": "Empfehlungsgutschriften gelten für berechtigte bezahlte Abos während der ersten 12 bezahlten Monate des geworbenen Kunden. Gutschriften werden mit Ihrer CallAmplify-Rechnung verrechnet und unterliegen unseren Empfehlungsbedingungen."});
+Object.assign(CA_FR, {"Referral credit applies to eligible paid subscriptions for the referred customer’s first 12 paid months. Credits are applied to your CallAmplify invoice and are subject to our referral terms.": "Le crédit de parrainage s’applique aux abonnements payants éligibles pendant les 12 premiers mois payés du client parrainé. Les crédits sont appliqués à votre facture CallAmplify et soumis à nos conditions de parrainage."});
+Object.assign(CA_IT, {"Referral credit applies to eligible paid subscriptions for the referred customer’s first 12 paid months. Credits are applied to your CallAmplify invoice and are subject to our referral terms.": "Il credito di invito si applica agli abbonamenti a pagamento idonei per i primi 12 mesi pagati del cliente presentato. I crediti vengono applicati alla Sua fattura CallAmplify e sono soggetti alle nostre condizioni."});
+Object.assign(CA_DE, {"Template guide": "Vorlagen-Guide"});
+Object.assign(CA_FR, {"Template guide": "Guide modèle"});
+Object.assign(CA_IT, {"Template guide": "Guida modello"});
+Object.assign(CA_DE, {"Partner support": "Partner-Support"});
+Object.assign(CA_FR, {"Partner support": "Support partenaires"});
+Object.assign(CA_IT, {"Partner support": "Supporto partner"});
+Object.assign(CA_DE, {"Partner-referred clients receive business-hours support through your dedicated partner contact.": "Von Partnern geworbene Kunden erhalten Support zu Geschäftszeiten über Ihre feste Partner-Ansprechperson."});
+Object.assign(CA_FR, {"Partner-referred clients receive business-hours support through your dedicated partner contact.": "Les clients parrainés bénéficient d’un support aux heures ouvrables via votre contact partenaire dédié."});
+Object.assign(CA_IT, {"Partner-referred clients receive business-hours support through your dedicated partner contact.": "I clienti presentati dai partner ricevono assistenza in orario di ufficio tramite il Suo referente partner dedicato."});
+Object.assign(CA_DE, {"Swiss company": "Schweizer Unternehmen"});
+Object.assign(CA_FR, {"Swiss company": "Entreprise suisse"});
+Object.assign(CA_IT, {"Swiss company": "Azienda svizzera"});
+Object.assign(CA_DE, {"Supported AI languages": "Unterstützte KI-Sprachen"});
+Object.assign(CA_FR, {"Supported AI languages": "Langues IA prises en charge"});
+Object.assign(CA_IT, {"Supported AI languages": "Lingue IA supportate"});
 Object.assign(CA_DE, {"View all solutions": "Alle L\u00f6sungen ansehen"});
 Object.assign(CA_FR, {"View all solutions": "Voir toutes les solutions"});
 Object.assign(CA_IT, {"View all solutions": "Tutte le soluzioni"});
@@ -7742,9 +7760,9 @@ Object.assign(CA_IT, {"No surprise overage charges — if you regularly exceed t
 // Static-pages translation batch (partners, principles, legal stubs,
 // book-demo consent, guides, search-calls, live-feed SMS) — 6 Aug 2026.
 // FR/IT copy authored by Claude; flagged for the native-speaker skim.
-Object.assign(CA_DE, {"Join our partner programme and offer your clients world-class call tracking with a revenue share that rewards your growth.": "Werden Sie Partner und bieten Sie Ihren Kunden erstklassiges Call-Tracking — mit einer Umsatzbeteiligung, die Ihr Wachstum belohnt."});
-Object.assign(CA_FR, {"Join our partner programme and offer your clients world-class call tracking with a revenue share that rewards your growth.": "Rejoignez notre programme partenaires et proposez à vos clients un suivi des appels de premier ordre — avec une part de revenus qui récompense votre croissance."});
-Object.assign(CA_IT, {"Join our partner programme and offer your clients world-class call tracking with a revenue share that rewards your growth.": "Diventi partner e offra ai suoi clienti un call tracking di prima classe — con una quota di ricavi che premia la sua crescita."});
+Object.assign(CA_DE, {"Join our partner programme for referrals, client onboarding support, and monthly account credit. White-label dashboards and deeper agency integrations are planned, but not live yet.": "Werden Sie Partner: Empfehlungen, Unterstützung beim Kunden-Onboarding und monatliche Gutschrift auf Ihrer Rechnung. White-Label-Dashboards und tiefere Agentur-Integrationen sind geplant, aber noch nicht verfügbar."});
+Object.assign(CA_FR, {"Join our partner programme for referrals, client onboarding support, and monthly account credit. White-label dashboards and deeper agency integrations are planned, but not live yet.": "Rejoignez notre programme partenaires : parrainages, aide à l’intégration des clients et avoir mensuel sur votre facture. Les tableaux de bord en marque blanche et les intégrations agence plus poussées sont prévus, mais pas encore disponibles."});
+Object.assign(CA_IT, {"Join our partner programme for referrals, client onboarding support, and monthly account credit. White-label dashboards and deeper agency integrations are planned, but not live yet.": "Diventi partner: inviti, supporto all’onboarding dei clienti e accredito mensile in fattura. Dashboard white-label e integrazioni più profonde per agenzie sono in programma, ma non ancora disponibili."});
 Object.assign(CA_DE, {"Earn 20% of every subscription your referred clients pay — as credit on your own bill, for their first 12 months.": "Erhalten Sie 20% jedes Abos Ihrer geworbenen Kunden — als Gutschrift auf Ihrer eigenen Rechnung, während der ersten 12 Monate."});
 Object.assign(CA_FR, {"Earn 20% of every subscription your referred clients pay — as credit on your own bill, for their first 12 months.": "Recevez 20% de chaque abonnement payé par vos clients parrainés — en avoir sur votre propre facture, pendant leurs 12 premiers mois."});
 Object.assign(CA_IT, {"Earn 20% of every subscription your referred clients pay — as credit on your own bill, for their first 12 months.": "Riceva il 20% di ogni abbonamento pagato dai clienti da lei presentati — come accredito sulla sua fattura, per i loro primi 12 mesi."});
@@ -7763,9 +7781,6 @@ Object.assign(CA_IT, {"Your clients stay yours": "I suoi clienti restano suoi"})
 Object.assign(CA_DE, {"You own the relationship — we never market to or poach the clients you bring.": "Die Kundenbeziehung gehört Ihnen — wir bewerben oder werben die Kunden, die Sie bringen, niemals ab."});
 Object.assign(CA_FR, {"You own the relationship — we never market to or poach the clients you bring.": "La relation client vous appartient — nous ne démarchons jamais les clients que vous amenez."});
 Object.assign(CA_IT, {"You own the relationship — we never market to or poach the clients you bring.": "La relazione con il cliente è sua — non contattiamo né sottraiamo mai i clienti che porta."});
-Object.assign(CA_DE, {"Your clients go to the front of the queue during business hours.": "Ihre Kunden kommen während der Geschäftszeiten an die erste Stelle."});
-Object.assign(CA_FR, {"Your clients go to the front of the queue during business hours.": "Vos clients passent en tête de file pendant les heures ouvrables."});
-Object.assign(CA_IT, {"Your clients go to the front of the queue during business hours.": "I suoi clienti passano in cima alla coda durante gli orari di ufficio."});
 Object.assign(CA_DE, {"Co-marketing opportunities": "Co-Marketing-Möglichkeiten"});
 Object.assign(CA_FR, {"Co-marketing opportunities": "Opportunités de co-marketing"});
 Object.assign(CA_IT, {"Co-marketing opportunities": "Opportunità di co-marketing"});
@@ -8448,7 +8463,8 @@ function caSendContact(btn) {
   fetch(base + '/api/demo-request', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      topic: 'Contact', firstName: parts[0], lastName: parts.slice(1).join(' '),
+      topic: (function(){ try { var t = sessionStorage.getItem('ca_contact_topic'); if (t) { sessionStorage.removeItem('ca_contact_topic'); return t; } } catch (e) {} return 'Contact'; })(),
+      firstName: parts[0], lastName: parts.slice(1).join(' '),
       email: email, message: message, website: v('cf-hp')
     })
   }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
