@@ -1,6 +1,11 @@
+/* Self-hosted typefaces, served under the aliases 'CallAmplify Sans' /
+   'CallAmplify Mono'. The underlying font software is IBM Plex,
+   (c) 2017 IBM Corp., Reserved Font Name 'Plex', SIL Open Font License
+   1.1 — full license in OFL.txt in this directory. The font files are
+   unmodified; only the CSS family alias differs. */
 /* latin-ext */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: italic;
   font-weight: 400;
   font-stretch: 100%;
@@ -10,7 +15,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: italic;
   font-weight: 400;
   font-stretch: 100%;
@@ -20,7 +25,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 300;
   font-stretch: 100%;
@@ -30,7 +35,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 300;
   font-stretch: 100%;
@@ -40,7 +45,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 400;
   font-stretch: 100%;
@@ -50,7 +55,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 400;
   font-stretch: 100%;
@@ -60,7 +65,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 500;
   font-stretch: 100%;
@@ -70,7 +75,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 500;
   font-stretch: 100%;
@@ -80,7 +85,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 600;
   font-stretch: 100%;
@@ -90,7 +95,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 600;
   font-stretch: 100%;
@@ -100,7 +105,7 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 700;
   font-stretch: 100%;
@@ -110,7 +115,7 @@
 }
 /* latin */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'CallAmplify Sans';
   font-style: normal;
   font-weight: 700;
   font-stretch: 100%;
