@@ -165,7 +165,7 @@ header{
 .arrow-button>.arrow::before,.arrow-button-outline>.arrow::before,.arrow-button-ghost>.arrow::before{display:block;background-color:currentColor;width:3px;transform-origin:bottom right;height:2px;position:absolute;opacity:0;bottom:calc(-2px / 2);transform:rotate(45deg);transition:all .3s ease;content:"";right:0}
 .arrow-button:hover>.arrow,.arrow-button-outline:hover>.arrow,.arrow-button-ghost:hover>.arrow{transform:rotate(-45deg) translate(4px,4px)}
 .arrow-button:hover>.arrow::before,.arrow-button-outline:hover>.arrow::before,.arrow-button-ghost:hover>.arrow::before{opacity:1;width:8px}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;background:none;border:none;cursor:pointer}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;background:none;border:none;cursor:pointer;align-items:center;justify-content:center;align-self:center}
 .hamburger span{display:block;width:20px;height:1.5px;background:#fff}
 .mobile-nav{display:none;position:fixed;top:48px;left:0;right:0;z-index:99;background:#fff;border-bottom:1px solid var(--n100);flex-direction:column;max-height:calc(100vh - 48px);overflow-y:auto;overscroll-behavior:contain}
 .mobile-nav-heading{height:40px;display:flex;align-items:flex-end;padding:0 2rem .35rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--n400)}
@@ -850,6 +850,10 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
 
 <!-- Mobile nav -->
 <nav class="mobile-nav" id="mobile-nav">
+  <div style="display:flex;gap:10px;padding:14px 16px;border-bottom:1px solid #2c2c2c;">
+    <button type="button" onclick="caGoSignin()" style="flex:1;height:44px;border:1px solid #6f6f6f;background:none;color:#f4f4f4;font-size:14px;font-family:inherit;cursor:pointer;">Sign in</button>
+    <button type="button" onclick="goTo('free-trial');toggleMobile()" style="flex:1;height:44px;border:none;background:#0f62fe;color:#fff;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;">Start free trial</button>
+  </div>
   <div class="mobile-nav-heading">What we offer</div>
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('feat-call-tracking');toggleMobile()">Call tracking &amp; recordings</button>
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('feat-ai-scoring');toggleMobile()">AI Receptionist</button>
@@ -863,10 +867,6 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('who-we-serve');toggleMobile()">All industries we serve</button>
   <button type="button" class="nav-tab" onclick="goTo('pricing');toggleMobile()">Pricing</button>
   <button type="button" class="nav-tab" onclick="goTo('company');toggleMobile()">Use cases</button>
-  <div class="mobile-nav-heading">Account</div>
-  <button type="button" class="nav-tab" onclick="caGoSignin()">Sign in</button>
-  <button type="button" class="nav-tab" onclick="goTo('book-demo');toggleMobile()">Book a demo</button>
-  <button type="button" class="nav-tab" style="color:#0f62fe;font-weight:600" onclick="goTo('free-trial');toggleMobile()">Start free trial</button>
 </nav>
 
 
