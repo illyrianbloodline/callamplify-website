@@ -476,6 +476,10 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
   .module-card.rev .mod-text{order:0}
   .pricing-grid{grid-template-columns:1fr}
   .pr-grid{grid-template-columns:1fr!important}
+  .stat-band{grid-template-columns:1fr 1fr!important}
+  .foot-top{grid-template-columns:1fr!important;gap:2rem!important}
+  .foot-links{grid-template-columns:1fr 1fr!important}
+  .stat-band>div{border-right:none!important}
   .steps-grid{grid-template-columns:1fr!important;gap:2rem!important}
   .steps-grid>div{padding-left:0!important;padding-right:0!important}
   .cta-left{border-right:none;border-bottom:1px solid var(--n100);padding:2.5rem}
@@ -501,6 +505,7 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
   
 }
 @media(max-width:480px){
+  .stat-band{grid-template-columns:1fr!important}
   .header-cta .btn-orange-sm{display:none}
   .card-grid-4{grid-template-columns:1fr}
 }
@@ -1561,7 +1566,7 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
   <!-- ROI & ATTRIBUTION TRUST BAR ─────────────── -->
   <section style="border-top:1px solid var(--n100);background:#fff;padding:4rem 0">
     <div style="max-width:var(--max);margin:0 auto;padding:0 2rem">
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr">
+      <div class="stat-band" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr">
 
         <!-- ROI Clarity -->
         <div style="padding:2.5rem 2rem;border-right:1px solid var(--n100);display:flex;align-items:flex-start;gap:1rem">
@@ -3931,12 +3936,12 @@ renderHub(1);
 </div><!-- /page-search-calls -->
 
 <footer style="border-top:1px solid var(--n100);margin-top:0">
-  <div style="max-width:var(--max);margin:0 auto;padding:2.4rem 2rem 1.8rem;display:grid;grid-template-columns:280px 1fr;gap:4rem;border-bottom:1px solid var(--n100)">
+  <div class="foot-top" style="max-width:var(--max);margin:0 auto;padding:2.4rem 2rem 1.8rem;display:grid;grid-template-columns:280px 1fr;gap:4rem;border-bottom:1px solid var(--n100)">
     <div>
       <div style="margin-bottom:1.25rem"><!-- cropped copy: the original PNG is 2/3 white padding, which rendered the wordmark 20px tall and 11px indented inside its 64px box --><img loading="lazy" decoding="async" width="640" height="117" src="callamplify-logo-footer.png" alt="CallAmplify" style="height:34px;width:auto;display:block"/><div style="display:flex;gap:8px;margin-top:14px"><a href="https://www.linkedin.com/company/callamplify" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="ca-social" style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--n900);flex-shrink:0"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7.5 0h3.8v2h.06c.53-1 1.82-2.06 3.75-2.06 4 0 4.74 2.64 4.74 6.07V23h-4v-7.6c0-1.82-.03-4.16-2.53-4.16-2.53 0-2.92 1.98-2.92 4.03V23H8V8.5z"/></svg></a><a href="https://x.com/CallAmplify" target="_blank" rel="noopener noreferrer" aria-label="X" class="ca-social" style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--n900);flex-shrink:0"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M18.24 2H21.5l-7.1 8.12L22.75 22h-6.54l-5.12-6.7L5.22 22H1.95l7.6-8.68L1.25 2h6.7l4.63 6.12L18.24 2zm-1.15 18.05h1.8L6.98 3.84H5.04l12.05 16.21z"/></svg></a></div></div>
       <p style="font-size:.875rem;line-height:1.75;color:var(--n600);max-width:220px">The AI receptionist for businesses — calls answered, jobs captured. Built in Switzerland.</p><p style="font-size:.78rem;color:var(--n400);margin-top:.75rem"><svg width="13" height="13" viewBox="0 0 32 32" aria-label="Swiss made" style="border-radius:2.5px;vertical-align:-1.5px;margin-right:7px;flex-shrink:0"><rect width="32" height="32" fill="#DA291C"/><rect x="13" y="6" width="6" height="20" fill="#fff"/><rect x="6" y="13" width="20" height="6" fill="#fff"/></svg>A service of CallTrack GmbH</p><p style="font-size:.78rem;margin-top:.3rem"><a href="mailto:hello@callamplify.com" style="color:var(--n400);text-decoration:none">hello@callamplify.com</a></p><p style="font-size:.72rem;color:var(--n400);margin-top:.6rem;max-width:220px;line-height:1.5">The people shown on this website are AI-generated and are used for illustrative purposes.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem">
+    <div class="foot-links" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem">
       <div>
         <div style="font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--n400);margin-bottom:1rem">Product</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem">
