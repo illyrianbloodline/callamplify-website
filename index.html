@@ -484,7 +484,9 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
 }
 @media(max-width:768px){
   .nav-tabs{display:none}
-  .header-cta .btn-ghost-sm,.header-cta .btn-outline-sm{display:none}
+  .header-cta .btn-ghost-sm,.header-cta .btn-outline-sm,
+  .header-cta .ca-navphone,.header-cta .ca-btn-secondary,
+  .header-cta .ca-btn-primary{display:none}
   .hamburger{display:flex}
   .card-grid{grid-template-columns:1fr}
   .grid-cell:nth-child(2n){border-right:1px solid var(--n100)}
@@ -861,6 +863,10 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
   <button type="button" class="nav-tab" style="padding-left:2.5rem" onclick="goTo('who-we-serve');toggleMobile()">All industries we serve</button>
   <button type="button" class="nav-tab" onclick="goTo('pricing');toggleMobile()">Pricing</button>
   <button type="button" class="nav-tab" onclick="goTo('company');toggleMobile()">Use cases</button>
+  <div class="mobile-nav-heading">Account</div>
+  <button type="button" class="nav-tab" onclick="caGoSignin()">Sign in</button>
+  <button type="button" class="nav-tab" onclick="goTo('book-demo');toggleMobile()">Book a demo</button>
+  <button type="button" class="nav-tab" style="color:#0f62fe;font-weight:600" onclick="goTo('free-trial');toggleMobile()">Start free trial</button>
 </nav>
 
 
