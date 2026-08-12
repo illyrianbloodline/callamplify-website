@@ -498,6 +498,10 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
   .steps-grid>div{padding-left:0!important;padding-right:0!important;border-left:none!important;border-right:none!important}
   .ca-ample-btn>span{padding:13px!important;gap:0!important}
   .ca-ample-btn>span>span{display:none!important}
+  /* Carousel handoff (Codex, adapted): 64px carousel bottom + the 3rem spacer
+     + the next section's padding stacked into a blank band on small screens. */
+  .ca-proof-section{padding:28px 0 12px!important}
+  .ca-mobile-gap{height:0!important}
   section[style*="padding:4rem 0"]{padding:2.6rem 0!important}
   section{border-top:none!important;border-bottom:none!important}
   .kpi-grid{grid-template-columns:1fr 1fr!important;gap:.8rem!important}
@@ -554,6 +558,8 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
   #page-solutions [style*="display:grid;grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
   .ca-slide>div[style*="min-height:440px"]{min-height:340px!important}
   .ca-slide>div[style*="padding:3rem 3.25rem"]{padding:2.25rem!important}
+  .ca-proof-section{padding:40px 0 20px!important}
+  .ca-mobile-gap{height:1rem!important}
 }
 @media(max-width:760px){
   html,body{max-width:100%;overflow-x:hidden}
@@ -1566,7 +1572,7 @@ a.nav-tab{text-decoration:none;box-sizing:border-box}
   })();
   </script>
   <!-- SOCIAL PROOF — real businesses -->
-  <section style="border-bottom:1px solid var(--n100);padding:64px 0">
+  <section class="ca-proof-section" style="border-bottom:1px solid var(--n100);padding:64px 0">
     <div style="max-width:var(--max);margin:0 auto;padding:0 2rem">
       <div style="position:relative">
         <div class="ca-slide" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));border:1px solid var(--n100);border-top:none">
@@ -9188,5 +9194,8 @@ function caSubmitDemo(btn){
   send('pageview',initialPage);
 })();
 </script>
+<style>/* carousel handoff — last-position override (Codex, adapted) */
+@media(max-width:760px){section.ca-proof-section{padding:28px 0 12px!important}.ca-mobile-gap{height:0!important}}
+@media(min-width:761px) and (max-width:1024px){section.ca-proof-section{padding:40px 0 20px!important}}</style>
 </body>
 </html>
