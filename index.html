@@ -8738,7 +8738,7 @@ window.CA_DICTS = CA_DICTS;
     root.id = 'ca-concierge-panel';
     root.setAttribute('role', 'dialog');
     root.setAttribute('aria-modal', 'true');
-    root.style.cssText='position:fixed;bottom:1.5rem;right:1.5rem;width:420px;max-width:calc(100vw - 2rem);height:calc(100vh - 6.5rem);z-index:400;background:#fff;border:1px solid #e0e0e0;border-radius:6px;box-shadow:0 28px 70px rgba(0,0,0,.26);display:none;flex-direction:column;font-family:\'CallAmplify Sans\',sans-serif;overflow:hidden';
+    root.style.cssText='position:fixed;bottom:1.5rem;right:1.5rem;width:420px;max-width:calc(100vw - 2rem);height:calc(100vh - 6.5rem);height:calc(100dvh - 6.5rem);max-height:calc(100dvh - 6.5rem);z-index:400;background:#fff;border:1px solid #e0e0e0;border-radius:6px;box-shadow:0 28px 70px rgba(0,0,0,.26);display:none;flex-direction:column;font-family:\'CallAmplify Sans\',sans-serif;overflow:hidden';
     root.innerHTML =
       '<div style="display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;border-bottom:1px solid #eee">'+
         '<div style="display:flex;align-items:center;gap:.55rem">'+'<img loading="lazy" decoding="async" width="320" height="89" src="ample-logo.png" alt="Ample" style="height:22px;width:auto;display:block"/>'+
